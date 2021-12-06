@@ -1,0 +1,12 @@
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.Properties.Resources.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Exam_Preparation_System.FormLogin.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.GenerateResource.cache
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.CoreCompileInputs.cache
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\Movie Ticket Booking System.exe.config
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\Movie Ticket Booking System.exe
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\Movie Ticket Booking System.pdb
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\Guna.UI2.dll
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.exe
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.pdb
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.AssemblyReference.cache
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.CopyComplete
