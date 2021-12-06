@@ -37,16 +37,15 @@ namespace Exam_Preparation_System
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panel = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtPasswordConfirm = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblShowPass = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.gtsShowPassword = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtFullName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.txtPasswordConfirm = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblSwitchPanel = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.tsSwitchPanel = new Guna.UI2.WinForms.Guna2ToggleSwitch();
+            this.lblSwitchPanel = new System.Windows.Forms.LinkLabel();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +98,6 @@ namespace Exam_Preparation_System
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.Transparent;
-            this.panel.Controls.Add(this.tsSwitchPanel);
             this.panel.Controls.Add(this.lblSwitchPanel);
             this.panel.Controls.Add(this.txtPhoneNumber);
             this.panel.Controls.Add(this.txtPasswordConfirm);
@@ -118,12 +116,77 @@ namespace Exam_Preparation_System
             this.panel.Size = new System.Drawing.Size(399, 644);
             this.panel.TabIndex = 8;
             // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Animated = true;
+            this.txtPhoneNumber.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtPhoneNumber.BorderRadius = 20;
+            this.txtPhoneNumber.BorderThickness = 2;
+            this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPhoneNumber.DefaultText = "";
+            this.txtPhoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPhoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPhoneNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPhoneNumber.DisabledState.Parent = this.txtPhoneNumber;
+            this.txtPhoneNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPhoneNumber.FillColor = System.Drawing.Color.Transparent;
+            this.txtPhoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtPhoneNumber.FocusedState.Parent = this.txtPhoneNumber;
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtPhoneNumber.HoverState.Parent = this.txtPhoneNumber;
+            this.txtPhoneNumber.Location = new System.Drawing.Point(46, 237);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhoneNumber.MaxLength = 10;
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.PasswordChar = '\0';
+            this.txtPhoneNumber.PlaceholderText = "Số điện thoại";
+            this.txtPhoneNumber.SelectedText = "";
+            this.txtPhoneNumber.ShadowDecoration.Parent = this.txtPhoneNumber;
+            this.txtPhoneNumber.Size = new System.Drawing.Size(316, 49);
+            this.txtPhoneNumber.TabIndex = 8;
+            this.txtPhoneNumber.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
+            // 
+            // txtPasswordConfirm
+            // 
+            this.txtPasswordConfirm.Animated = true;
+            this.txtPasswordConfirm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtPasswordConfirm.BorderRadius = 20;
+            this.txtPasswordConfirm.BorderThickness = 2;
+            this.txtPasswordConfirm.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPasswordConfirm.DefaultText = "";
+            this.txtPasswordConfirm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPasswordConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPasswordConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPasswordConfirm.DisabledState.Parent = this.txtPasswordConfirm;
+            this.txtPasswordConfirm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPasswordConfirm.FillColor = System.Drawing.Color.Transparent;
+            this.txtPasswordConfirm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtPasswordConfirm.FocusedState.Parent = this.txtPasswordConfirm;
+            this.txtPasswordConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasswordConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
+            this.txtPasswordConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtPasswordConfirm.HoverState.Parent = this.txtPasswordConfirm;
+            this.txtPasswordConfirm.Location = new System.Drawing.Point(46, 377);
+            this.txtPasswordConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPasswordConfirm.Name = "txtPasswordConfirm";
+            this.txtPasswordConfirm.PasswordChar = '\0';
+            this.txtPasswordConfirm.PlaceholderText = "Nhập lại mật khẩu";
+            this.txtPasswordConfirm.SelectedText = "";
+            this.txtPasswordConfirm.ShadowDecoration.Parent = this.txtPasswordConfirm;
+            this.txtPasswordConfirm.Size = new System.Drawing.Size(316, 49);
+            this.txtPasswordConfirm.TabIndex = 7;
+            this.txtPasswordConfirm.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtPasswordConfirm.UseSystemPasswordChar = true;
+            // 
             // lblShowPass
             // 
             this.lblShowPass.BackColor = System.Drawing.Color.Transparent;
             this.lblShowPass.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowPass.ForeColor = System.Drawing.Color.Silver;
-            this.lblShowPass.Location = new System.Drawing.Point(101, 492);
+            this.lblShowPass.Location = new System.Drawing.Point(101, 447);
             this.lblShowPass.Name = "lblShowPass";
             this.lblShowPass.Size = new System.Drawing.Size(124, 24);
             this.lblShowPass.TabIndex = 6;
@@ -140,7 +203,7 @@ namespace Exam_Preparation_System
             this.gtsShowPassword.CheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(1)))), ((int)(((byte)(68)))));
             this.gtsShowPassword.CheckedState.InnerColor = System.Drawing.Color.Black;
             this.gtsShowPassword.CheckedState.Parent = this.gtsShowPassword;
-            this.gtsShowPassword.Location = new System.Drawing.Point(46, 492);
+            this.gtsShowPassword.Location = new System.Drawing.Point(46, 447);
             this.gtsShowPassword.Name = "gtsShowPassword";
             this.gtsShowPassword.ShadowDecoration.Parent = this.gtsShowPassword;
             this.gtsShowPassword.Size = new System.Drawing.Size(49, 22);
@@ -159,6 +222,7 @@ namespace Exam_Preparation_System
             this.btnConfirm.Animated = true;
             this.btnConfirm.BorderRadius = 20;
             this.btnConfirm.CheckedState.Parent = this.btnConfirm;
+            this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.CustomImages.Parent = this.btnConfirm;
             this.btnConfirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnConfirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -171,7 +235,7 @@ namespace Exam_Preparation_System
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
-            this.btnConfirm.Location = new System.Drawing.Point(111, 538);
+            this.btnConfirm.Location = new System.Drawing.Point(111, 493);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
             this.btnConfirm.Size = new System.Drawing.Size(180, 45);
@@ -199,7 +263,7 @@ namespace Exam_Preparation_System
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPassword.HoverState.Parent = this.txtPassword;
-            this.txtPassword.Location = new System.Drawing.Point(46, 352);
+            this.txtPassword.Location = new System.Drawing.Point(46, 307);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '\0';
@@ -231,7 +295,7 @@ namespace Exam_Preparation_System
             this.txtFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtFullName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtFullName.HoverState.Parent = this.txtFullName;
-            this.txtFullName.Location = new System.Drawing.Point(46, 212);
+            this.txtFullName.Location = new System.Drawing.Point(46, 167);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.PasswordChar = '\0';
@@ -247,113 +311,28 @@ namespace Exam_Preparation_System
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft YaHei UI", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(95, 28);
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(92, 30);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(225, 72);
             this.guna2HtmlLabel3.TabIndex = 0;
             this.guna2HtmlLabel3.Text = "NETFLIX";
             // 
-            // txtPasswordConfirm
-            // 
-            this.txtPasswordConfirm.Animated = true;
-            this.txtPasswordConfirm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtPasswordConfirm.BorderRadius = 20;
-            this.txtPasswordConfirm.BorderThickness = 2;
-            this.txtPasswordConfirm.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPasswordConfirm.DefaultText = "";
-            this.txtPasswordConfirm.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPasswordConfirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPasswordConfirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPasswordConfirm.DisabledState.Parent = this.txtPasswordConfirm;
-            this.txtPasswordConfirm.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPasswordConfirm.FillColor = System.Drawing.Color.Transparent;
-            this.txtPasswordConfirm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtPasswordConfirm.FocusedState.Parent = this.txtPasswordConfirm;
-            this.txtPasswordConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPasswordConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.txtPasswordConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtPasswordConfirm.HoverState.Parent = this.txtPasswordConfirm;
-            this.txtPasswordConfirm.Location = new System.Drawing.Point(46, 422);
-            this.txtPasswordConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPasswordConfirm.Name = "txtPasswordConfirm";
-            this.txtPasswordConfirm.PasswordChar = '\0';
-            this.txtPasswordConfirm.PlaceholderText = "Nhập lại mật khẩu";
-            this.txtPasswordConfirm.SelectedText = "";
-            this.txtPasswordConfirm.ShadowDecoration.Parent = this.txtPasswordConfirm;
-            this.txtPasswordConfirm.Size = new System.Drawing.Size(316, 49);
-            this.txtPasswordConfirm.TabIndex = 7;
-            this.txtPasswordConfirm.TextOffset = new System.Drawing.Point(5, 0);
-            this.txtPasswordConfirm.UseSystemPasswordChar = true;
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Animated = true;
-            this.txtPhoneNumber.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtPhoneNumber.BorderRadius = 20;
-            this.txtPhoneNumber.BorderThickness = 2;
-            this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPhoneNumber.DefaultText = "";
-            this.txtPhoneNumber.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPhoneNumber.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPhoneNumber.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhoneNumber.DisabledState.Parent = this.txtPhoneNumber;
-            this.txtPhoneNumber.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPhoneNumber.FillColor = System.Drawing.Color.Transparent;
-            this.txtPhoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtPhoneNumber.FocusedState.Parent = this.txtPhoneNumber;
-            this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
-            this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtPhoneNumber.HoverState.Parent = this.txtPhoneNumber;
-            this.txtPhoneNumber.Location = new System.Drawing.Point(46, 282);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPhoneNumber.MaxLength = 10;
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.PasswordChar = '\0';
-            this.txtPhoneNumber.PlaceholderText = "Số điện thoại";
-            this.txtPhoneNumber.SelectedText = "";
-            this.txtPhoneNumber.ShadowDecoration.Parent = this.txtPhoneNumber;
-            this.txtPhoneNumber.Size = new System.Drawing.Size(316, 49);
-            this.txtPhoneNumber.TabIndex = 8;
-            this.txtPhoneNumber.TextOffset = new System.Drawing.Point(5, 0);
-            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
-            // 
             // lblSwitchPanel
             // 
-            this.lblSwitchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.lblSwitchPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSwitchPanel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.lblSwitchPanel.AutoSize = true;
+            this.lblSwitchPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSwitchPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblSwitchPanel.ForeColor = System.Drawing.Color.Silver;
-            this.lblSwitchPanel.Location = new System.Drawing.Point(191, 117);
+            this.lblSwitchPanel.LinkColor = System.Drawing.Color.Silver;
+            this.lblSwitchPanel.Location = new System.Drawing.Point(155, 563);
             this.lblSwitchPanel.Name = "lblSwitchPanel";
-            this.lblSwitchPanel.Size = new System.Drawing.Size(70, 24);
-            this.lblSwitchPanel.TabIndex = 11;
-            this.lblSwitchPanel.Text = "Đăng ký";
-            // 
-            // tsSwitchPanel
-            // 
-            this.tsSwitchPanel.Animated = true;
-            this.tsSwitchPanel.BackColor = System.Drawing.Color.Transparent;
-            this.tsSwitchPanel.Checked = true;
-            this.tsSwitchPanel.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.tsSwitchPanel.CheckedState.BorderRadius = 10;
-            this.tsSwitchPanel.CheckedState.BorderThickness = 2;
-            this.tsSwitchPanel.CheckedState.FillColor = System.Drawing.Color.Silver;
-            this.tsSwitchPanel.CheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(1)))), ((int)(((byte)(68)))));
-            this.tsSwitchPanel.CheckedState.InnerColor = System.Drawing.Color.Black;
-            this.tsSwitchPanel.CheckedState.Parent = this.tsSwitchPanel;
-            this.tsSwitchPanel.Location = new System.Drawing.Point(136, 118);
-            this.tsSwitchPanel.Name = "tsSwitchPanel";
-            this.tsSwitchPanel.ShadowDecoration.Parent = this.tsSwitchPanel;
-            this.tsSwitchPanel.Size = new System.Drawing.Size(49, 22);
-            this.tsSwitchPanel.TabIndex = 12;
-            this.tsSwitchPanel.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.tsSwitchPanel.UncheckedState.BorderRadius = 10;
-            this.tsSwitchPanel.UncheckedState.BorderThickness = 2;
-            this.tsSwitchPanel.UncheckedState.FillColor = System.Drawing.Color.Black;
-            this.tsSwitchPanel.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.tsSwitchPanel.UncheckedState.InnerColor = System.Drawing.Color.Silver;
-            this.tsSwitchPanel.UncheckedState.Parent = this.tsSwitchPanel;
-            this.tsSwitchPanel.CheckedChanged += new System.EventHandler(this.tsSwitchPanel_CheckedChanged);
+            this.lblSwitchPanel.Size = new System.Drawing.Size(99, 22);
+            this.lblSwitchPanel.TabIndex = 9;
+            this.lblSwitchPanel.TabStop = true;
+            this.lblSwitchPanel.Text = "Đăng nhập";
+            this.lblSwitchPanel.VisitedLinkColor = System.Drawing.Color.Silver;
+            this.lblSwitchPanel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSwitchPanel_LinkClicked);
             // 
             // FormLogin
             // 
@@ -393,7 +372,6 @@ namespace Exam_Preparation_System
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtFullName;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2ToggleSwitch tsSwitchPanel;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblSwitchPanel;
+        private System.Windows.Forms.LinkLabel lblSwitchPanel;
     }
 }

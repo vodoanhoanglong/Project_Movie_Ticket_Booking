@@ -26,7 +26,7 @@ namespace Exam_Preparation_System
                 this.ClientSize.Width / 2 - panel.Size.Width / 2,
                 this.ClientSize.Height / 2 - panel.Size.Height / 2);
 
-            tsSwitchPanel.Checked = false;
+            setPanelSignIn();
         }
 
         private void gtsShowPassword_CheckedChanged(object sender, EventArgs e)
@@ -52,11 +52,12 @@ namespace Exam_Preparation_System
         {
             txtPassword.Location = txtPhoneNumber.Location;
             txtPhoneNumber.Location = txtFullName.Location;
-            btnConfirm.Location = new Point(111, 419);
             gtsShowPassword.Location = new Point(txtPassword.Location.X, txtPassword.Location.Y + 70);
+            btnConfirm.Location = new Point(111, gtsShowPassword.Location.Y + 70);
             lblShowPass.Location = new Point(gtsShowPassword.Location.X + 55, gtsShowPassword.Location.Y);
             btnConfirm.Text = "Đăng nhập";
             lblSwitchPanel.Text = "Đăng ký";
+            lblSwitchPanel.Location = new Point(160, btnConfirm.Location.Y + 60);
             txtFullName.Visible = false;
             txtPasswordConfirm.Visible = false;
         }
@@ -64,26 +65,15 @@ namespace Exam_Preparation_System
         private void setPanelSignUp()
         {
             btnConfirm.Text = "Đăng ký";
-            lblSwitchPanel.Text = "Đăng nhập";
-            btnConfirm.Location = new Point(111, 538);
+            lblSwitchPanel.Text = "Trở về";
             txtFullName.Visible = true;
             txtPasswordConfirm.Visible = true;
             txtPhoneNumber.Location = new Point(txtFullName.Location.X, txtFullName.Location.Y + 70);
             txtPassword.Location = new Point(txtPhoneNumber.Location.X, txtPhoneNumber.Location.Y + 70);
             gtsShowPassword.Location = new Point(txtPasswordConfirm.Location.X, txtPasswordConfirm.Location.Y + 70);
+            btnConfirm.Location = new Point(111, gtsShowPassword.Location.Y + 40);
             lblShowPass.Location = new Point(gtsShowPassword.Location.X + 55, gtsShowPassword.Location.Y);
-        }
-
-        private void tsSwitchPanel_CheckedChanged(object sender, EventArgs e)
-        {
-            txtFullName.Text = "";
-            txtPhoneNumber.Text = "";
-            txtPassword.Text = "";
-            txtPasswordConfirm.Text = "";
-            if (!tsSwitchPanel.Checked)
-                setPanelSignIn();
-            else
-                setPanelSignUp();
+            lblSwitchPanel.Location = new Point(168, btnConfirm.Location.Y + 60);
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -94,10 +84,10 @@ namespace Exam_Preparation_System
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 return;
             }
-            if (tsSwitchPanel.Checked &&
+            if (lblSwitchPanel.Text == "Đăng ký" &&
                 (txtFullName.Text == "" || txtPasswordConfirm.Text == ""))
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-            else if (tsSwitchPanel.Checked && txtPasswordConfirm.Text != txtPassword.Text)
+            else if (lblSwitchPanel.Text == "Đăng ký" && txtPasswordConfirm.Text != txtPassword.Text)
                 MessageBox.Show("Mật khẩu xác nhận không giống nhau");
             else MessageBox.Show("Thành công");
         }
@@ -106,6 +96,19 @@ namespace Exam_Preparation_System
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void lblSwitchPanel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            txtFullName.Text = "";
+            txtPhoneNumber.Text = "";
+            txtPassword.Text = "";
+            txtPasswordConfirm.Text = "";
+            gtsShowPassword.Checked = false;
+            if (lblSwitchPanel.Text == "Trở về")
+                setPanelSignIn();
+            else
+                setPanelSignUp();
         }
     }
 }
