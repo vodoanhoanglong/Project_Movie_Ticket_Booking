@@ -37,6 +37,7 @@ namespace Exam_Preparation_System
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panel = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblSwitchPanel = new System.Windows.Forms.LinkLabel();
             this.txtPhoneNumber = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPasswordConfirm = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblShowPass = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -45,12 +46,12 @@ namespace Exam_Preparation_System
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtFullName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblSwitchPanel = new System.Windows.Forms.LinkLabel();
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Elipse
             // 
+            this.Elipse.BorderRadius = 15;
             this.Elipse.TargetControl = this;
             // 
             // DragControl
@@ -61,7 +62,7 @@ namespace Exam_Preparation_System
             // 
             // ShadowForm
             // 
-            this.ShadowForm.BorderRadius = 6;
+            this.ShadowForm.BorderRadius = 15;
             this.ShadowForm.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.ShadowForm.TargetForm = this;
             // 
@@ -115,6 +116,23 @@ namespace Exam_Preparation_System
             this.panel.ShadowDepth = 180;
             this.panel.Size = new System.Drawing.Size(399, 644);
             this.panel.TabIndex = 8;
+            // 
+            // lblSwitchPanel
+            // 
+            this.lblSwitchPanel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.lblSwitchPanel.AutoSize = true;
+            this.lblSwitchPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblSwitchPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblSwitchPanel.ForeColor = System.Drawing.Color.Silver;
+            this.lblSwitchPanel.LinkColor = System.Drawing.Color.Silver;
+            this.lblSwitchPanel.Location = new System.Drawing.Point(155, 563);
+            this.lblSwitchPanel.Name = "lblSwitchPanel";
+            this.lblSwitchPanel.Size = new System.Drawing.Size(99, 22);
+            this.lblSwitchPanel.TabIndex = 9;
+            this.lblSwitchPanel.TabStop = true;
+            this.lblSwitchPanel.Text = "Đăng nhập";
+            this.lblSwitchPanel.VisitedLinkColor = System.Drawing.Color.Silver;
+            this.lblSwitchPanel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSwitchPanel_LinkClicked);
             // 
             // txtPhoneNumber
             // 
@@ -297,6 +315,7 @@ namespace Exam_Preparation_System
             this.txtFullName.HoverState.Parent = this.txtFullName;
             this.txtFullName.Location = new System.Drawing.Point(46, 167);
             this.txtFullName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFullName.MaxLength = 30;
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.PasswordChar = '\0';
             this.txtFullName.PlaceholderText = "Họ tên";
@@ -316,23 +335,6 @@ namespace Exam_Preparation_System
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(225, 72);
             this.guna2HtmlLabel3.TabIndex = 0;
             this.guna2HtmlLabel3.Text = "NETFLIX";
-            // 
-            // lblSwitchPanel
-            // 
-            this.lblSwitchPanel.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.lblSwitchPanel.AutoSize = true;
-            this.lblSwitchPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblSwitchPanel.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblSwitchPanel.ForeColor = System.Drawing.Color.Silver;
-            this.lblSwitchPanel.LinkColor = System.Drawing.Color.Silver;
-            this.lblSwitchPanel.Location = new System.Drawing.Point(155, 563);
-            this.lblSwitchPanel.Name = "lblSwitchPanel";
-            this.lblSwitchPanel.Size = new System.Drawing.Size(99, 22);
-            this.lblSwitchPanel.TabIndex = 9;
-            this.lblSwitchPanel.TabStop = true;
-            this.lblSwitchPanel.Text = "Đăng nhập";
-            this.lblSwitchPanel.VisitedLinkColor = System.Drawing.Color.Silver;
-            this.lblSwitchPanel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblSwitchPanel_LinkClicked);
             // 
             // FormLogin
             // 

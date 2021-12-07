@@ -17,10 +17,12 @@ namespace Movie_Ticket_Booking_System.Models
 
         public int MovieID { get; set; }
 
+        [Column(TypeName = "NVARCHAR")]
         public string Name { get; set; }
 
         public TimeSpan? Time { get; set; }
 
+        [Column(TypeName = "NVARCHAR")]
         public string Des { get; set; }
 
         public decimal? Price { get; set; }

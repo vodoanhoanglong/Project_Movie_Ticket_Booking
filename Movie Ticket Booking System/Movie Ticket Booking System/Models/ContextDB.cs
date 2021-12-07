@@ -12,13 +12,13 @@ namespace Movie_Ticket_Booking_System.Models
         {
         }
 
-        public virtual DbSet<ACCOUNT> ACCOUNTs { get; set; }
-        public virtual DbSet<CHAIR> CHAIRs { get; set; }
-        public virtual DbSet<DISCOUNT> DISCOUNTs { get; set; }
-        public virtual DbSet<MOVIE> MOVIEs { get; set; }
-        public virtual DbSet<ROOM> ROOMs { get; set; }
-        public virtual DbSet<SHOWTIME> SHOWTIMEs { get; set; }
-        public virtual DbSet<TICKET> TICKETs { get; set; }
+        public virtual DbSet<ACCOUNT> ACCOUNTS { get; set; }
+        public virtual DbSet<CHAIR> CHAIRS { get; set; }
+        public virtual DbSet<DISCOUNT> DISCOUNTS { get; set; }
+        public virtual DbSet<MOVIE> MOVIES { get; set; }
+        public virtual DbSet<ROOM> ROOMS { get; set; }
+        public virtual DbSet<SHOWTIME> SHOWTIMES { get; set; }
+        public virtual DbSet<TICKET> TICKETS { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -22,11 +22,13 @@ namespace Movie_Ticket_Booking_System.Models
         public string Password { get; set; }
 
         [StringLength(30)]
+        [Column(TypeName = "NVARCHAR")]
         public string FullName { get; set; }
 
         public decimal? Balance { get; set; }
 
         [StringLength(10)]
+        [Column(TypeName = "NVARCHAR")]
         public string Role { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

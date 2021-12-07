@@ -1,4 +1,6 @@
 ﻿
+using Movie_Ticket_Booking_System;
+using Movie_Ticket_Booking_System.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +15,11 @@ namespace Exam_Preparation_System
 {
     public partial class FormLogin : Form
     {
+        private const int percentDiscount = 10;
+        ContextDB context = Program.context;
         public FormLogin()
         {
             InitializeComponent();
-
             // center screen
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
@@ -78,18 +81,69 @@ namespace Exam_Preparation_System
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            bool currPnl = btnConfirm.Text.Equals("Đăng ký") ? true : false;
             if (txtPhoneNumber.Text == ""
                 || txtPassword.Text == "")
             { 
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
                 return;
             }
-            if (lblSwitchPanel.Text == "Đăng ký" &&
-                (txtFullName.Text == "" || txtPasswordConfirm.Text == ""))
+            if (currPnl && (txtFullName.Text == "" || txtPasswordConfirm.Text == ""))
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-            else if (lblSwitchPanel.Text == "Đăng ký" && txtPasswordConfirm.Text != txtPassword.Text)
+            else if (currPnl && txtPasswordConfirm.Text != txtPassword.Text)
                 MessageBox.Show("Mật khẩu xác nhận không giống nhau");
-            else MessageBox.Show("Thành công");
+            else if(currPnl && existAccount())
+                MessageBox.Show("Số điện thoại đã tồn tại");
+            else
+            {
+                if (currPnl)
+                    saveAccount();
+                else
+                    checkLogin();
+            } 
+                
+        }
+
+        private void checkLogin()
+        {
+            var query = context.ACCOUNTS
+                .Where(x => x.AccountID == txtPhoneNumber.Text &&
+                x.Password == txtPassword.Text).FirstOrDefault();
+            if (query != null)
+                MessageBox.Show("Đăng nhập thành công");
+            else
+                MessageBox.Show("Số điện thoại hoặc mật khẩu sai");
+        }
+
+        private bool existAccount()
+        {
+            var result = context.ACCOUNTS.Find(txtPhoneNumber.Text);
+            return result != null ? true : false;
+        }
+
+        private void saveAccount()
+        {
+            ACCOUNT newAccount = new ACCOUNT();
+            DISCOUNT newDiscount = new DISCOUNT();
+
+            newAccount.AccountID = txtPhoneNumber.Text;
+            newAccount.Password = txtPassword.Text;
+            newAccount.FullName = txtFullName.Text;
+            newDiscount.AccountID = txtPhoneNumber.Text;
+            newDiscount.Code = txtPhoneNumber.Text;
+            newDiscount.Percent = percentDiscount;
+
+            context.DISCOUNTS.Add(newDiscount);
+            context.ACCOUNTS.Add(newAccount);
+            // use trycatch for error message of trigger
+            try
+            {
+                context.SaveChanges();
+            }catch(Exception)
+            {
+                MessageBox.Show("Đăng ký thành công");
+                resetInput();
+            }
         }
 
         private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
@@ -100,15 +154,20 @@ namespace Exam_Preparation_System
 
         private void lblSwitchPanel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            resetInput();
+            if (lblSwitchPanel.Text == "Trở về")
+                setPanelSignIn();
+            else
+                setPanelSignUp();
+        }
+
+        private void resetInput()
+        {
             txtFullName.Text = "";
             txtPhoneNumber.Text = "";
             txtPassword.Text = "";
             txtPasswordConfirm.Text = "";
             gtsShowPassword.Checked = false;
-            if (lblSwitchPanel.Text == "Trở về")
-                setPanelSignIn();
-            else
-                setPanelSignUp();
         }
     }
 }
