@@ -15,24 +15,30 @@ namespace Movie_Ticket_Booking_System.View
     {
         private Guna2Button currBtn;
         private Panel leftBorderBtn;
-        private int imgNumber = 1;
+        private Form currChildForm;
+        private bool isAdmin;
 
         private System.Drawing.Bitmap home = global::Movie_Ticket_Booking_System.Properties.Resources.home;
         private System.Drawing.Bitmap film = global::Movie_Ticket_Booking_System.Properties.Resources.film;
         private System.Drawing.Bitmap showtime = global::Movie_Ticket_Booking_System.Properties.Resources.showtime;
         private System.Drawing.Bitmap history = global::Movie_Ticket_Booking_System.Properties.Resources.history;
+        private System.Drawing.Bitmap addFilm = global::Movie_Ticket_Booking_System.Properties.Resources.add_film;
 
         private System.Drawing.Bitmap homeColor = global::Movie_Ticket_Booking_System.Properties.Resources.home_color;
         private System.Drawing.Bitmap filmColor = global::Movie_Ticket_Booking_System.Properties.Resources.film_color;
         private System.Drawing.Bitmap showtimeColor = global::Movie_Ticket_Booking_System.Properties.Resources.showtime_color;
         private System.Drawing.Bitmap historyColor = global::Movie_Ticket_Booking_System.Properties.Resources.history_color;
-
+        private System.Drawing.Bitmap addFilmColor = global::Movie_Ticket_Booking_System.Properties.Resources.add_film_color;
         public FormMenu()
         {
             InitializeComponent();
             // center screen
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
+
+            //check admin account
+            isAdmin = false;
+
         }
 
       
@@ -40,7 +46,22 @@ namespace Movie_Ticket_Booking_System.View
         {
             leftBorderBtn = new Panel();
             panelMenu.Controls.Add(leftBorderBtn);
-            loadThumb();
+            activateButton(btnHome, Color.White);
+            openChildForm(new FormHome());
+        }
+
+        public void openChildForm(Form childForm)
+        {
+            if (currChildForm != null)
+                currChildForm.Dispose();
+            currChildForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(childForm);
+            panelContent.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         private void activateButton(object senderBtn, Color color)
@@ -84,15 +105,20 @@ namespace Movie_Ticket_Booking_System.View
                 case "btnShowTime":
                     currBtn.Image = checkColor ? showtimeColor : showtime;
                     break;
+                case "btnAddFilm":
+                    currBtn.Image = checkColor ? addFilmColor : addFilm;
+                    break;
                 default:
                     currBtn.Image = checkColor ? historyColor : history;
                     break;
             }
         }
 
+        //user
         private void btnHome_Click(object sender, EventArgs e)
         {
             activateButton(sender, Color.White);
+            openChildForm(new FormHome());
         }
 
         private void btnFilm_Click(object sender, EventArgs e)
@@ -110,41 +136,15 @@ namespace Movie_Ticket_Booking_System.View
             activateButton(sender, Color.White);
         }
 
+        //admin
+        private void btnAddFilm_Click(object sender, EventArgs e)
+        {
+            activateButton(sender, Color.White);
+            openChildForm(new FormAddFilm());
+        }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-
-        private void timerSlider_Tick(object sender, EventArgs e)
-        {
-            loadImgs();
-        }
-
-        private void resetThumb()
-        {
-            thumb1.FillColor = Color.FromArgb(25, 26, 31);
-            thumb2.FillColor = Color.FromArgb(25, 26, 31);
-            thumb3.FillColor = Color.FromArgb(25, 26, 31);
-        }
-        private void loadThumb()
-        {
-            resetThumb();
-            if (imgNumber == 1)
-                thumb1.FillColor = Color.White;
-            else if (imgNumber == 2)
-                thumb2.FillColor = Color.White;
-            else
-                thumb3.FillColor = Color.White;
-        }
-
-        private void loadImgs()
-        {
-            timerSlider.Start();
-            if (imgNumber > 3)
-                imgNumber = 1;
-            loadThumb();
-            pcbCarousel.ImageLocation = string.Format(@"D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\ImgSlider\" + imgNumber + ".jpg");
-            imgNumber++;
         }
     }
 }

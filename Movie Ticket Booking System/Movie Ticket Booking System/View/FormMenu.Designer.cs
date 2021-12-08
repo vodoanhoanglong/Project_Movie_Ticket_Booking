@@ -39,21 +39,15 @@ namespace Movie_Ticket_Booking_System.View
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
-            this.pcbCarousel = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnHistory = new Guna.UI2.WinForms.Guna2Button();
             this.btnShowTime = new Guna.UI2.WinForms.Guna2Button();
             this.btnFilm = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.ptbTitle = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.thumb3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.thumb2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.thumb1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.timerSlider = new System.Windows.Forms.Timer(this.components);
+            this.btnAddFilm = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu.SuspendLayout();
             this.panelTitle.SuspendLayout();
-            this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCarousel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTitle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +64,7 @@ namespace Movie_Ticket_Booking_System.View
             // 
             // panelMenu
             // 
+            this.panelMenu.Controls.Add(this.btnAddFilm);
             this.panelMenu.Controls.Add(this.btnLogOut);
             this.panelMenu.Controls.Add(this.btnHistory);
             this.panelMenu.Controls.Add(this.btnShowTime);
@@ -141,10 +136,6 @@ namespace Movie_Ticket_Booking_System.View
             // 
             // panelContent
             // 
-            this.panelContent.Controls.Add(this.thumb3);
-            this.panelContent.Controls.Add(this.thumb2);
-            this.panelContent.Controls.Add(this.thumb1);
-            this.panelContent.Controls.Add(this.pcbCarousel);
             this.panelContent.Location = new System.Drawing.Point(206, 31);
             this.panelContent.Name = "panelContent";
             this.panelContent.ShadowDecoration.Parent = this.panelContent;
@@ -173,19 +164,6 @@ namespace Movie_Ticket_Booking_System.View
             this.btnProfile.ShadowDecoration.Parent = this.btnProfile;
             this.btnProfile.Size = new System.Drawing.Size(33, 25);
             this.btnProfile.TabIndex = 9;
-            // 
-            // pcbCarousel
-            // 
-            this.pcbCarousel.BorderRadius = 20;
-            this.pcbCarousel.Image = global::Movie_Ticket_Booking_System.Properties.Resources.background_login;
-            this.pcbCarousel.ImageRotate = 0F;
-            this.pcbCarousel.Location = new System.Drawing.Point(131, 16);
-            this.pcbCarousel.Name = "pcbCarousel";
-            this.pcbCarousel.ShadowDecoration.Parent = this.pcbCarousel;
-            this.pcbCarousel.Size = new System.Drawing.Size(974, 380);
-            this.pcbCarousel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbCarousel.TabIndex = 0;
-            this.pcbCarousel.TabStop = false;
             // 
             // btnLogOut
             // 
@@ -378,41 +356,41 @@ namespace Movie_Ticket_Booking_System.View
             this.ptbTitle.TabIndex = 0;
             this.ptbTitle.TabStop = false;
             // 
-            // thumb3
+            // btnAddFilm
             // 
-            this.thumb3.BackColor = System.Drawing.Color.Transparent;
-            this.thumb3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.thumb3.Location = new System.Drawing.Point(685, 382);
-            this.thumb3.Name = "thumb3";
-            this.thumb3.ShadowDecoration.Parent = this.thumb3;
-            this.thumb3.Size = new System.Drawing.Size(50, 8);
-            this.thumb3.TabIndex = 3;
-            // 
-            // thumb2
-            // 
-            this.thumb2.BackColor = System.Drawing.Color.Transparent;
-            this.thumb2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.thumb2.Location = new System.Drawing.Point(625, 382);
-            this.thumb2.Name = "thumb2";
-            this.thumb2.ShadowDecoration.Parent = this.thumb2;
-            this.thumb2.Size = new System.Drawing.Size(50, 8);
-            this.thumb2.TabIndex = 2;
-            // 
-            // thumb1
-            // 
-            this.thumb1.BackColor = System.Drawing.Color.Transparent;
-            this.thumb1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.thumb1.Location = new System.Drawing.Point(565, 382);
-            this.thumb1.Name = "thumb1";
-            this.thumb1.ShadowDecoration.Parent = this.thumb1;
-            this.thumb1.Size = new System.Drawing.Size(50, 8);
-            this.thumb1.TabIndex = 1;
-            // 
-            // timerSlider
-            // 
-            this.timerSlider.Enabled = true;
-            this.timerSlider.Interval = 3000;
-            this.timerSlider.Tick += new System.EventHandler(this.timerSlider_Tick);
+            this.btnAddFilm.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddFilm.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAddFilm.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAddFilm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
+            this.btnAddFilm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAddFilm.CheckedState.Parent = this.btnAddFilm;
+            this.btnAddFilm.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddFilm.CustomImages.Parent = this.btnAddFilm;
+            this.btnAddFilm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddFilm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddFilm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddFilm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddFilm.DisabledState.Parent = this.btnAddFilm;
+            this.btnAddFilm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddFilm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.btnAddFilm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAddFilm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(114)))), ((int)(((byte)(124)))));
+            this.btnAddFilm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
+            this.btnAddFilm.HoverState.Parent = this.btnAddFilm;
+            this.btnAddFilm.Image = global::Movie_Ticket_Booking_System.Properties.Resources.add_film;
+            this.btnAddFilm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddFilm.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnAddFilm.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnAddFilm.Location = new System.Drawing.Point(0, 325);
+            this.btnAddFilm.Name = "btnAddFilm";
+            this.btnAddFilm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
+            this.btnAddFilm.ShadowDecoration.Parent = this.btnAddFilm;
+            this.btnAddFilm.Size = new System.Drawing.Size(200, 45);
+            this.btnAddFilm.TabIndex = 7;
+            this.btnAddFilm.Text = "Tạo lịch chiếu";
+            this.btnAddFilm.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddFilm.TextOffset = new System.Drawing.Point(28, 0);
+            this.btnAddFilm.Click += new System.EventHandler(this.btnAddFilm_Click);
             // 
             // FormMenu
             // 
@@ -432,8 +410,6 @@ namespace Movie_Ticket_Booking_System.View
             this.panelMenu.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            this.panelContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbCarousel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTitle)).EndInit();
             this.ResumeLayout(false);
 
@@ -456,10 +432,6 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2Panel panelContent;
         private Guna.UI2.WinForms.Guna2Button btnProfile;
-        private Guna.UI2.WinForms.Guna2PictureBox pcbCarousel;
-        private Guna.UI2.WinForms.Guna2Panel thumb3;
-        private Guna.UI2.WinForms.Guna2Panel thumb2;
-        private Guna.UI2.WinForms.Guna2Panel thumb1;
-        private System.Windows.Forms.Timer timerSlider;
+        private Guna.UI2.WinForms.Guna2Button btnAddFilm;
     }
 }
