@@ -15,6 +15,7 @@ namespace Movie_Ticket_Booking_System.View
     {
         private Guna2Button currBtn;
         private Panel leftBorderBtn;
+        private int imgNumber = 1;
 
         private System.Drawing.Bitmap home = global::Movie_Ticket_Booking_System.Properties.Resources.home;
         private System.Drawing.Bitmap film = global::Movie_Ticket_Booking_System.Properties.Resources.film;
@@ -34,10 +35,12 @@ namespace Movie_Ticket_Booking_System.View
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
         }
 
+      
         private void FormMenu_Load(object sender, EventArgs e)
         {
             leftBorderBtn = new Panel();
             panelMenu.Controls.Add(leftBorderBtn);
+            loadThumb();
         }
 
         private void activateButton(object senderBtn, Color color)
@@ -110,6 +113,38 @@ namespace Movie_Ticket_Booking_System.View
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void timerSlider_Tick(object sender, EventArgs e)
+        {
+            loadImgs();
+        }
+
+        private void resetThumb()
+        {
+            thumb1.FillColor = Color.FromArgb(25, 26, 31);
+            thumb2.FillColor = Color.FromArgb(25, 26, 31);
+            thumb3.FillColor = Color.FromArgb(25, 26, 31);
+        }
+        private void loadThumb()
+        {
+            resetThumb();
+            if (imgNumber == 1)
+                thumb1.FillColor = Color.White;
+            else if (imgNumber == 2)
+                thumb2.FillColor = Color.White;
+            else
+                thumb3.FillColor = Color.White;
+        }
+
+        private void loadImgs()
+        {
+            timerSlider.Start();
+            if (imgNumber > 3)
+                imgNumber = 1;
+            loadThumb();
+            pcbCarousel.ImageLocation = string.Format(@"D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\ImgSlider\" + imgNumber + ".jpg");
+            imgNumber++;
         }
     }
 }
