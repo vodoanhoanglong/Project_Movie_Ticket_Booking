@@ -30,7 +30,7 @@ Create table MOVIE
 (
 	MovieID int identity(1,1),
 	[Name] nvarchar(max),
-	[Time] time,
+	[Time] varchar(8),
 	[Des] nvarchar(MAX),
 	Price decimal,
 	

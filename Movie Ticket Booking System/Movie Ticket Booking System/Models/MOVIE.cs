@@ -20,7 +20,8 @@ namespace Movie_Ticket_Booking_System.Models
         [Column(TypeName = "NVARCHAR")]
         public string Name { get; set; }
 
-        public TimeSpan? Time { get; set; }
+        [StringLength(8)]
+        public string Time { get; set; }
 
         [Column(TypeName = "NVARCHAR")]
         public string Des { get; set; }

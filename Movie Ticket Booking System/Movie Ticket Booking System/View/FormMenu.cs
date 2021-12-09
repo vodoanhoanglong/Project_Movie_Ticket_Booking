@@ -124,6 +124,7 @@ namespace Movie_Ticket_Booking_System.View
         private void btnFilm_Click(object sender, EventArgs e)
         {
             activateButton(sender, Color.White);
+            openChildForm(new FormMovieStore());
         }
 
         private void btnShowTime_Click(object sender, EventArgs e)

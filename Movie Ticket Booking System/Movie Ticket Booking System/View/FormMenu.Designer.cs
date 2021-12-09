@@ -39,13 +39,13 @@ namespace Movie_Ticket_Booking_System.View
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
             this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAddFilm = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnHistory = new Guna.UI2.WinForms.Guna2Button();
             this.btnShowTime = new Guna.UI2.WinForms.Guna2Button();
             this.btnFilm = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
             this.ptbTitle = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.btnAddFilm = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu.SuspendLayout();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTitle)).BeginInit();
@@ -164,6 +164,42 @@ namespace Movie_Ticket_Booking_System.View
             this.btnProfile.ShadowDecoration.Parent = this.btnProfile;
             this.btnProfile.Size = new System.Drawing.Size(33, 25);
             this.btnProfile.TabIndex = 9;
+            // 
+            // btnAddFilm
+            // 
+            this.btnAddFilm.BackColor = System.Drawing.Color.Transparent;
+            this.btnAddFilm.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAddFilm.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAddFilm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
+            this.btnAddFilm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAddFilm.CheckedState.Parent = this.btnAddFilm;
+            this.btnAddFilm.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddFilm.CustomImages.Parent = this.btnAddFilm;
+            this.btnAddFilm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddFilm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAddFilm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAddFilm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAddFilm.DisabledState.Parent = this.btnAddFilm;
+            this.btnAddFilm.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddFilm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.btnAddFilm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAddFilm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(114)))), ((int)(((byte)(124)))));
+            this.btnAddFilm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
+            this.btnAddFilm.HoverState.Parent = this.btnAddFilm;
+            this.btnAddFilm.Image = global::Movie_Ticket_Booking_System.Properties.Resources.add_film;
+            this.btnAddFilm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddFilm.ImageOffset = new System.Drawing.Point(5, 0);
+            this.btnAddFilm.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnAddFilm.Location = new System.Drawing.Point(0, 325);
+            this.btnAddFilm.Name = "btnAddFilm";
+            this.btnAddFilm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
+            this.btnAddFilm.ShadowDecoration.Parent = this.btnAddFilm;
+            this.btnAddFilm.Size = new System.Drawing.Size(200, 45);
+            this.btnAddFilm.TabIndex = 7;
+            this.btnAddFilm.Text = "Thêm phim";
+            this.btnAddFilm.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAddFilm.TextOffset = new System.Drawing.Point(28, 0);
+            this.btnAddFilm.Click += new System.EventHandler(this.btnAddFilm_Click);
             // 
             // btnLogOut
             // 
@@ -355,42 +391,6 @@ namespace Movie_Ticket_Booking_System.View
             this.ptbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbTitle.TabIndex = 0;
             this.ptbTitle.TabStop = false;
-            // 
-            // btnAddFilm
-            // 
-            this.btnAddFilm.BackColor = System.Drawing.Color.Transparent;
-            this.btnAddFilm.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAddFilm.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAddFilm.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
-            this.btnAddFilm.CheckedState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAddFilm.CheckedState.Parent = this.btnAddFilm;
-            this.btnAddFilm.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddFilm.CustomImages.Parent = this.btnAddFilm;
-            this.btnAddFilm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddFilm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAddFilm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAddFilm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAddFilm.DisabledState.Parent = this.btnAddFilm;
-            this.btnAddFilm.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddFilm.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.btnAddFilm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAddFilm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(114)))), ((int)(((byte)(124)))));
-            this.btnAddFilm.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
-            this.btnAddFilm.HoverState.Parent = this.btnAddFilm;
-            this.btnAddFilm.Image = global::Movie_Ticket_Booking_System.Properties.Resources.add_film;
-            this.btnAddFilm.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddFilm.ImageOffset = new System.Drawing.Point(5, 0);
-            this.btnAddFilm.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnAddFilm.Location = new System.Drawing.Point(0, 325);
-            this.btnAddFilm.Name = "btnAddFilm";
-            this.btnAddFilm.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
-            this.btnAddFilm.ShadowDecoration.Parent = this.btnAddFilm;
-            this.btnAddFilm.Size = new System.Drawing.Size(200, 45);
-            this.btnAddFilm.TabIndex = 7;
-            this.btnAddFilm.Text = "Tạo lịch chiếu";
-            this.btnAddFilm.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAddFilm.TextOffset = new System.Drawing.Point(28, 0);
-            this.btnAddFilm.Click += new System.EventHandler(this.btnAddFilm_Click);
             // 
             // FormMenu
             // 

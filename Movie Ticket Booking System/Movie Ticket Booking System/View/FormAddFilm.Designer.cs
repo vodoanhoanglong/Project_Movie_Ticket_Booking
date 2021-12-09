@@ -35,7 +35,8 @@ namespace Movie_Ticket_Booking_System.View
             this.txtDes = new Guna.UI2.WinForms.Guna2TextBox();
             this.ptbAddImg = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnAddFilm = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnChangeImg = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAddImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtTime.HoverState.Parent = this.txtTime;
             this.txtTime.Location = new System.Drawing.Point(1084, 13);
             this.txtTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtTime.MaxLength = 30;
+            this.txtTime.MaxLength = 8;
             this.txtTime.Name = "txtTime";
             this.txtTime.PasswordChar = '\0';
             this.txtTime.PlaceholderText = "";
@@ -103,6 +104,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtTime.Size = new System.Drawing.Size(120, 49);
             this.txtTime.TabIndex = 3;
             this.txtTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTime_KeyPress);
             // 
             // txtPrice
             // 
@@ -126,7 +128,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtPrice.HoverState.Parent = this.txtPrice;
             this.txtPrice.Location = new System.Drawing.Point(724, 13);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPrice.MaxLength = 30;
+            this.txtPrice.MaxLength = 7;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "Giá phim";
@@ -135,6 +137,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtPrice.Size = new System.Drawing.Size(316, 49);
             this.txtPrice.TabIndex = 4;
             this.txtPrice.TextOffset = new System.Drawing.Point(5, 0);
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // txtDes
             // 
@@ -158,7 +161,6 @@ namespace Movie_Ticket_Booking_System.View
             this.txtDes.HoverState.Parent = this.txtDes;
             this.txtDes.Location = new System.Drawing.Point(368, 13);
             this.txtDes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtDes.MaxLength = 30;
             this.txtDes.Name = "txtDes";
             this.txtDes.PasswordChar = '\0';
             this.txtDes.PlaceholderText = "Mô tả";
@@ -173,10 +175,10 @@ namespace Movie_Ticket_Booking_System.View
             this.ptbAddImg.BorderRadius = 20;
             this.ptbAddImg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.ptbAddImg.ImageRotate = 0F;
-            this.ptbAddImg.Location = new System.Drawing.Point(161, 142);
+            this.ptbAddImg.Location = new System.Drawing.Point(16, 80);
             this.ptbAddImg.Name = "ptbAddImg";
             this.ptbAddImg.ShadowDecoration.Parent = this.ptbAddImg;
-            this.ptbAddImg.Size = new System.Drawing.Size(910, 437);
+            this.ptbAddImg.Size = new System.Drawing.Size(1024, 675);
             this.ptbAddImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbAddImg.TabIndex = 6;
             this.ptbAddImg.TabStop = false;
@@ -199,7 +201,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnAddFilm.HoverState.Parent = this.btnAddFilm;
             this.btnAddFilm.Image = global::Movie_Ticket_Booking_System.Properties.Resources.add_img;
             this.btnAddFilm.ImageSize = new System.Drawing.Size(80, 80);
-            this.btnAddFilm.Location = new System.Drawing.Point(549, 285);
+            this.btnAddFilm.Location = new System.Drawing.Point(442, 326);
             this.btnAddFilm.Name = "btnAddFilm";
             this.btnAddFilm.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnAddFilm.ShadowDecoration.Parent = this.btnAddFilm;
@@ -209,30 +211,63 @@ namespace Movie_Ticket_Booking_System.View
             // 
             // btnAdd
             // 
+            this.btnAdd.Animated = true;
+            this.btnAdd.BorderRadius = 20;
             this.btnAdd.CheckedState.Parent = this.btnAdd;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.CustomImages.Parent = this.btnAdd;
             this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAdd.DisabledState.Parent = this.btnAdd;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAdd.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnAdd.FillColor2 = System.Drawing.Color.Black;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.HoverState.Parent = this.btnAdd;
-            this.btnAdd.Location = new System.Drawing.Point(986, 630);
+            this.btnAdd.Location = new System.Drawing.Point(1077, 710);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.ShadowDecoration.Parent = this.btnAdd;
-            this.btnAdd.Size = new System.Drawing.Size(180, 45);
-            this.btnAdd.TabIndex = 8;
-            this.btnAdd.Text = "Thêm";
+            this.btnAdd.Size = new System.Drawing.Size(127, 45);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "Tạo";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnChangeImg
+            // 
+            this.btnChangeImg.Animated = true;
+            this.btnChangeImg.BorderRadius = 20;
+            this.btnChangeImg.CheckedState.Parent = this.btnChangeImg;
+            this.btnChangeImg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeImg.CustomImages.Parent = this.btnChangeImg;
+            this.btnChangeImg.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChangeImg.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChangeImg.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChangeImg.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChangeImg.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChangeImg.DisabledState.Parent = this.btnChangeImg;
+            this.btnChangeImg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnChangeImg.FillColor2 = System.Drawing.Color.Black;
+            this.btnChangeImg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnChangeImg.ForeColor = System.Drawing.Color.White;
+            this.btnChangeImg.HoverState.Parent = this.btnChangeImg;
+            this.btnChangeImg.Location = new System.Drawing.Point(1077, 646);
+            this.btnChangeImg.Name = "btnChangeImg";
+            this.btnChangeImg.ShadowDecoration.Parent = this.btnChangeImg;
+            this.btnChangeImg.Size = new System.Drawing.Size(127, 45);
+            this.btnChangeImg.TabIndex = 10;
+            this.btnChangeImg.Text = "Xóa ảnh";
+            this.btnChangeImg.Click += new System.EventHandler(this.btnChangeImg_Click);
             // 
             // FormAddFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1217, 717);
+            this.ClientSize = new System.Drawing.Size(1217, 767);
+            this.Controls.Add(this.btnChangeImg);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnAddFilm);
             this.Controls.Add(this.ptbAddImg);
@@ -256,6 +291,7 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2TextBox txtDes;
         private Guna.UI2.WinForms.Guna2PictureBox ptbAddImg;
         private Guna.UI2.WinForms.Guna2CircleButton btnAddFilm;
-        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
+        private Guna.UI2.WinForms.Guna2GradientButton btnChangeImg;
     }
 }
