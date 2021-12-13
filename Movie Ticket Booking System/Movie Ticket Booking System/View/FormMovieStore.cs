@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -17,8 +18,9 @@ namespace Movie_Ticket_Booking_System.View
     public partial class FormMovieStore : Form
     {
         private ContextDB context = Program.context;
-        private Size sizePic = new Size(277, 354);
-        private PictureBox overlay, currPicture;
+        private Size sizePic = new Size(350, 355);
+        private Guna2PictureBox overlay, currPicture;
+        private Guna2HtmlLabel lblHover;
         public FormMovieStore()
         {
             InitializeComponent();
@@ -27,28 +29,32 @@ namespace Movie_Ticket_Booking_System.View
         {
             loadData();
         }
+        
+        private int getMovieID()
+        {
+            return Convert.ToInt32(currPicture.Name.Substring(7));
+        }
 
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
-        );
+        private void overlay_Click(object sender, EventArgs e)
+        {
+            currPicture.Controls.Clear();
+            new FormViewFilm(getMovieID()).ShowDialog();
+        }
 
         private void picture_MouseHover(object sender, EventArgs e)
         {
-            currPicture = (PictureBox)sender;
+            currPicture = (Guna2PictureBox)sender;
+            string lblName = "name" + currPicture.Name.Substring(7);
+            lblHover = (Guna2HtmlLabel)this.Controls[lblName];
+            lblHover.ForeColor = Color.FromArgb(229, 9, 20);
             createOverlay();
         }
+
         private void createOverlay()
         {
             Image overlayImage = currPicture.Image;
             Bitmap transparentImage = new Bitmap(overlayImage.Width, overlayImage.Height);
-            overlay = new PictureBox();
+            overlay = new Guna2PictureBox();
             overlay.Dock = DockStyle.Fill;
             overlay.BackColor = Color.Transparent;
             using (Graphics graphics = Graphics.FromImage(transparentImage))
@@ -62,19 +68,23 @@ namespace Movie_Ticket_Booking_System.View
                 graphics.DrawImage(overlayImage, new Rectangle(0, 0, transparentImage.Width, transparentImage.Height)
                     , 0, 0, currPicture.Width, currPicture.Height, GraphicsUnit.Pixel, attributes);
             }
-            overlay.Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 30, 30));
+            overlay.BorderRadius = 20;
             overlay.Image = transparentImage;
             overlay.MouseLeave += this.overlay_MouseLeave;
+            overlay.Click += this.overlay_Click;
             currPicture.Controls.Add(overlay);
         }
+
         private void overlay_MouseLeave(object sender, EventArgs e)
         {
             currPicture.Controls.Clear();
+            lblHover.ForeColor = Color.White;
         }
 
         private void setPicture(int id, int width, int height, string title)
         {
             Guna2PictureBox picture = new Guna2PictureBox();
+            picture.Cursor = Cursors.Hand;
             picture.BorderRadius = 20;
             picture.ImageLocation = string.Format(@"D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\Images\Movies\" + id + ".jpg");
             picture.ImageRotate = 0F;
@@ -84,7 +94,7 @@ namespace Movie_Ticket_Booking_System.View
             picture.Size = sizePic;
             picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             picture.TabStop = false;
-            picture.MouseHover += new System.EventHandler(this.picture_MouseHover);
+            picture.MouseHover += this.picture_MouseHover;
             this.Controls.Add(picture);
             setLabel(id, title, picture);
         }
@@ -99,21 +109,23 @@ namespace Movie_Ticket_Booking_System.View
             int locationName = picture.Location.X + (picture.ClientSize.Width / 2 - lblTitle.Size.Width / 2);
             lblTitle.Location = new Point(locationName, picture.Location.Y + 350);
             lblTitle.Name = "name" + id;
+            lblTitle.AutoSize = true;
             lblTitle.MaximumSize = new Size(280, 0);
             lblTitle.TextAlignment = ContentAlignment.MiddleCenter;
             this.Controls.Add(lblTitle);
         }
 
+
         private void loadData()
         {
             var query = context.MOVIES.OrderByDescending(x => x.MovieID).ToList();
-            int height = 65, width = 65, count = 0;
+            int height = 65, width = 35, count = 0;
             query.ForEach(x =>
             {
                 if (count == 3)
                 {
-                    height += 455;
-                    width = 65;
+                    height += 425;
+                    width = 35;
                     count = 0;
                 }
                 setPicture(x.MovieID, width, height, x.Name);

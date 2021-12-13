@@ -98,6 +98,12 @@
     <Compile Include="View\FormMovieStore.Designer.cs">
       <DependentUpon>FormMovieStore.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormViewFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormViewFilm.Designer.cs">
+      <DependentUpon>FormViewFilm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormMovieStore.resx">
       <DependentUpon>FormMovieStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormViewFilm.resx">
+      <DependentUpon>FormViewFilm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -183,6 +192,7 @@
     <Content Include="Images\Sliders\1.jpg" />
     <Content Include="Images\Sliders\2.jpg" />
     <Content Include="Images\Sliders\3.jpg" />
+    <None Include="Resources\add.png" />
     <None Include="Resources\add_img.png" />
     <None Include="Resources\add_film.png" />
     <None Include="Resources\add_film_color.png" />

@@ -51,6 +51,7 @@ namespace Movie_Ticket_Booking_System.View
             this.cbmFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.cbmFilter.BorderRadius = 15;
             this.cbmFilter.BorderThickness = 2;
+            this.cbmFilter.Cursor = System.Windows.Forms.Cursors.Default;
             this.cbmFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbmFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbmFilter.FillColor = System.Drawing.Color.Transparent;

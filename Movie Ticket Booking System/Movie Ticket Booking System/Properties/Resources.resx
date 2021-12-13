@@ -148,6 +148,9 @@
   <data name="film_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\film_color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="add_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="background_login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background_login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,8 +162,5 @@
   </data>
   <data name="home_color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_color.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_img.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
