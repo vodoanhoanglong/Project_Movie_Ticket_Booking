@@ -17,13 +17,29 @@ namespace Movie_Ticket_Booking_System.View
         public FormViewFilm(int movieID)
         {
             InitializeComponent();
+
             var movie = context.MOVIES.Find(movieID);
             lblMovieName.Text = movie.Name;
             lblDes.Text = movie.Des;
             this.BackgroundImage = Image.FromFile(
-                string.Format(@"D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\Images\Movies\"
+                string.Format(@"..\..\Images\Movies\"
                 + movieID + ".jpg"));
-            btnConfirm.Location = new Point(lblDes.Location.X, lblDes.Location.Y + 50);
+            dtpShowDate.Location = new Point(lblDes.Location.X, lblDes.Location.Y + 50);
+            dtpShowTime.Location = new Point(dtpShowDate.Location.X + dtpShowDate.Width + 25
+                , dtpShowDate.Location.Y);
+            btnConfirm.Location = new Point(dtpShowDate.Location.X, dtpShowDate.Location.Y + 80);
+            
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            //gan date time cho 2 control
+            /*datePortionDateTimePicker.Value = myDate.Date;
+            timePortionDateTimePicker.Value = myDate.TimeOfDay;*/
+
+            DateTime myDate = dtpShowDate.Value.Date +
+                    dtpShowTime.Value.TimeOfDay;
+            MessageBox.Show(myDate.ToString("dd/MM/yyyy hh:mm:ss"));
         }
     }
 }

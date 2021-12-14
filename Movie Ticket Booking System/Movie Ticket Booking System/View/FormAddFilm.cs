@@ -18,7 +18,7 @@ namespace Movie_Ticket_Booking_System.View
         private ContextDB context = Program.context;
         private Image img;
         private string filterImg = "Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG";
-        private string newImg = @"D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\Images\Movies\";
+        private string newImg = @"..\..\Images\Movies\";
         private string selectedFile;
 
         public FormAddFilm()

@@ -37,6 +37,8 @@ namespace Movie_Ticket_Booking_System.View
             this.lblDes = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lblMovieName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.dtpShowTime = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpShowDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.panelOverlay.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +50,8 @@ namespace Movie_Ticket_Booking_System.View
             // panelOverlay
             // 
             this.panelOverlay.BackColor = System.Drawing.Color.Transparent;
+            this.panelOverlay.Controls.Add(this.dtpShowDate);
+            this.panelOverlay.Controls.Add(this.dtpShowTime);
             this.panelOverlay.Controls.Add(this.guna2ControlBox1);
             this.panelOverlay.Controls.Add(this.lblDes);
             this.panelOverlay.Controls.Add(this.btnConfirm);
@@ -105,12 +109,13 @@ namespace Movie_Ticket_Booking_System.View
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
-            this.btnConfirm.Location = new System.Drawing.Point(664, 517);
+            this.btnConfirm.Location = new System.Drawing.Point(664, 592);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
             this.btnConfirm.Size = new System.Drawing.Size(180, 45);
             this.btnConfirm.TabIndex = 4;
-            this.btnConfirm.Text = "Đặt vé";
+            this.btnConfirm.Text = "Thêm lịch chiếu";
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // lblMovieName
             // 
@@ -122,6 +127,54 @@ namespace Movie_Ticket_Booking_System.View
             this.lblMovieName.Size = new System.Drawing.Size(132, 38);
             this.lblMovieName.TabIndex = 2;
             this.lblMovieName.Text = "Tên phim";
+            // 
+            // dtpShowTime
+            // 
+            this.dtpShowTime.Animated = true;
+            this.dtpShowTime.BackColor = System.Drawing.Color.Transparent;
+            this.dtpShowTime.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.dtpShowTime.BorderRadius = 20;
+            this.dtpShowTime.BorderThickness = 2;
+            this.dtpShowTime.Checked = true;
+            this.dtpShowTime.CheckedState.Parent = this.dtpShowTime;
+            this.dtpShowTime.FillColor = System.Drawing.Color.Black;
+            this.dtpShowTime.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpShowTime.ForeColor = System.Drawing.Color.White;
+            this.dtpShowTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpShowTime.HoverState.Parent = this.dtpShowTime;
+            this.dtpShowTime.Location = new System.Drawing.Point(817, 522);
+            this.dtpShowTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpShowTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpShowTime.Name = "dtpShowTime";
+            this.dtpShowTime.ShadowDecoration.Parent = this.dtpShowTime;
+            this.dtpShowTime.ShowUpDown = true;
+            this.dtpShowTime.Size = new System.Drawing.Size(132, 44);
+            this.dtpShowTime.TabIndex = 8;
+            this.dtpShowTime.Value = new System.DateTime(2021, 12, 14, 18, 25, 37, 37);
+            // 
+            // dtpShowDate
+            // 
+            this.dtpShowDate.Animated = true;
+            this.dtpShowDate.BackColor = System.Drawing.Color.Transparent;
+            this.dtpShowDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.dtpShowDate.BorderRadius = 20;
+            this.dtpShowDate.BorderThickness = 2;
+            this.dtpShowDate.Checked = true;
+            this.dtpShowDate.CheckedState.Parent = this.dtpShowDate;
+            this.dtpShowDate.CustomFormat = "dd/MM/yyyy";
+            this.dtpShowDate.FillColor = System.Drawing.Color.Black;
+            this.dtpShowDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpShowDate.ForeColor = System.Drawing.Color.White;
+            this.dtpShowDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpShowDate.HoverState.Parent = this.dtpShowDate;
+            this.dtpShowDate.Location = new System.Drawing.Point(664, 522);
+            this.dtpShowDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpShowDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpShowDate.Name = "dtpShowDate";
+            this.dtpShowDate.ShadowDecoration.Parent = this.dtpShowDate;
+            this.dtpShowDate.Size = new System.Drawing.Size(132, 44);
+            this.dtpShowDate.TabIndex = 9;
+            this.dtpShowDate.Value = new System.DateTime(2021, 12, 14, 18, 25, 37, 37);
             // 
             // FormViewFilm
             // 
@@ -149,5 +202,7 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2GradientButton btnConfirm;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblDes;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpShowTime;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpShowDate;
     }
 }
