@@ -43,12 +43,12 @@ namespace Movie_Ticket_Booking_System.View
             return Convert.ToDateTime(context.MOVIES.Find(movieID).Time);
         }
 
-        private DateTime getDtpDate()
+        private DateTime getTimeStart()
         {          
             return dtpShowDate.Value.Date + dtpShowTime.Value.TimeOfDay;
         }
 
-        private DateTime getDtpTotalTime()
+        private DateTime getTimeEndWithTimeClean()
         {
             DateTime movieTime = getTimeMovie();
             DateTime totalTime = dtpShowTime.Value.Add(movieTime.TimeOfDay);
@@ -80,28 +80,36 @@ namespace Movie_Ticket_Booking_System.View
             if (!checkShowTime())
                 saveShowTime();
             else
-                MessageBox.Show("Da bi trung");
+                MessageBox.Show("Đã bị trùng lịch");
         }
 
         private bool checkShowTime()
         {
             int roomID = Convert.ToInt32(cmbRoom.SelectedValue);
-            DateTime date = getDtpDate().Date;
-            TimeSpan time = getDtpTotalTime().TimeOfDay - getDtpDate().TimeOfDay;
+            DateTime currMinutes, setTimeStart = getTimeStart(), 
+                setTimeEnd = getTimeEndWithTimeClean(), dtpDate = setTimeStart.Date;
+            TimeSpan timeRemaining = setTimeEnd.TimeOfDay - setTimeStart.TimeOfDay,
+                dtpTimeStart = setTimeStart.TimeOfDay,
+                dtpTimeEnd = setTimeEnd.TimeOfDay,
+                timeStart, timeEnd;
+
             var query = context.SHOWTIMES
                 .Where(x => x.RoomID == roomID
-                && DbFunctions.TruncateTime(x.MovieShowTime) == date)
+                && DbFunctions.TruncateTime(x.MovieShowTime) == dtpDate)
                 .ToList();
+
             for (int index = 0; index < query.Count; index++)
             {
-                if ((query[index].MovieShowTime.TimeOfDay <= getDtpDate().TimeOfDay && getDtpDate().TimeOfDay <= query[index].MovieEndTime.TimeOfDay)
-                    || query[index].MovieShowTime.TimeOfDay <= getDtpTotalTime().TimeOfDay && getDtpTotalTime().TimeOfDay <= query[index].MovieEndTime.TimeOfDay)
+                timeStart = query[index].MovieShowTime.TimeOfDay;
+                timeEnd = query[index].MovieEndTime.TimeOfDay;
+                if ((timeStart <= dtpTimeStart && dtpTimeStart <= timeEnd)
+                    || timeStart <= dtpTimeEnd && dtpTimeEnd <= timeEnd)
                     return true;
                 else
-                    for (int minutes = 1; minutes <= time.TotalMinutes; minutes++)
+                    for (int minutes = 1; minutes <= timeRemaining.TotalMinutes; minutes++)
                     {
-                        DateTime currMinutes = getDtpDate().AddMinutes(minutes);
-                        if (query[index].MovieShowTime.TimeOfDay <= currMinutes.TimeOfDay && currMinutes.TimeOfDay <= query[index].MovieEndTime.TimeOfDay)
+                        currMinutes = setTimeStart.AddMinutes(minutes);
+                        if (timeStart <= currMinutes.TimeOfDay && currMinutes.TimeOfDay <= timeEnd)
                             return true;
                     }
             }
@@ -113,7 +121,7 @@ namespace Movie_Ticket_Booking_System.View
             SHOWTIME createST = new SHOWTIME();
             
             createST.ShowTimeID = parseDate(DateTime.Now);
-            createST.MovieShowTime = parseDate(getDtpDate());
+            createST.MovieShowTime = parseDate(getTimeStart());
             createST.MovieEndTime = getTimeEnd();
             createST.MovieID = movieID;
             createST.RoomID = getRoomID();
