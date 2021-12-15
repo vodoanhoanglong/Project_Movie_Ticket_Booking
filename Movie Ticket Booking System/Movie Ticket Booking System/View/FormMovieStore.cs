@@ -86,7 +86,7 @@ namespace Movie_Ticket_Booking_System.View
             Guna2PictureBox picture = new Guna2PictureBox();
             picture.Cursor = Cursors.Hand;
             picture.BorderRadius = 20;
-            picture.ImageLocation = string.Format(@"D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\Images\Movies\" + id + ".jpg");
+            picture.ImageLocation = string.Format(@"..\..\Images\Movies\" + id + ".jpg");
             picture.ImageRotate = 0F;
             picture.Location = new System.Drawing.Point(width, height);
             picture.Name = "picture" + id;

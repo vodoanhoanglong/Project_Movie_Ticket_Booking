@@ -34,7 +34,7 @@ namespace Movie_Ticket_Booking_System.View
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            new FormShowTime(movieID).ShowDialog();
+            new FormCreateShowTime(movieID).ShowDialog();
         }
     }
 }
