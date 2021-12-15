@@ -17,9 +17,11 @@ namespace Movie_Ticket_Booking_System.Models
 
         [Key]
         [Column(Order = 0)]
-        public int ShowTimeID { get; set; }
+        public DateTime ShowTimeID { get; set; }
 
-        public TimeSpan? MovieShowTime { get; set; }
+        public DateTime MovieShowTime { get; set; }
+
+        public DateTime MovieEndTime { get; set; }
 
         [Key]
         [Column(Order = 1)]

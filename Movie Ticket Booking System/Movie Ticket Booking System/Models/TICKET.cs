@@ -26,8 +26,7 @@ namespace Movie_Ticket_Booking_System.Models
 
         [Key]
         [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ShowTimeID { get; set; }
+        public DateTime ShowTimeID { get; set; }
 
         [Key]
         [Column(Order = 3)]

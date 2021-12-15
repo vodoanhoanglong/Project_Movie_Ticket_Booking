@@ -19,7 +19,6 @@ namespace Movie_Ticket_Booking_System.Models
         public int RoomID { get; set; }
 
         [StringLength(10)]
-        [Column(TypeName = "NVARCHAR")]
         public string RoomName { get; set; }
 
         public int? ChairQuantity { get; set; }

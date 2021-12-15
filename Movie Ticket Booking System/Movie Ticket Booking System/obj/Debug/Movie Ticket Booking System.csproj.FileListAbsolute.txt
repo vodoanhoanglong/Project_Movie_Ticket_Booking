@@ -1,21 +1,22 @@
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.Properties.Resources.resources
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Exam_Preparation_System.FormLogin.resources
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.GenerateResource.cache
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.CoreCompileInputs.cache
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\Movie Ticket Booking System.exe.config
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\Movie Ticket Booking System.exe
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\Movie Ticket Booking System.pdb
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\Guna.UI2.dll
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.exe
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.pdb
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.CopyComplete
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\EntityFramework.dll
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\EntityFramework.SqlServer.dll
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\Guna.UI2.dll
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\EntityFramework.xml
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\EntityFramework.SqlServer.xml
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormMenu.resources
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormHome.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.Properties.Resources.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormAddFilm.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormHome.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Exam_Preparation_System.FormLogin.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormMenu.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormMovieStore.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormShowTime.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormViewFilm.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.GenerateResource.cache
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.CoreCompileInputs.cache
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.CopyComplete
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.exe
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.pdb
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.AssemblyReference.cache

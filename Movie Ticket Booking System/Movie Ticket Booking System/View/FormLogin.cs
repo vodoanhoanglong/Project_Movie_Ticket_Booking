@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -100,8 +101,7 @@ namespace Exam_Preparation_System
                     saveAccount();
                 else
                     checkLogin();
-            } 
-                
+            }                
         }
 
         private void checkLogin()
@@ -123,27 +123,19 @@ namespace Exam_Preparation_System
 
         private void saveAccount()
         {
-            ACCOUNT newAccount = new ACCOUNT();
             DISCOUNT newDiscount = new DISCOUNT();
+            var accountID = new SqlParameter("@AccountID", txtPhoneNumber.Text);
+            var password = new SqlParameter("@Password", txtPassword.Text);
+            var fullname = new SqlParameter("@FullName", txtFullName.Text);
+            context.Database.ExecuteSqlCommand("EXEC sp_SetAccountRole @AccountID , @Password , @FullName",
+                accountID, password, fullname);
 
-            newAccount.AccountID = txtPhoneNumber.Text;
-            newAccount.Password = txtPassword.Text;
-            newAccount.FullName = txtFullName.Text;
             newDiscount.AccountID = txtPhoneNumber.Text;
             newDiscount.Code = txtPhoneNumber.Text;
             newDiscount.Percent = percentDiscount;
-
             context.DISCOUNTS.Add(newDiscount);
-            context.ACCOUNTS.Add(newAccount);
-            // use trycatch for error message of trigger
-            try
-            {
-                context.SaveChanges();
-            }catch(Exception)
-            {
-                MessageBox.Show("Đăng ký thành công");
-                resetInput();
-            }
+            context.SaveChanges();
+            MessageBox.Show("Đăng ký thành công");
         }
 
         private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)

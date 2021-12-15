@@ -51,16 +51,19 @@ Create table CHAIR
 	ChairID int identity(1,1),
 	[Type] int,
 	Price decimal,
+	haveBooked bit default 0,
 	RoomID int,
 
 	PRIMARY KEY(ChairID),
 	FOREIGN KEY (RoomID) REFERENCES  ROOM(RoomID)
 )
 
+
 Create table SHOWTIME
 (
-	ShowTimeID int identity(1,1),
-	MovieShowTime time,
+	ShowTimeID datetime default GETDate(),
+	MovieShowTime datetime,
+	MovieEndTime datetime,
 	RoomID int,
 	MovieID int,
 
@@ -69,6 +72,7 @@ Create table SHOWTIME
 	FOREIGN KEY (MovieID) REFERENCES  MOVIE(MovieID)
 )
 
+
 Create table TICKET
 (
 	TicketID int identity(1,1),
@@ -76,7 +80,7 @@ Create table TICKET
 	SubTotalPrice decimal,
 	TotalPrice decimal,
 	AccountID varchar(10),
-	ShowTimeID int,
+	ShowTimeID datetime,
 	RoomID int,
 	MovieID int,
 	ChairID int,
@@ -107,41 +111,83 @@ GO
 --alter role db_datareader ADD MEMBER [Standard]
 --GO
 
+--PROC
+
 CREATE PROC sp_SetAccountRole(@AccountID varchar(11), @Password varchar(max), 
 								@FullName nvarchar(30), @Role varchar(10)='Standard',
 								@Balance decimal=100000)
 AS
 	declare @sql nvarchar(max)
+	set @AccountID = 'A' + @AccountID
 	set @sql = 'use MTB' + ';' +
            'create login ' + @AccountID + 
                ' with password = ''' + @Password + '''; ' +
            'create user ' + @AccountID + ';'
 exec (@sql)
+if @AccountID = 'A0932765080'
+	set @Role = 'Manager'
 if @Role = 'Manager'
 	exec sp_addrolemember 'Manager', @AccountID
 else exec sp_addrolemember 'Standard', @AccountID
 SET @AccountID = SUBSTRING(@AccountID,2,10)
 INSERT into ACCOUNT VALUES(@AccountID,@Password,@FullName,@Balance, @Role)
 GO
- 
-CREATE TRIGGER tr_CheckAccount ON ACCOUNT
-FOR INSERT
-AS
-	DECLARE @AccountID varchar(11),
-			@Password varchar(max),
-			@FullName nvarchar(30)
-	SELECT @AccountID = I.AccountID, @Password = I.[Password], @FullName = I.FullName 
-	FROM INSERTED I
 
-	SET @AccountID = 'A' + @AccountID
-	IF @AccountID = 'A0932765080' 
-			EXEC sp_SetAccountRole @AccountID, @Password, @FullName, 'Manager'
-	ELSE EXEC sp_SetAccountRole @AccountID, @Password, @FullName
+CREATE PROC sp_AddChairByType(@Type int, @RoomID int)
+AS
+	DECLARE @Price DECIMAL
+	IF @Type = 0
+		SET @Price = 10000
+	ELSE IF @Type = 1
+		SET @Price = 15000
+	ELSE
+		SET @Price = 20000
+INSERT INTO CHAIR([Type], Price, RoomID) VALUES (@Type, @Price, @RoomID)
 GO
 
+-- TRIGGER
+
+
 -- Insert admin account
-INSERT INTO ACCOUNT(AccountID,[Password],FullName) VALUES('0932765080', '1', N'Võ Đoàn Hoàng Long')
+EXEC sp_SetAccountRole '0932765080', '1', N'Võ Đoàn Hoàng Long'
 -- Insert user account
-INSERT INTO ACCOUNT(AccountID,[Password],FullName) VALUES('0909230102', '1', N'Tiểu Lợi')
-
-
+EXEC sp_SetAccountRole '0909230102', '1', N'Tiểu Lợi'
+-- Insert room
+INSERT INTO ROOM(RoomName, ChairQuantity)
+VALUES (N'Y1', 10),
+	   (N'Y2', 10),
+	   (N'Y3', 10)
+-- Insert chair 
+-- room 1: 10 chair - 4 medium - 4 vjp - 2 couple
+EXEC sp_AddChairByType 0, 1
+EXEC sp_AddChairByType 0, 1
+EXEC sp_AddChairByType 0, 1
+EXEC sp_AddChairByType 0, 1
+EXEC sp_AddChairByType 1, 1
+EXEC sp_AddChairByType 1, 1
+EXEC sp_AddChairByType 1, 1
+EXEC sp_AddChairByType 1, 1
+EXEC sp_AddChairByType 2, 1
+EXEC sp_AddChairByType 2, 1
+-- room 2: 10 chair - 4 medium - 4 vjp - 2 couple
+EXEC sp_AddChairByType 0, 2
+EXEC sp_AddChairByType 0, 2
+EXEC sp_AddChairByType 0, 2
+EXEC sp_AddChairByType 0, 2
+EXEC sp_AddChairByType 1, 2
+EXEC sp_AddChairByType 1, 2
+EXEC sp_AddChairByType 1, 2
+EXEC sp_AddChairByType 1, 2
+EXEC sp_AddChairByType 2, 2
+EXEC sp_AddChairByType 2, 2
+-- room 3: 10 chair - 4 medium - 4 vjp - 2 couple
+EXEC sp_AddChairByType 0, 3
+EXEC sp_AddChairByType 0, 3
+EXEC sp_AddChairByType 0, 3
+EXEC sp_AddChairByType 0, 3
+EXEC sp_AddChairByType 1, 3
+EXEC sp_AddChairByType 1, 3
+EXEC sp_AddChairByType 1, 3
+EXEC sp_AddChairByType 1, 3
+EXEC sp_AddChairByType 2, 3
+EXEC sp_AddChairByType 2, 3

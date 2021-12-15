@@ -56,6 +56,10 @@ namespace Movie_Ticket_Booking_System.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<MOVIE>()
+                .Property(e => e.Time)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<MOVIE>()
                 .Property(e => e.Price)
                 .HasPrecision(18, 0);
 

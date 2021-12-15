@@ -21,6 +21,8 @@ namespace Movie_Ticket_Booking_System.Models
 
         public decimal? Price { get; set; }
 
+        public bool? haveBooked { get; set; }
+
         public int? RoomID { get; set; }
 
         public virtual ROOM ROOM { get; set; }

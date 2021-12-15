@@ -98,6 +98,12 @@
     <Compile Include="View\FormMovieStore.Designer.cs">
       <DependentUpon>FormMovieStore.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FormShowTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormShowTime.Designer.cs">
+      <DependentUpon>FormShowTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormViewFilm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,9 +135,13 @@
     <EmbeddedResource Include="View\FormMovieStore.resx">
       <DependentUpon>FormMovieStore.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FormShowTime.resx">
+      <DependentUpon>FormShowTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormViewFilm.resx">
       <DependentUpon>FormViewFilm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.Config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -142,9 +152,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background_login.jpg" />
