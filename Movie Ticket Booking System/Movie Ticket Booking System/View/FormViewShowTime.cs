@@ -33,17 +33,31 @@ namespace Movie_Ticket_Booking_System.View
 
         private void loadData()
         {
-            DateTime date = DateTime.Now.AddDays(1).Date;
-            int height = 100, width = 50;
+       
+            DateTime date = DateTime.Now.Date;
+            int height = 100, width = 50, withLabel = 300;
             var query = context.SHOWTIMES
                 .Where(x => DbFunctions.TruncateTime(x.MovieShowTime) == date)
-                .OrderBy(x => x.RoomID)
                 .ToList();
-            query.ForEach(x => 
+
+            foreach(SHOWTIME parent in query)
             {
-                setPicture(x.MovieID, width, height, x.MOVIE.Name);
+                string found = "picture" + parent.MovieID;
+                if (this.Controls[found] != null)
+                    continue;
+                setPicture(parent.MovieID, width, height, parent.MOVIE.Name);
+                query.ForEach(child => 
+                {
+                    if (parent.MovieID == child.MovieID)
+                        setLabel(child.ShowTimeID.ToString(), withLabel += 150,
+                            height, child.MovieShowTime.ToString("HH:mm"),
+                            child.ROOM.RoomName);
+                });
+
+                withLabel = 300;
                 height += 500;
-            });
+            };
+          
         }
 
         private void setPicture(int id, int width, int height, string title)
@@ -60,7 +74,21 @@ namespace Movie_Ticket_Booking_System.View
             picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             picture.TabStop = false;
             this.Controls.Add(picture);
-/*            setLabel(id, title, picture);*/
+        }
+
+        private void setLabel(string id, int width, int height, string timeStart, string roomName)
+        {
+            Guna2HtmlLabel lblTitle = new Guna2HtmlLabel();
+            lblTitle.Text = timeStart + "\nPhòng " + roomName;
+            lblTitle.BackColor = System.Drawing.Color.Transparent;
+            lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            lblTitle.ForeColor = System.Drawing.Color.White;
+            lblTitle.Location = new Point(width, height);
+            lblTitle.Name = id;
+            lblTitle.AutoSize = true;
+            lblTitle.MaximumSize = new Size(150, 0);
+            lblTitle.TextAlignment = ContentAlignment.MiddleLeft;
+            this.Controls.Add(lblTitle);
         }
     }
 }
