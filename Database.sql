@@ -46,19 +46,6 @@ Create table ROOM
 	PRIMARY KEY(RoomID)
 )
 
-Create table CHAIR
-(
-	ChairID int identity(1,1),
-	[Type] int,
-	Price decimal,
-	haveBooked bit default 0,
-	RoomID int,
-
-	PRIMARY KEY(ChairID),
-	FOREIGN KEY (RoomID) REFERENCES  ROOM(RoomID)
-)
-
-
 Create table SHOWTIME
 (
 	ShowTimeID varchar(14),
@@ -70,6 +57,19 @@ Create table SHOWTIME
 	PRIMARY KEY (ShowTimeID, RoomID, MovieID),
 	FOREIGN KEY (RoomID) REFERENCES  ROOM(RoomID),
 	FOREIGN KEY (MovieID) REFERENCES  MOVIE(MovieID)
+)
+
+Create table CHAIR
+(
+	ChairID int identity(1,1),
+	ChairName varchar(10),
+	[Type] int,
+	Price decimal,
+	haveBooked bit default 0,
+	RoomID int,
+
+	PRIMARY KEY(ChairID),
+	FOREIGN KEY (RoomID) REFERENCES  ROOM(RoomID)
 )
 
 
@@ -145,6 +145,7 @@ AS
 INSERT INTO CHAIR([Type], Price, RoomID) VALUES (@Type, @Price, @RoomID)
 GO
 
+
 -- TRIGGER
 
 
@@ -157,37 +158,3 @@ INSERT INTO ROOM(RoomName, ChairQuantity)
 VALUES (N'Y1', 10),
 	   (N'Y2', 10),
 	   (N'Y3', 10)
--- Insert chair 
--- room 1: 10 chair - 4 medium - 4 vjp - 2 couple
-EXEC sp_AddChairByType 0, 1
-EXEC sp_AddChairByType 0, 1
-EXEC sp_AddChairByType 0, 1
-EXEC sp_AddChairByType 0, 1
-EXEC sp_AddChairByType 1, 1
-EXEC sp_AddChairByType 1, 1
-EXEC sp_AddChairByType 1, 1
-EXEC sp_AddChairByType 1, 1
-EXEC sp_AddChairByType 2, 1
-EXEC sp_AddChairByType 2, 1
--- room 2: 10 chair - 4 medium - 4 vjp - 2 couple
-EXEC sp_AddChairByType 0, 2
-EXEC sp_AddChairByType 0, 2
-EXEC sp_AddChairByType 0, 2
-EXEC sp_AddChairByType 0, 2
-EXEC sp_AddChairByType 1, 2
-EXEC sp_AddChairByType 1, 2
-EXEC sp_AddChairByType 1, 2
-EXEC sp_AddChairByType 1, 2
-EXEC sp_AddChairByType 2, 2
-EXEC sp_AddChairByType 2, 2
--- room 3: 10 chair - 4 medium - 4 vjp - 2 couple
-EXEC sp_AddChairByType 0, 3
-EXEC sp_AddChairByType 0, 3
-EXEC sp_AddChairByType 0, 3
-EXEC sp_AddChairByType 0, 3
-EXEC sp_AddChairByType 1, 3
-EXEC sp_AddChairByType 1, 3
-EXEC sp_AddChairByType 1, 3
-EXEC sp_AddChairByType 1, 3
-EXEC sp_AddChairByType 2, 3
-EXEC sp_AddChairByType 2, 3

@@ -217,6 +217,10 @@
     <Content Include="Images\Sliders\1.jpg" />
     <Content Include="Images\Sliders\2.jpg" />
     <Content Include="Images\Sliders\3.jpg" />
+    <None Include="Resources\seat_couple.png" />
+    <None Include="Resources\seat_vip.png" />
+    <None Include="Resources\seat_normal1.png" />
+    <None Include="Resources\seat_normal.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\add_img.png" />
     <None Include="Resources\add_film.png" />

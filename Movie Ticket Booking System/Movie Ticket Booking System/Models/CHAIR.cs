@@ -17,6 +17,9 @@ namespace Movie_Ticket_Booking_System.Models
 
         public int ChairID { get; set; }
 
+        [StringLength(10)]
+        public string ChairName { get; set; }
+
         public int? Type { get; set; }
 
         public decimal? Price { get; set; }

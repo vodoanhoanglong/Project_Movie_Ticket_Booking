@@ -35,14 +35,17 @@ namespace Movie_Ticket_Booking_System.View
             this.btnBooking = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnBack = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtCode = new Guna.UI2.WinForms.Guna2TextBox();
-            this.ptbMovie = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnVerify = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lblPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTotalPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblChairPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMovie)).BeginInit();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ptbMovie = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ptbScreen = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.pnlRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMovie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbScreen)).BeginInit();
             this.SuspendLayout();
             // 
             // lblShowtime
@@ -70,6 +73,7 @@ namespace Movie_Ticket_Booking_System.View
             // pnlRoom
             // 
             this.pnlRoom.BackColor = System.Drawing.Color.Transparent;
+            this.pnlRoom.Controls.Add(this.ptbScreen);
             this.pnlRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.pnlRoom.Location = new System.Drawing.Point(15, 64);
             this.pnlRoom.Name = "pnlRoom";
@@ -161,34 +165,6 @@ namespace Movie_Ticket_Booking_System.View
             this.txtCode.TabIndex = 7;
             this.txtCode.TextOffset = new System.Drawing.Point(5, 0);
             // 
-            // ptbMovie
-            // 
-            this.ptbMovie.BorderRadius = 15;
-            this.ptbMovie.ImageRotate = 0F;
-            this.ptbMovie.Location = new System.Drawing.Point(787, 68);
-            this.ptbMovie.Name = "ptbMovie";
-            this.ptbMovie.ShadowDecoration.Parent = this.ptbMovie;
-            this.ptbMovie.Size = new System.Drawing.Size(429, 436);
-            this.ptbMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbMovie.TabIndex = 8;
-            this.ptbMovie.TabStop = false;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImage = global::Movie_Ticket_Booking_System.Properties.Resources.film_color;
-            this.guna2PictureBox1.BorderRadius = 20;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Movie_Ticket_Booking_System.Properties.Resources.film_color;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(984, 486);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(64, 55);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 9;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // btnVerify
             // 
             this.btnVerify.Animated = true;
@@ -247,6 +223,47 @@ namespace Movie_Ticket_Booking_System.View
             this.lblChairPrice.TabIndex = 13;
             this.lblChairPrice.Text = "Giá ghế:  ";
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.BackgroundImage = global::Movie_Ticket_Booking_System.Properties.Resources.film_color;
+            this.guna2PictureBox1.BorderRadius = 20;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::Movie_Ticket_Booking_System.Properties.Resources.film_color;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(984, 475);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(64, 55);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 9;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // ptbMovie
+            // 
+            this.ptbMovie.BorderRadius = 15;
+            this.ptbMovie.ImageRotate = 0F;
+            this.ptbMovie.Location = new System.Drawing.Point(787, 68);
+            this.ptbMovie.Name = "ptbMovie";
+            this.ptbMovie.ShadowDecoration.Parent = this.ptbMovie;
+            this.ptbMovie.Size = new System.Drawing.Size(429, 436);
+            this.ptbMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbMovie.TabIndex = 8;
+            this.ptbMovie.TabStop = false;
+            // 
+            // ptbScreen
+            // 
+            this.ptbScreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.ptbScreen.BorderRadius = 15;
+            this.ptbScreen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.ptbScreen.ImageRotate = 0F;
+            this.ptbScreen.Location = new System.Drawing.Point(19, 12);
+            this.ptbScreen.Name = "ptbScreen";
+            this.ptbScreen.ShadowDecoration.Parent = this.ptbScreen;
+            this.ptbScreen.Size = new System.Drawing.Size(717, 73);
+            this.ptbScreen.TabIndex = 1;
+            this.ptbScreen.TabStop = false;
+            // 
             // FormChairBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,8 +286,10 @@ namespace Movie_Ticket_Booking_System.View
             this.Name = "FormChairBooking";
             this.Text = "FormChairBooking";
             this.Load += new System.EventHandler(this.FormChairBooking_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMovie)).EndInit();
+            this.pnlRoom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMovie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbScreen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +309,6 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPrice;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTotalPrice;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblChairPrice;
+        private Guna.UI2.WinForms.Guna2PictureBox ptbScreen;
     }
 }
