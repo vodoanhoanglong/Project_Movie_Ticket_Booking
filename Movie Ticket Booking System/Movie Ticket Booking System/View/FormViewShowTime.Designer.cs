@@ -58,6 +58,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnToday.Size = new System.Drawing.Size(180, 45);
             this.btnToday.TabIndex = 4;
             this.btnToday.Text = "today";
+            this.btnToday.Click += new System.EventHandler(this.changeDate_Click);
             // 
             // btnTomorrow
             // 
@@ -83,6 +84,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnTomorrow.Size = new System.Drawing.Size(180, 45);
             this.btnTomorrow.TabIndex = 5;
             this.btnTomorrow.Text = "tomorrow";
+            this.btnTomorrow.Click += new System.EventHandler(this.changeDate_Click);
             // 
             // btnAfterTomorrow
             // 
@@ -108,6 +110,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnAfterTomorrow.Size = new System.Drawing.Size(180, 45);
             this.btnAfterTomorrow.TabIndex = 6;
             this.btnAfterTomorrow.Text = "afterTomorrow";
+            this.btnAfterTomorrow.Click += new System.EventHandler(this.changeDate_Click);
             // 
             // FormViewShowTime
             // 

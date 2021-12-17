@@ -16,7 +16,8 @@ namespace Movie_Ticket_Booking_System.View
         private Guna2Button currBtn;
         private Panel leftBorderBtn;
         private Form currChildForm;
-        private bool isAdmin;
+        public bool isAdmin;
+        public static FormMenu instance;
 
         private System.Drawing.Bitmap home = global::Movie_Ticket_Booking_System.Properties.Resources.home;
         private System.Drawing.Bitmap film = global::Movie_Ticket_Booking_System.Properties.Resources.film;
@@ -35,7 +36,7 @@ namespace Movie_Ticket_Booking_System.View
             // center screen
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
-
+            instance = this;
             //check admin account
             isAdmin = false;
 

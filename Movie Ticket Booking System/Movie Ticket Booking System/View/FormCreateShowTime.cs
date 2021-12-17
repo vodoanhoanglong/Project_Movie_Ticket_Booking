@@ -115,7 +115,7 @@ namespace Movie_Ticket_Booking_System.View
         {
             SHOWTIME createST = new SHOWTIME();
             
-            createST.ShowTimeID = parseDate(DateTime.Now);
+            createST.ShowTimeID = DateTime.Now.ToString("yyyyMMddHHmmss");
             createST.MovieShowTime = parseDate(getTimeStart());
             createST.MovieEndTime = getTimeEnd();
             createST.MovieID = movieID;

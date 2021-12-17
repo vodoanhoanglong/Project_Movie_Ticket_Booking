@@ -61,7 +61,7 @@ Create table CHAIR
 
 Create table SHOWTIME
 (
-	ShowTimeID datetime default GETDate(),
+	ShowTimeID varchar(14),
 	MovieShowTime datetime,
 	MovieEndTime datetime,
 	RoomID int,
@@ -80,7 +80,7 @@ Create table TICKET
 	SubTotalPrice decimal,
 	TotalPrice decimal,
 	AccountID varchar(10),
-	ShowTimeID datetime,
+	ShowTimeID varchar(14),
 	RoomID int,
 	MovieID int,
 	ChairID int,

@@ -17,7 +17,8 @@ namespace Movie_Ticket_Booking_System.Models
 
         [Key]
         [Column(Order = 0)]
-        public DateTime ShowTimeID { get; set; }
+        [StringLength(14)]
+        public string ShowTimeID { get; set; }
 
         public DateTime MovieShowTime { get; set; }
 

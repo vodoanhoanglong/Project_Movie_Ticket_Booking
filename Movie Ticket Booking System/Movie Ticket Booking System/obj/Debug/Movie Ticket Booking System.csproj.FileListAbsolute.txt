@@ -21,3 +21,4 @@ D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.AssemblyReference.cache
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormCreateShowTime.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormViewShowTime.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormChairBooking.resources

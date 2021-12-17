@@ -74,6 +74,10 @@ namespace Movie_Ticket_Booking_System.Models
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<SHOWTIME>()
+                .Property(e => e.ShowTimeID)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SHOWTIME>()
                 .HasMany(e => e.TICKETs)
                 .WithRequired(e => e.SHOWTIME)
                 .HasForeignKey(e => new { e.ShowTimeID, e.RoomID, e.MovieID })
@@ -89,6 +93,10 @@ namespace Movie_Ticket_Booking_System.Models
 
             modelBuilder.Entity<TICKET>()
                 .Property(e => e.AccountID)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TICKET>()
+                .Property(e => e.ShowTimeID)
                 .IsUnicode(false);
         }
     }

@@ -17,30 +17,36 @@ namespace Movie_Ticket_Booking_System.View
     {
         private ContextDB context = Program.context;
         private Size sizePic = new Size(350, 450);
+        private Guna2Button currBtnShowtime;
+        private Guna2GradientButton currBtnDate;
+        private DateTime date = DateTime.Now.Date;
+        private string today, tomorrow, afterTomorrow;
         public FormViewShowTime()
         {
             InitializeComponent();
+            today = date.ToString("dd/MM/yyyy");
+            tomorrow = date.AddDays(1).ToString("dd/MM/yyyy");
+            afterTomorrow = date.AddDays(2).ToString("dd/MM/yyyy");
         }
 
         private void FormViewShowTime_Load(object sender, EventArgs e)
-        {
-            DateTime date = DateTime.Now;
-            btnToday.Text = date.ToString("dd/MM/yyyy");
-            btnTomorrow.Text = date.AddDays(1).ToString("dd/MM/yyyy");
-            btnAfterTomorrow.Text = date.AddDays(2).ToString("dd/MM/yyyy");
-            loadData();
+        {          
+            btnToday.Text = today;
+            btnTomorrow.Text = tomorrow;
+            btnAfterTomorrow.Text = afterTomorrow;
+
+            btnToday.Checked = true;
+            this.changeDate_Click(btnToday, e);
         }
 
-        private void loadData()
+        private void loadData(DateTime date)
         {
-       
-            DateTime date = DateTime.Now.Date;
             int height = 100, width = 50, withLabel = 300;
             var query = context.SHOWTIMES
                 .Where(x => DbFunctions.TruncateTime(x.MovieShowTime) == date)
                 .ToList();
 
-            foreach(SHOWTIME parent in query)
+            foreach (SHOWTIME parent in query)
             {
                 string found = "picture" + parent.MovieID;
                 if (this.Controls[found] != null)
@@ -49,7 +55,7 @@ namespace Movie_Ticket_Booking_System.View
                 query.ForEach(child => 
                 {
                     if (parent.MovieID == child.MovieID)
-                        setLabel(child.ShowTimeID.ToString(), withLabel += 150,
+                        btnShowtime(child.ShowTimeID.ToString(), withLabel += 180,
                             height, child.MovieShowTime.ToString("HH:mm"),
                             child.ROOM.RoomName);
                 });
@@ -63,8 +69,7 @@ namespace Movie_Ticket_Booking_System.View
         private void setPicture(int id, int width, int height, string title)
         {
             Guna2PictureBox picture = new Guna2PictureBox();
-            picture.Cursor = Cursors.Hand;
-            picture.BorderRadius = 20;
+            picture.BorderRadius = 10;
             picture.ImageLocation = string.Format(@"..\..\Images\Movies\" + id + ".jpg");
             picture.ImageRotate = 0F;
             picture.Location = new System.Drawing.Point(width, height);
@@ -76,19 +81,47 @@ namespace Movie_Ticket_Booking_System.View
             this.Controls.Add(picture);
         }
 
-        private void setLabel(string id, int width, int height, string timeStart, string roomName)
+        private void btnShowtime(string id, int width, int height, string timeStart, string roomName)
         {
-            Guna2HtmlLabel lblTitle = new Guna2HtmlLabel();
-            lblTitle.Text = timeStart + "\nPhòng " + roomName;
-            lblTitle.BackColor = System.Drawing.Color.Transparent;
-            lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            lblTitle.ForeColor = System.Drawing.Color.White;
-            lblTitle.Location = new Point(width, height);
-            lblTitle.Name = id;
-            lblTitle.AutoSize = true;
-            lblTitle.MaximumSize = new Size(150, 0);
-            lblTitle.TextAlignment = ContentAlignment.MiddleLeft;
-            this.Controls.Add(lblTitle);
+            Guna2Button btnShowtime = new Guna2Button();
+            btnShowtime.Text = timeStart + "\nPhòng " + roomName;
+            btnShowtime.FillColor = Color.Black;
+            btnShowtime.HoverState.ForeColor = Color.FromArgb(229, 9, 20);
+            btnShowtime.Cursor = Cursors.Hand;
+            btnShowtime.BorderRadius = 20;
+            btnShowtime.BorderThickness = 2;
+            btnShowtime.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            btnShowtime.ForeColor = System.Drawing.Color.White;
+            btnShowtime.Location = new Point(width, height);
+            btnShowtime.Name = id;
+            btnShowtime.Size = new Size(130, 65);
+            btnShowtime.Click += this.btnShowtime_Click;
+            this.Controls.Add(btnShowtime);
+        }
+
+        private void btnShowtime_Click(object sender, EventArgs e)
+        {
+            currBtnShowtime = (Guna2Button)sender;
+            string showtimeID = currBtnShowtime.Name;
+            FormMenu.instance.openChildForm(new FormChairBooking(showtimeID));       
+        }
+
+        private void disabledChecked()
+        {
+            if (currBtnDate != null)
+                currBtnDate.Checked = false;
+        }
+
+        private void changeDate_Click(object sender, EventArgs e)
+        {
+            disabledChecked();
+            currBtnDate = (Guna2GradientButton)sender;
+            currBtnDate.Checked = true;
+            if (currBtnDate.Text == today)
+                loadData(date);
+            else if (currBtnDate.Text == tomorrow)
+                loadData(date.AddDays(1));
+            else loadData(date.AddDays(2));
         }
     }
 }
