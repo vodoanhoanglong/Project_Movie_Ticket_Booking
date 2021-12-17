@@ -41,7 +41,7 @@ namespace Movie_Ticket_Booking_System.View
 
         private void loadData(DateTime date)
         {
-            int height = 100, width = 50, withLabel = 300;
+            int height = 100, width = 50, withLabel = 280;
             var query = context.SHOWTIMES
                 .Where(x => DbFunctions.TruncateTime(x.MovieShowTime) == date)
                 .ToList();
@@ -60,7 +60,7 @@ namespace Movie_Ticket_Booking_System.View
                             child.ROOM.RoomName);
                 });
 
-                withLabel = 300;
+                withLabel = 280;
                 height += 500;
             };
           

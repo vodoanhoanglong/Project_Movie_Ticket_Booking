@@ -29,6 +29,7 @@ namespace Movie_Ticket_Booking_System.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormChairBooking));
             this.lblShowtime = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblRoom = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlRoom = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -38,10 +39,19 @@ namespace Movie_Ticket_Booking_System.View
             this.btnVerify = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lblPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTotalPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblChairPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblDiscount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptbMovie = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptbScreen = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMovie)).BeginInit();
@@ -80,7 +90,7 @@ namespace Movie_Ticket_Booking_System.View
             this.pnlRoom.Radius = 15;
             this.pnlRoom.ShadowColor = System.Drawing.Color.Silver;
             this.pnlRoom.ShadowDepth = 200;
-            this.pnlRoom.Size = new System.Drawing.Size(753, 656);
+            this.pnlRoom.Size = new System.Drawing.Size(753, 662);
             this.pnlRoom.TabIndex = 2;
             // 
             // btnBooking
@@ -107,6 +117,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnBooking.Size = new System.Drawing.Size(135, 45);
             this.btnBooking.TabIndex = 5;
             this.btnBooking.Text = "Đặt ghế";
+            this.btnBooking.Click += new System.EventHandler(this.btnBooking_Click);
             // 
             // btnBack
             // 
@@ -132,6 +143,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnBack.Size = new System.Drawing.Size(131, 45);
             this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Quay lại";
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtCode
             // 
@@ -189,6 +201,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnVerify.Size = new System.Drawing.Size(135, 45);
             this.btnVerify.TabIndex = 10;
             this.btnVerify.Text = "Xác thực";
+            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
             // 
             // lblPrice
             // 
@@ -212,16 +225,16 @@ namespace Movie_Ticket_Booking_System.View
             this.lblTotalPrice.TabIndex = 12;
             this.lblTotalPrice.Text = "Tổng tiền: ";
             // 
-            // lblChairPrice
+            // lblDiscount
             // 
-            this.lblChairPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblChairPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChairPrice.ForeColor = System.Drawing.Color.White;
-            this.lblChairPrice.Location = new System.Drawing.Point(787, 653);
-            this.lblChairPrice.Name = "lblChairPrice";
-            this.lblChairPrice.Size = new System.Drawing.Size(85, 27);
-            this.lblChairPrice.TabIndex = 13;
-            this.lblChairPrice.Text = "Giá ghế:  ";
+            this.lblDiscount.BackColor = System.Drawing.Color.Transparent;
+            this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscount.ForeColor = System.Drawing.Color.White;
+            this.lblDiscount.Location = new System.Drawing.Point(787, 653);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(95, 27);
+            this.lblDiscount.TabIndex = 13;
+            this.lblDiscount.Text = "Giảm giá:  ";
             // 
             // guna2PictureBox1
             // 
@@ -256,21 +269,128 @@ namespace Movie_Ticket_Booking_System.View
             this.ptbScreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ptbScreen.BorderRadius = 15;
             this.ptbScreen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.ptbScreen.Image = ((System.Drawing.Image)(resources.GetObject("ptbScreen.Image")));
             this.ptbScreen.ImageRotate = 0F;
-            this.ptbScreen.Location = new System.Drawing.Point(19, 12);
+            this.ptbScreen.Location = new System.Drawing.Point(91, 21);
             this.ptbScreen.Name = "ptbScreen";
             this.ptbScreen.ShadowDecoration.Parent = this.ptbScreen;
-            this.ptbScreen.Size = new System.Drawing.Size(717, 73);
+            this.ptbScreen.Size = new System.Drawing.Size(611, 172);
+            this.ptbScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbScreen.TabIndex = 1;
             this.ptbScreen.TabStop = false;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Black;
+            this.guna2Panel1.BorderRadius = 10;
+            this.guna2Panel1.Location = new System.Drawing.Point(15, 738);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.ShadowDecoration.Parent = this.guna2Panel1;
+            this.guna2Panel1.Size = new System.Drawing.Size(28, 22);
+            this.guna2Panel1.TabIndex = 14;
+            // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(49, 738);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(89, 22);
+            this.guna2HtmlLabel1.TabIndex = 15;
+            this.guna2HtmlLabel1.Text = "Chưa chọn";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(192, 738);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(70, 22);
+            this.guna2HtmlLabel2.TabIndex = 17;
+            this.guna2HtmlLabel2.Text = "Đã chọn";
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.guna2Panel2.BorderRadius = 10;
+            this.guna2Panel2.Location = new System.Drawing.Point(158, 738);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.ShadowDecoration.Parent = this.guna2Panel2;
+            this.guna2Panel2.Size = new System.Drawing.Size(28, 22);
+            this.guna2Panel2.TabIndex = 16;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(315, 738);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(90, 22);
+            this.guna2HtmlLabel3.TabIndex = 19;
+            this.guna2HtmlLabel3.Text = "Đang chọn";
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.Silver;
+            this.guna2Panel3.BorderRadius = 10;
+            this.guna2Panel3.Location = new System.Drawing.Point(281, 738);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.ShadowDecoration.Parent = this.guna2Panel3;
+            this.guna2Panel3.Size = new System.Drawing.Size(28, 22);
+            this.guna2Panel3.TabIndex = 18;
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(428, 738);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(96, 22);
+            this.guna2HtmlLabel4.TabIndex = 20;
+            this.guna2HtmlLabel4.Text = "E, F, G: Vip";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(545, 738);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(78, 22);
+            this.guna2HtmlLabel5.TabIndex = 21;
+            this.guna2HtmlLabel5.Text = "J: Couple";
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(644, 738);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(124, 22);
+            this.guna2HtmlLabel6.TabIndex = 22;
+            this.guna2HtmlLabel6.Text = "Còn lại: Normal";
             // 
             // FormChairBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1239, 750);
-            this.Controls.Add(this.lblChairPrice);
+            this.ClientSize = new System.Drawing.Size(1239, 790);
+            this.Controls.Add(this.guna2HtmlLabel6);
+            this.Controls.Add(this.guna2HtmlLabel5);
+            this.Controls.Add(this.guna2HtmlLabel4);
+            this.Controls.Add(this.guna2HtmlLabel3);
+            this.Controls.Add(this.guna2Panel3);
+            this.Controls.Add(this.guna2HtmlLabel2);
+            this.Controls.Add(this.guna2Panel2);
+            this.Controls.Add(this.guna2HtmlLabel1);
+            this.Controls.Add(this.guna2Panel1);
+            this.Controls.Add(this.lblDiscount);
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.btnVerify);
@@ -308,7 +428,16 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2GradientButton btnVerify;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPrice;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTotalPrice;
-        private Guna.UI2.WinForms.Guna2HtmlLabel lblChairPrice;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDiscount;
         private Guna.UI2.WinForms.Guna2PictureBox ptbScreen;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
     }
 }

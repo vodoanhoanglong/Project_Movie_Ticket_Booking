@@ -20,6 +20,7 @@ Create table DISCOUNT
 	DiscountID int identity(1,1),
 	Code varchar(10),
 	[Percent] int,
+	isActive bit default 0,
 	AccountID varchar(10),
 
 	PRIMARY KEY (DiscountID),
@@ -59,6 +60,8 @@ Create table SHOWTIME
 	FOREIGN KEY (MovieID) REFERENCES  MOVIE(MovieID)
 )
 
+
+ 
 Create table CHAIR
 (
 	ChairID int identity(1,1),

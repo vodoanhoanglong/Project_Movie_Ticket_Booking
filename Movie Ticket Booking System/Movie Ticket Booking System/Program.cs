@@ -1,4 +1,4 @@
-﻿using Exam_Preparation_System;
+﻿using Movie_Ticket_Booking_System.View;
 using Movie_Ticket_Booking_System.Models;
 using Movie_Ticket_Booking_System.View;
 using System;
@@ -47,7 +47,7 @@ namespace Movie_Ticket_Booking_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenu());
+            Application.Run(new FormLogin());
         }
     }
 }

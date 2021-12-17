@@ -1,5 +1,5 @@
 ﻿
-namespace Exam_Preparation_System
+namespace Movie_Ticket_Booking_System.View
 {
     partial class FormLogin
     {

@@ -33,19 +33,19 @@ namespace Movie_Ticket_Booking_System.View
             this.Elipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.ShadowForm = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
-            this.panelTitle = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
             this.btnAddFilm = new Guna.UI2.WinForms.Guna2Button();
             this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             this.btnHistory = new Guna.UI2.WinForms.Guna2Button();
             this.btnShowTime = new Guna.UI2.WinForms.Guna2Button();
             this.btnFilm = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
+            this.panelTitle = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.ptbTitle = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnProfile = new Guna.UI2.WinForms.Guna2Button();
             this.panelMenu.SuspendLayout();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTitle)).BeginInit();
@@ -81,89 +81,6 @@ namespace Movie_Ticket_Booking_System.View
             this.panelMenu.ShadowDecoration.Parent = this.panelMenu;
             this.panelMenu.Size = new System.Drawing.Size(200, 800);
             this.panelMenu.TabIndex = 0;
-            // 
-            // panelTitle
-            // 
-            this.panelTitle.Controls.Add(this.guna2HtmlLabel3);
-            this.panelTitle.Controls.Add(this.ptbTitle);
-            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitle.Location = new System.Drawing.Point(0, 0);
-            this.panelTitle.Name = "panelTitle";
-            this.panelTitle.ShadowDecoration.Parent = this.panelTitle;
-            this.panelTitle.Size = new System.Drawing.Size(200, 145);
-            this.panelTitle.TabIndex = 0;
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft YaHei UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(71, 37);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(116, 38);
-            this.guna2HtmlLabel3.TabIndex = 1;
-            this.guna2HtmlLabel3.Text = "NETFLIX";
-            // 
-            // guna2ControlBox2
-            // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(1369, 0);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
-            this.guna2ControlBox2.Size = new System.Drawing.Size(32, 25);
-            this.guna2ControlBox2.TabIndex = 8;
-            // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Red;
-            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1407, 0);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(32, 25);
-            this.guna2ControlBox1.TabIndex = 7;
-            // 
-            // panelContent
-            // 
-            this.panelContent.Location = new System.Drawing.Point(206, 31);
-            this.panelContent.Name = "panelContent";
-            this.panelContent.ShadowDecoration.Parent = this.panelContent;
-            this.panelContent.Size = new System.Drawing.Size(1233, 756);
-            this.panelContent.TabIndex = 9;
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.CheckedState.Parent = this.btnProfile;
-            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.btnProfile.CustomImages.Parent = this.btnProfile;
-            this.btnProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnProfile.DisabledState.Parent = this.btnProfile;
-            this.btnProfile.FillColor = System.Drawing.Color.Transparent;
-            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnProfile.ForeColor = System.Drawing.Color.White;
-            this.btnProfile.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
-            this.btnProfile.HoverState.Parent = this.btnProfile;
-            this.btnProfile.Image = global::Movie_Ticket_Booking_System.Properties.Resources.user;
-            this.btnProfile.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnProfile.Location = new System.Drawing.Point(1330, 0);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.ShadowDecoration.Parent = this.btnProfile;
-            this.btnProfile.Size = new System.Drawing.Size(33, 25);
-            this.btnProfile.TabIndex = 9;
             // 
             // btnAddFilm
             // 
@@ -380,6 +297,28 @@ namespace Movie_Ticket_Booking_System.View
             this.btnHome.TextOffset = new System.Drawing.Point(28, 0);
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // panelTitle
+            // 
+            this.panelTitle.Controls.Add(this.guna2HtmlLabel3);
+            this.panelTitle.Controls.Add(this.ptbTitle);
+            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitle.Location = new System.Drawing.Point(0, 0);
+            this.panelTitle.Name = "panelTitle";
+            this.panelTitle.ShadowDecoration.Parent = this.panelTitle;
+            this.panelTitle.Size = new System.Drawing.Size(200, 145);
+            this.panelTitle.TabIndex = 0;
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft YaHei UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(71, 37);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(116, 38);
+            this.guna2HtmlLabel3.TabIndex = 1;
+            this.guna2HtmlLabel3.Text = "NETFLIX";
+            // 
             // ptbTitle
             // 
             this.ptbTitle.Image = global::Movie_Ticket_Booking_System.Properties.Resources.film_title;
@@ -391,6 +330,67 @@ namespace Movie_Ticket_Booking_System.View
             this.ptbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptbTitle.TabIndex = 0;
             this.ptbTitle.TabStop = false;
+            // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.HoverState.Parent = this.guna2ControlBox2;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(1369, 0);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.ShadowDecoration.Parent = this.guna2ControlBox2;
+            this.guna2ControlBox2.Size = new System.Drawing.Size(32, 25);
+            this.guna2ControlBox2.TabIndex = 8;
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.HoverState.FillColor = System.Drawing.Color.Red;
+            this.guna2ControlBox1.HoverState.Parent = this.guna2ControlBox1;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1407, 0);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
+            this.guna2ControlBox1.Size = new System.Drawing.Size(32, 25);
+            this.guna2ControlBox1.TabIndex = 7;
+            // 
+            // panelContent
+            // 
+            this.panelContent.Location = new System.Drawing.Point(206, 31);
+            this.panelContent.Name = "panelContent";
+            this.panelContent.ShadowDecoration.Parent = this.panelContent;
+            this.panelContent.Size = new System.Drawing.Size(1233, 769);
+            this.panelContent.TabIndex = 9;
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.CheckedState.Parent = this.btnProfile;
+            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.btnProfile.CustomImages.Parent = this.btnProfile;
+            this.btnProfile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnProfile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnProfile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnProfile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnProfile.DisabledState.Parent = this.btnProfile;
+            this.btnProfile.FillColor = System.Drawing.Color.Transparent;
+            this.btnProfile.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnProfile.ForeColor = System.Drawing.Color.White;
+            this.btnProfile.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(38)))));
+            this.btnProfile.HoverState.Parent = this.btnProfile;
+            this.btnProfile.Image = global::Movie_Ticket_Booking_System.Properties.Resources.user;
+            this.btnProfile.ImageSize = new System.Drawing.Size(28, 28);
+            this.btnProfile.Location = new System.Drawing.Point(1330, 0);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.ShadowDecoration.Parent = this.btnProfile;
+            this.btnProfile.Size = new System.Drawing.Size(33, 25);
+            this.btnProfile.TabIndex = 9;
             // 
             // FormMenu
             // 

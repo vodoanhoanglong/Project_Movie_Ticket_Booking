@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Exam_Preparation_System
+namespace Movie_Ticket_Booking_System.View
 {
     public partial class FormLogin : Form
     {
@@ -105,12 +105,15 @@ namespace Exam_Preparation_System
         }
 
         private void checkLogin()
-        {
+        {           
             var query = context.ACCOUNTS
                 .Where(x => x.AccountID == txtPhoneNumber.Text &&
                 x.Password == txtPassword.Text).FirstOrDefault();
             if (query != null)
-                MessageBox.Show("Đăng nhập thành công");
+            {
+                new FormMenu(query).Show();
+                this.Visible = false;
+            }
             else
                 MessageBox.Show("Số điện thoại hoặc mật khẩu sai");
         }

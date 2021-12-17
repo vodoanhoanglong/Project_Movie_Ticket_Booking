@@ -1,4 +1,5 @@
 ﻿using Guna.UI2.WinForms;
+using Movie_Ticket_Booking_System.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace Movie_Ticket_Booking_System.View
         private Panel leftBorderBtn;
         private Form currChildForm;
         public bool isAdmin;
+        public ACCOUNT info;
         public static FormMenu instance;
 
         private System.Drawing.Bitmap home = global::Movie_Ticket_Booking_System.Properties.Resources.home;
@@ -30,13 +32,14 @@ namespace Movie_Ticket_Booking_System.View
         private System.Drawing.Bitmap showtimeColor = global::Movie_Ticket_Booking_System.Properties.Resources.showtime_color;
         private System.Drawing.Bitmap historyColor = global::Movie_Ticket_Booking_System.Properties.Resources.history_color;
         private System.Drawing.Bitmap addFilmColor = global::Movie_Ticket_Booking_System.Properties.Resources.add_film_color;
-        public FormMenu()
+        public FormMenu(ACCOUNT info = null)
         {
             InitializeComponent();
             // center screen
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             instance = this;
+            this.info = info;
             //check admin account
             isAdmin = false;
 

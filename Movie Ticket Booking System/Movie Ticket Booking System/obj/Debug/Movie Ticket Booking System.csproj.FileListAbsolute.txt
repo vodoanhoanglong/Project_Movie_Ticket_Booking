@@ -9,7 +9,6 @@ D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.Properties.Resources.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormAddFilm.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormHome.resources
-D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Exam_Preparation_System.FormLogin.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormMenu.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormMovieStore.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormViewFilm.resources
@@ -22,3 +21,4 @@ D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormCreateShowTime.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormViewShowTime.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormChairBooking.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.View.FormLogin.resources
