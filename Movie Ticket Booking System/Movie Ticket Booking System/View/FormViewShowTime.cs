@@ -41,7 +41,8 @@ namespace Movie_Ticket_Booking_System.View
 
         private void loadData(DateTime date)
         {
-            int height = 100, width = 50, withLabel = 280;
+            panelViewShowTime.Controls.Clear();
+            int height = 100, width = 50, withLabel = 450, heightLabel = 100, temp = 0;
             var query = context.SHOWTIMES
                 .Where(x => DbFunctions.TruncateTime(x.MovieShowTime) == date)
                 .ToList();
@@ -49,24 +50,35 @@ namespace Movie_Ticket_Booking_System.View
             foreach (SHOWTIME parent in query)
             {
                 string found = "picture" + parent.MovieID;
-                if (this.Controls[found] != null)
+                if (this.panelViewShowTime.Controls[found] != null)
                     continue;
-                setPicture(parent.MovieID, width, height, parent.MOVIE.Name);
+                setPicture(parent.MovieID, width, height);
                 query.ForEach(child => 
                 {
                     if (parent.MovieID == child.MovieID)
-                        btnShowtime(child.ShowTimeID.ToString(), withLabel += 180,
-                            height, child.MovieShowTime.ToString("HH:mm"),
+                    {
+                        btnShowtime(child.ShowTimeID.ToString(), withLabel,
+                            heightLabel, child.MovieShowTime.ToString("HH:mm"),
                             child.ROOM.RoomName);
+                        heightLabel += 95;
+                        temp++;
+                        if(temp == 5)
+                        {
+                            temp = 0;
+                            heightLabel = height;
+                            withLabel += 180;
+                        }    
+                    }    
                 });
 
-                withLabel = 280;
+                temp = 0;
                 height += 500;
+                heightLabel = height;
             };
           
         }
 
-        private void setPicture(int id, int width, int height, string title)
+        private void setPicture(int id, int width, int height)
         {
             Guna2PictureBox picture = new Guna2PictureBox();
             picture.BorderRadius = 10;
@@ -78,7 +90,7 @@ namespace Movie_Ticket_Booking_System.View
             picture.Size = sizePic;
             picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             picture.TabStop = false;
-            this.Controls.Add(picture);
+            this.panelViewShowTime.Controls.Add(picture);
         }
 
         private void btnShowtime(string id, int width, int height, string timeStart, string roomName)
@@ -96,7 +108,7 @@ namespace Movie_Ticket_Booking_System.View
             btnShowtime.Name = id;
             btnShowtime.Size = new Size(130, 65);
             btnShowtime.Click += this.btnShowtime_Click;
-            this.Controls.Add(btnShowtime);
+            this.panelViewShowTime.Controls.Add(btnShowtime);
         }
 
         private void btnShowtime_Click(object sender, EventArgs e)

@@ -32,6 +32,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnToday = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnTomorrow = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnAfterTomorrow = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.panelViewShowTime = new Guna.UI2.WinForms.Guna2Panel();
             this.SuspendLayout();
             // 
             // btnToday
@@ -112,13 +113,22 @@ namespace Movie_Ticket_Booking_System.View
             this.btnAfterTomorrow.Text = "afterTomorrow";
             this.btnAfterTomorrow.Click += new System.EventHandler(this.changeDate_Click);
             // 
+            // panelViewShowTime
+            // 
+            this.panelViewShowTime.AutoScroll = true;
+            this.panelViewShowTime.Location = new System.Drawing.Point(1, 76);
+            this.panelViewShowTime.Name = "panelViewShowTime";
+            this.panelViewShowTime.ShadowDecoration.Parent = this.panelViewShowTime;
+            this.panelViewShowTime.Size = new System.Drawing.Size(1230, 668);
+            this.panelViewShowTime.TabIndex = 7;
+            // 
             // FormViewShowTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1233, 756);
+            this.Controls.Add(this.panelViewShowTime);
             this.Controls.Add(this.btnAfterTomorrow);
             this.Controls.Add(this.btnTomorrow);
             this.Controls.Add(this.btnToday);
@@ -135,5 +145,6 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2GradientButton btnToday;
         private Guna.UI2.WinForms.Guna2GradientButton btnTomorrow;
         private Guna.UI2.WinForms.Guna2GradientButton btnAfterTomorrow;
+        private Guna.UI2.WinForms.Guna2Panel panelViewShowTime;
     }
 }

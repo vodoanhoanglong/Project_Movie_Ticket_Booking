@@ -64,7 +64,7 @@ Create table SHOWTIME
  
 Create table CHAIR
 (
-	ChairID int identity(1,1),
+	ChairID varchar(50),
 	ChairName varchar(10),
 	[Type] int,
 	Price decimal,
@@ -78,7 +78,7 @@ Create table CHAIR
 
 Create table TICKET
 (
-	TicketID int identity(1,1),
+	TicketID varchar(50),
 	BookingDate datetime,
 	SubTotalPrice decimal,
 	TotalPrice decimal,
@@ -86,7 +86,7 @@ Create table TICKET
 	ShowTimeID varchar(14),
 	RoomID int,
 	MovieID int,
-	ChairID int,
+	ChairID varchar(50),
 
 	PRIMARY KEY (TicketID, ShowTimeID, AccountID, RoomID, MovieID),
 	FOREIGN KEY (AccountID) REFERENCES ACCOUNT(AccountID),

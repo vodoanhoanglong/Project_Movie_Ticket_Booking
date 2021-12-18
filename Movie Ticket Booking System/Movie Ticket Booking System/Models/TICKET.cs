@@ -11,7 +11,8 @@ namespace Movie_Ticket_Booking_System.Models
     {
         [Key]
         [Column(Order = 0)]
-        public int TicketID { get; set; }
+        [StringLength(50)]
+        public string TicketID { get; set; }
 
         public DateTime? BookingDate { get; set; }
 
@@ -39,7 +40,9 @@ namespace Movie_Ticket_Booking_System.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MovieID { get; set; }
 
-        public int? ChairID { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string ChairID { get; set; }
 
         public virtual ACCOUNT ACCOUNT { get; set; }
 

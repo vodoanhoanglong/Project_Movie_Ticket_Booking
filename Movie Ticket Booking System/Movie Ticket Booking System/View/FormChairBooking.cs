@@ -17,7 +17,9 @@ namespace Movie_Ticket_Booking_System.View
         private ContextDB context = Program.context;
         private Guna2Button currSeat;
         private string showtimeID;
-
+        private int roomID, movieID;
+        private decimal? subPrice;
+        private List<string> chairBooked = new List<string>(); 
         public FormChairBooking(string showtimeID)
         {
             InitializeComponent();
@@ -43,13 +45,21 @@ namespace Movie_Ticket_Booking_System.View
             ptbMovie.ImageLocation = string.Format(@"..\..\Images\Movies\" + query.MovieID + ".jpg");
             lblShowtime.Text += query.MovieShowTime.TimeOfDay + " - " + query.MovieEndTime.TimeOfDay;
             lblRoom.Text += query.ROOM.RoomName;
+            this.movieID = query.MovieID;
+            this.subPrice = query.MOVIE.Price;
+            this.roomID = query.RoomID;
+            this.lblName.Text = query.MOVIE.Name;
         }
 
         private void setSeat(char row, string index, int x, int y, int width = 48)
         {
+            string foundID = this.showtimeID + row + index;
+            // để đây thì chưa tối ưu khi dữ liệu đầu vào lớn
+            var query = context.TICKETS.FirstOrDefault(found => found.TicketID == foundID);
+
             Guna2Button btnSeat = new Guna2Button();
             btnSeat.Text = index;
-            btnSeat.FillColor = Color.Black;
+            btnSeat.FillColor = query != null ? Color.FromArgb(229, 9, 20) : Color.Black;
             btnSeat.BorderRadius = 5;
             btnSeat.HoverState.ForeColor = Color.Black;
             btnSeat.Cursor = Cursors.Hand;
@@ -78,11 +88,13 @@ namespace Movie_Ticket_Booking_System.View
             {
                 currSeat.FillColor = Color.Black;
                 lblTotalPrice.Text += calculatorDiv(type, total).ToString();
+                chairBooked.Remove(currSeat.Name);
             }
             else
             {
                 currSeat.FillColor = Color.Silver;
                 lblTotalPrice.Text += calculatorSum(type, total).ToString();
+                chairBooked.Add(currSeat.Name);
             }
         }
 
@@ -177,8 +189,60 @@ namespace Movie_Ticket_Booking_System.View
 
         private void btnBooking_Click(object sender, EventArgs e)
         {
-            if(lblDiscount.Text.Split(' ')[2] != "0" )
+            decimal? balance = FormMenu.instance.info.Balance;
+            decimal totalPrice = Convert.ToDecimal(lblTotalPrice.Text.Substring(11));
+            if (chairBooked.Count == 0)
+                MessageBox.Show("Bạn chưa đặt ghế");
+            else if (balance < totalPrice)
+                MessageBox.Show("Bạn không đủ tiền \n" + "Số dư hiện tại: " + balance);
+            else
+                saveTicked(totalPrice);
+            if (lblDiscount.Text.Split(' ')[3] != "0")
                 updateDiscount();
+        }
+
+        private void saveTicked(decimal totalPrice)
+        {
+            DateTime currDate = DateTime.Now;
+            chairBooked.ForEach(x =>
+            {
+                CHAIR newChair = new CHAIR();
+                TICKET newTicket = new TICKET();
+                string type = x.Substring(0, 1);
+                string chairID = this.showtimeID + x;
+
+                newChair.ChairID = chairID;
+                newChair.ChairName = x;
+                newChair.haveBooked = true;
+                newChair.Price = getType(type);
+                newChair.Type = Convert.ToInt32(getType(type, true));
+                newChair.RoomID = this.roomID;
+                context.CHAIRS.Add(newChair);
+
+                newTicket.TicketID = chairID;
+                newTicket.BookingDate = currDate;
+                newTicket.SubTotalPrice = this.subPrice;
+                newTicket.TotalPrice = totalPrice;
+                newTicket.AccountID = FormMenu.instance.info.AccountID;
+                newTicket.ShowTimeID = this.showtimeID;
+                newTicket.RoomID = this.roomID;
+                newTicket.MovieID = this.movieID;
+                newTicket.ChairID = chairID;
+                context.TICKETS.Add(newTicket);
+                context.SaveChanges();
+            });
+            MessageBox.Show("Đặt thành công");
+            FormMenu.instance.openChildForm(new FormViewShowTime());
+        }
+
+        private decimal getType(string type, bool number = false)
+        {
+            if (type == "J")
+                return !number ? 20000 : 2; 
+            else if (type == "E" || type == "F" || type == "G")
+                return !number ? 15000 : 1;
+            else
+                return !number ? 10000 : 0;
         }
     }
 }

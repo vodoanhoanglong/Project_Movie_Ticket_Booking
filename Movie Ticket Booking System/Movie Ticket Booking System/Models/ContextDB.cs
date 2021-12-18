@@ -47,6 +47,19 @@ namespace Movie_Ticket_Booking_System.Models
                 .Property(e => e.Price)
                 .HasPrecision(18, 0);
 
+            modelBuilder.Entity<CHAIR>()
+                .Property(e => e.ChairName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CHAIR>()
+                .Property(e => e.ChairID)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CHAIR>()
+                .HasMany(e => e.TICKETs)
+                .WithRequired(e => e.CHAIR)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<DISCOUNT>()
                 .Property(e => e.Code)
                 .IsUnicode(false);
@@ -97,6 +110,10 @@ namespace Movie_Ticket_Booking_System.Models
 
             modelBuilder.Entity<TICKET>()
                 .Property(e => e.ShowTimeID)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TICKET>()
+                .Property(e => e.ChairID)
                 .IsUnicode(false);
         }
     }

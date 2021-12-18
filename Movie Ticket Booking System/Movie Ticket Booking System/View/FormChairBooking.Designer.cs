@@ -33,6 +33,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblShowtime = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblRoom = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlRoom = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.ptbScreen = new Guna.UI2.WinForms.Guna2PictureBox();
             this.btnBooking = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnBack = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtCode = new Guna.UI2.WinForms.Guna2TextBox();
@@ -42,7 +43,6 @@ namespace Movie_Ticket_Booking_System.View
             this.lblDiscount = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptbMovie = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.ptbScreen = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -52,31 +52,32 @@ namespace Movie_Ticket_Booking_System.View
             this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlRoom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbScreen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMovie)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbScreen)).BeginInit();
             this.SuspendLayout();
             // 
             // lblShowtime
             // 
             this.lblShowtime.BackColor = System.Drawing.Color.Transparent;
-            this.lblShowtime.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowtime.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblShowtime.ForeColor = System.Drawing.Color.White;
-            this.lblShowtime.Location = new System.Drawing.Point(285, 8);
+            this.lblShowtime.Location = new System.Drawing.Point(393, 10);
             this.lblShowtime.Name = "lblShowtime";
-            this.lblShowtime.Size = new System.Drawing.Size(156, 33);
+            this.lblShowtime.Size = new System.Drawing.Size(115, 32);
             this.lblShowtime.TabIndex = 0;
             this.lblShowtime.Text = "Suất Chiếu: ";
             // 
             // lblRoom
             // 
             this.lblRoom.BackColor = System.Drawing.Color.Transparent;
-            this.lblRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoom.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblRoom.ForeColor = System.Drawing.Color.White;
-            this.lblRoom.Location = new System.Drawing.Point(753, 8);
+            this.lblRoom.Location = new System.Drawing.Point(205, 10);
             this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(95, 33);
+            this.lblRoom.Size = new System.Drawing.Size(74, 32);
             this.lblRoom.TabIndex = 1;
             this.lblRoom.Text = "Phòng: ";
             // 
@@ -93,6 +94,21 @@ namespace Movie_Ticket_Booking_System.View
             this.pnlRoom.Size = new System.Drawing.Size(753, 662);
             this.pnlRoom.TabIndex = 2;
             // 
+            // ptbScreen
+            // 
+            this.ptbScreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.ptbScreen.BorderRadius = 15;
+            this.ptbScreen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.ptbScreen.Image = ((System.Drawing.Image)(resources.GetObject("ptbScreen.Image")));
+            this.ptbScreen.ImageRotate = 0F;
+            this.ptbScreen.Location = new System.Drawing.Point(91, 21);
+            this.ptbScreen.Name = "ptbScreen";
+            this.ptbScreen.ShadowDecoration.Parent = this.ptbScreen;
+            this.ptbScreen.Size = new System.Drawing.Size(611, 172);
+            this.ptbScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbScreen.TabIndex = 1;
+            this.ptbScreen.TabStop = false;
+            // 
             // btnBooking
             // 
             this.btnBooking.Animated = true;
@@ -108,7 +124,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnBooking.DisabledState.Parent = this.btnBooking;
             this.btnBooking.FillColor = System.Drawing.Color.Transparent;
             this.btnBooking.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.btnBooking.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBooking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBooking.ForeColor = System.Drawing.Color.White;
             this.btnBooking.HoverState.Parent = this.btnBooking;
             this.btnBooking.Location = new System.Drawing.Point(1081, 681);
@@ -134,7 +150,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnBack.DisabledState.Parent = this.btnBack;
             this.btnBack.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.btnBack.FillColor2 = System.Drawing.Color.Transparent;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.HoverState.Parent = this.btnBack;
             this.btnBack.Location = new System.Drawing.Point(12, 4);
@@ -161,7 +177,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtCode.FillColor = System.Drawing.Color.Transparent;
             this.txtCode.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtCode.FocusedState.Parent = this.txtCode;
-            this.txtCode.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtCode.HoverState.Parent = this.txtCode;
@@ -192,7 +208,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnVerify.DisabledState.Parent = this.btnVerify;
             this.btnVerify.FillColor = System.Drawing.Color.Transparent;
             this.btnVerify.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.btnVerify.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnVerify.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnVerify.ForeColor = System.Drawing.Color.White;
             this.btnVerify.HoverState.Parent = this.btnVerify;
             this.btnVerify.Location = new System.Drawing.Point(1081, 549);
@@ -206,33 +222,33 @@ namespace Movie_Ticket_Booking_System.View
             // lblPrice
             // 
             this.lblPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblPrice.ForeColor = System.Drawing.Color.White;
             this.lblPrice.Location = new System.Drawing.Point(787, 614);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(95, 27);
+            this.lblPrice.Size = new System.Drawing.Size(93, 30);
             this.lblPrice.TabIndex = 11;
             this.lblPrice.Text = "Giá phim: ";
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblTotalPrice.ForeColor = System.Drawing.Color.White;
             this.lblTotalPrice.Location = new System.Drawing.Point(787, 693);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(101, 27);
+            this.lblTotalPrice.Size = new System.Drawing.Size(99, 30);
             this.lblTotalPrice.TabIndex = 12;
             this.lblTotalPrice.Text = "Tổng tiền: ";
             // 
             // lblDiscount
             // 
             this.lblDiscount.BackColor = System.Drawing.Color.Transparent;
-            this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscount.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblDiscount.ForeColor = System.Drawing.Color.White;
             this.lblDiscount.Location = new System.Drawing.Point(787, 653);
             this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(95, 27);
+            this.lblDiscount.Size = new System.Drawing.Size(92, 30);
             this.lblDiscount.TabIndex = 13;
             this.lblDiscount.Text = "Giảm giá:  ";
             // 
@@ -264,21 +280,6 @@ namespace Movie_Ticket_Booking_System.View
             this.ptbMovie.TabIndex = 8;
             this.ptbMovie.TabStop = false;
             // 
-            // ptbScreen
-            // 
-            this.ptbScreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.ptbScreen.BorderRadius = 15;
-            this.ptbScreen.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.ptbScreen.Image = ((System.Drawing.Image)(resources.GetObject("ptbScreen.Image")));
-            this.ptbScreen.ImageRotate = 0F;
-            this.ptbScreen.Location = new System.Drawing.Point(91, 21);
-            this.ptbScreen.Name = "ptbScreen";
-            this.ptbScreen.ShadowDecoration.Parent = this.ptbScreen;
-            this.ptbScreen.Size = new System.Drawing.Size(611, 172);
-            this.ptbScreen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbScreen.TabIndex = 1;
-            this.ptbScreen.TabStop = false;
-            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.Black;
@@ -292,22 +293,22 @@ namespace Movie_Ticket_Booking_System.View
             // guna2HtmlLabel1
             // 
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(49, 738);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(89, 22);
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(77, 23);
             this.guna2HtmlLabel1.TabIndex = 15;
             this.guna2HtmlLabel1.Text = "Chưa chọn";
             // 
             // guna2HtmlLabel2
             // 
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(192, 738);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(70, 22);
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(60, 23);
             this.guna2HtmlLabel2.TabIndex = 17;
             this.guna2HtmlLabel2.Text = "Đã chọn";
             // 
@@ -324,11 +325,11 @@ namespace Movie_Ticket_Booking_System.View
             // guna2HtmlLabel3
             // 
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(315, 738);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(90, 22);
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(78, 23);
             this.guna2HtmlLabel3.TabIndex = 19;
             this.guna2HtmlLabel3.Text = "Đang chọn";
             // 
@@ -345,35 +346,46 @@ namespace Movie_Ticket_Booking_System.View
             // guna2HtmlLabel4
             // 
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2HtmlLabel4.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(428, 738);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(96, 22);
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(74, 23);
             this.guna2HtmlLabel4.TabIndex = 20;
             this.guna2HtmlLabel4.Text = "E, F, G: Vip";
             // 
             // guna2HtmlLabel5
             // 
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2HtmlLabel5.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(545, 738);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(78, 22);
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(65, 23);
             this.guna2HtmlLabel5.TabIndex = 21;
             this.guna2HtmlLabel5.Text = "J: Couple";
             // 
             // guna2HtmlLabel6
             // 
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.guna2HtmlLabel6.ForeColor = System.Drawing.Color.White;
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(644, 738);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(124, 22);
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(111, 23);
             this.guna2HtmlLabel6.TabIndex = 22;
             this.guna2HtmlLabel6.Text = "Còn lại: Normal";
+            // 
+            // lblName
+            // 
+            this.lblName.BackColor = System.Drawing.Color.Transparent;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(788, 10);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(96, 32);
+            this.lblName.TabIndex = 23;
+            this.lblName.Text = "Tên phim";
             // 
             // FormChairBooking
             // 
@@ -381,6 +393,7 @@ namespace Movie_Ticket_Booking_System.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1239, 790);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.guna2HtmlLabel6);
             this.Controls.Add(this.guna2HtmlLabel5);
             this.Controls.Add(this.guna2HtmlLabel4);
@@ -407,9 +420,9 @@ namespace Movie_Ticket_Booking_System.View
             this.Text = "FormChairBooking";
             this.Load += new System.EventHandler(this.FormChairBooking_Load);
             this.pnlRoom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ptbScreen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMovie)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbScreen)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,5 +452,6 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblName;
     }
 }
