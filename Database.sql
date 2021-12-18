@@ -80,6 +80,7 @@ Create table TICKET
 (
 	TicketID varchar(50),
 	BookingDate datetime,
+	DiscountPercent int,
 	SubTotalPrice decimal,
 	TotalPrice decimal,
 	AccountID varchar(10),

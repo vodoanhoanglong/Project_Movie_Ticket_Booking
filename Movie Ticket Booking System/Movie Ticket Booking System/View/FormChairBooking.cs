@@ -175,7 +175,7 @@ namespace Movie_Ticket_Booking_System.View
                 MessageBox.Show("Mã giảm giá đã sử dụng");
             else
             {
-                lblDiscount.Text = "Giảm giá: " + query.Percent + "%";
+                lblDiscount.Text = "Giảm giá(%): " + query.Percent;
                 MessageBox.Show("Mã giảm giá hợp lệ");
             }
         }
@@ -197,8 +197,6 @@ namespace Movie_Ticket_Booking_System.View
                 MessageBox.Show("Bạn không đủ tiền \n" + "Số dư hiện tại: " + balance);
             else
                 saveTicked(totalPrice);
-            if (lblDiscount.Text.Split(' ')[3] != "0")
-                updateDiscount();
         }
 
         private void saveTicked(decimal totalPrice)
@@ -221,6 +219,7 @@ namespace Movie_Ticket_Booking_System.View
 
                 newTicket.TicketID = chairID;
                 newTicket.BookingDate = currDate;
+                newTicket.DiscountPercent = Convert.ToInt32(lblDiscount.Text.Split(' ')[2]);
                 newTicket.SubTotalPrice = this.subPrice;
                 newTicket.TotalPrice = totalPrice;
                 newTicket.AccountID = FormMenu.instance.info.AccountID;
@@ -231,6 +230,8 @@ namespace Movie_Ticket_Booking_System.View
                 context.TICKETS.Add(newTicket);
                 context.SaveChanges();
             });
+            if (lblDiscount.Text.Split(' ')[2] != "0")
+                updateDiscount();
             MessageBox.Show("Đặt thành công");
             FormMenu.instance.openChildForm(new FormViewShowTime());
         }

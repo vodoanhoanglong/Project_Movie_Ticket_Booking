@@ -140,6 +140,7 @@ namespace Movie_Ticket_Booking_System.View
         private void btnHistory_Click(object sender, EventArgs e)
         {
             activateButton(sender, Color.White);
+            openChildForm(new FormViewHistory());
         }
 
         //admin

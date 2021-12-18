@@ -248,9 +248,9 @@ namespace Movie_Ticket_Booking_System.View
             this.lblDiscount.ForeColor = System.Drawing.Color.White;
             this.lblDiscount.Location = new System.Drawing.Point(787, 653);
             this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(92, 30);
+            this.lblDiscount.Size = new System.Drawing.Size(123, 30);
             this.lblDiscount.TabIndex = 13;
-            this.lblDiscount.Text = "Giảm giá:  ";
+            this.lblDiscount.Text = "Giảm giá(%):  ";
             // 
             // guna2PictureBox1
             // 

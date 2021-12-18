@@ -119,7 +119,7 @@ namespace Movie_Ticket_Booking_System.View
             this.panelViewShowTime.Location = new System.Drawing.Point(1, 76);
             this.panelViewShowTime.Name = "panelViewShowTime";
             this.panelViewShowTime.ShadowDecoration.Parent = this.panelViewShowTime;
-            this.panelViewShowTime.Size = new System.Drawing.Size(1230, 668);
+            this.panelViewShowTime.Size = new System.Drawing.Size(1220, 668);
             this.panelViewShowTime.TabIndex = 7;
             // 
             // FormViewShowTime

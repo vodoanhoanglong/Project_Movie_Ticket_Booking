@@ -14,7 +14,9 @@ namespace Movie_Ticket_Booking_System.Models
         [StringLength(50)]
         public string TicketID { get; set; }
 
-        public DateTime? BookingDate { get; set; }
+        public DateTime BookingDate { get; set; }
+
+        public int? DiscountPercent { get; set; }
 
         public decimal? SubTotalPrice { get; set; }
 

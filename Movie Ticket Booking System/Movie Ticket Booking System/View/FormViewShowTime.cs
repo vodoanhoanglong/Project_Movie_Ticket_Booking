@@ -41,7 +41,7 @@ namespace Movie_Ticket_Booking_System.View
 
         private void loadData(DateTime date)
         {
-            panelViewShowTime.Controls.Clear();
+            this.panelViewShowTime.Controls.Clear();
             int height = 100, width = 50, withLabel = 450, heightLabel = 100, temp = 0;
             var query = context.SHOWTIMES
                 .Where(x => DbFunctions.TruncateTime(x.MovieShowTime) == date)
