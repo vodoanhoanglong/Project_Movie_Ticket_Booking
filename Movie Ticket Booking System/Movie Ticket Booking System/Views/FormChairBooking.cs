@@ -18,7 +18,7 @@ namespace Movie_Ticket_Booking_System.View
         private Guna2Button currSeat;
         private string showtimeID;
         private int roomID, movieID;
-        private decimal currPercent = 0, subTotalPrice = 0;
+        private decimal currPercent = 0, subTotalPrice = 0, currPriceChair = 0;
         private List<string> chairBooked = new List<string>(); 
         public FormChairBooking(string showtimeID)
         {
@@ -84,11 +84,14 @@ namespace Movie_Ticket_Booking_System.View
             
             string type = currSeat.Name.Substring(0, 1);
             lblTotalPrice.Text = "Tổng tiền: ";
+            lblPriceChair.Text = "Giá ghế: ";
             if (currSeat.FillColor == Color.Silver)
             {
                 currSeat.FillColor = Color.Black;
                 subTotalPrice = calculatorDiv(type, subTotalPrice);
                 lblTotalPrice.Text += calculPercent();
+                currPriceChair = calculatorDiv(type, currPriceChair);
+                lblPriceChair.Text += currPriceChair.ToString();
                 chairBooked.Remove(currSeat.Name);
             }
             else
@@ -96,6 +99,8 @@ namespace Movie_Ticket_Booking_System.View
                 currSeat.FillColor = Color.Silver;
                 subTotalPrice = calculatorSum(type, subTotalPrice);
                 lblTotalPrice.Text += calculPercent();
+                currPriceChair = calculatorSum(type, currPriceChair);
+                lblPriceChair.Text += currPriceChair.ToString();
                 chairBooked.Add(currSeat.Name);
             }
         }
