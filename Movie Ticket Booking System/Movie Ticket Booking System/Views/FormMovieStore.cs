@@ -26,8 +26,24 @@ namespace Movie_Ticket_Booking_System.View
             InitializeComponent();
         }
         private void FormMovieStore_Load(object sender, EventArgs e)
-        {
-            loadData();
+        { 
+            DataTable table = new DataTable();
+            table.Columns.Add("MovieID", typeof(int));
+            table.Columns.Add("Type", typeof(string));
+
+            DataRow row1 = table.NewRow();
+            row1["MovieID"] = 0;
+            row1["Type"] = "Sắp xếp theo tên";
+            table.Rows.InsertAt(row1, 0);
+
+            DataRow row2 = table.NewRow();
+            row2["MovieID"] = 1;
+            row2["Type"] = "Tăng dần theo giá";
+            table.Rows.InsertAt(row2, 1);
+
+            cbmFilter.ValueMember = "MovieID";
+            cbmFilter.DisplayMember = "Type";
+            cbmFilter.DataSource = table;
         }
         
         private int getMovieID()
@@ -45,7 +61,7 @@ namespace Movie_Ticket_Booking_System.View
         {
             currPicture = (Guna2PictureBox)sender;
             string lblName = "name" + currPicture.Name.Substring(7);
-            lblHover = (Guna2HtmlLabel)this.Controls[lblName];
+            lblHover = (Guna2HtmlLabel)this.pnlContainer.Controls[lblName];
             lblHover.ForeColor = Color.FromArgb(229, 9, 20);
             createOverlay();
         }
@@ -95,7 +111,7 @@ namespace Movie_Ticket_Booking_System.View
             picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             picture.TabStop = false;
             picture.MouseHover += this.picture_MouseHover;
-            this.Controls.Add(picture);
+            this.pnlContainer.Controls.Add(picture);
             setLabel(id, title, picture);
         }
 
@@ -112,15 +128,38 @@ namespace Movie_Ticket_Booking_System.View
             lblTitle.AutoSize = true;
             lblTitle.MaximumSize = new Size(280, 0);
             lblTitle.TextAlignment = ContentAlignment.MiddleCenter;
-            this.Controls.Add(lblTitle);
+            this.pnlContainer.Controls.Add(lblTitle);
         }
 
-
-        private void loadData()
+        private void cbmFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var query = context.MOVIES.OrderByDescending(x => x.MovieID).ToList();
+            loadData(Convert.ToInt32(cbmFilter.SelectedValue));
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            btnReset.Enabled = true;
+            loadData(2, txtSearch.Text);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            btnReset.Enabled = false;
+            cbmFilter.SelectedValue = 0;
+            loadData(0);
+        }
+
+        private void loadData(int type, string name = null)
+        {
+            this.pnlContainer.Controls.Clear();
+            var query = type == 0 
+                ? context.MOVIES.OrderBy(x => x.Name)
+                : type == 1 
+                ? context.MOVIES.OrderBy(x => x.Price)
+                : context.MOVIES.Where(x => x.Name.Contains(name));
+
             int height = 65, width = 35, count = 0;
-            query.ForEach(x =>
+            query.ToList().ForEach(x =>
             {
                 if (count == 3)
                 {

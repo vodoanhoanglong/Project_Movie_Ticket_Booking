@@ -18,9 +18,12 @@ namespace Movie_Ticket_Booking_System.View
     {
         private const int percentDiscount = 10;
         ContextDB context = Program.context;
+        public static FormLogin instance;
         public FormLogin()
         {
             InitializeComponent();
+            instance = this;
+
             // center screen
             this.Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2,
                           (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
@@ -138,7 +141,9 @@ namespace Movie_Ticket_Booking_System.View
             newDiscount.Percent = percentDiscount;
             context.DISCOUNTS.Add(newDiscount);
             context.SaveChanges();
+            resetInput();
             MessageBox.Show("Đăng ký thành công");
+            setPanelSignIn();
         }
 
         private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)

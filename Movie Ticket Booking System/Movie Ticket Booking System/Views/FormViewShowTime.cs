@@ -45,6 +45,7 @@ namespace Movie_Ticket_Booking_System.View
             int height = 100, width = 50, withLabel = 450, heightLabel = 100, temp = 0;
             var query = context.SHOWTIMES
                 .Where(x => DbFunctions.TruncateTime(x.MovieShowTime) == date)
+                .OrderBy(x => x.MovieShowTime)
                 .ToList();
 
             foreach (SHOWTIME parent in query)
@@ -59,7 +60,7 @@ namespace Movie_Ticket_Booking_System.View
                     {
                         btnShowtime(child.ShowTimeID.ToString(), withLabel,
                             heightLabel, child.MovieShowTime.ToString("HH:mm"),
-                            child.ROOM.RoomName);
+                            child.ROOM.RoomName, child.MovieShowTime);
                         heightLabel += 95;
                         temp++;
                         if(temp == 5)
@@ -93,7 +94,8 @@ namespace Movie_Ticket_Booking_System.View
             this.panelViewShowTime.Controls.Add(picture);
         }
 
-        private void btnShowtime(string id, int width, int height, string timeStart, string roomName)
+        private void btnShowtime(string id, int width, int height, 
+            string timeStart, string roomName, DateTime dateStart)
         {
             Guna2Button btnShowtime = new Guna2Button();
             btnShowtime.Text = timeStart + "\nPhòng " + roomName;
@@ -107,14 +109,21 @@ namespace Movie_Ticket_Booking_System.View
             btnShowtime.Location = new Point(width, height);
             btnShowtime.Name = id;
             btnShowtime.Size = new Size(130, 65);
-            btnShowtime.Click += this.btnShowtime_Click;
+            btnShowtime.Click += delegate (object sender, EventArgs e) 
+            { this.btnShowtime_Click(sender, e, dateStart); };
             this.panelViewShowTime.Controls.Add(btnShowtime);
         }
 
-        private void btnShowtime_Click(object sender, EventArgs e)
+        private void btnShowtime_Click(object sender, EventArgs e, DateTime date)
         {
             currBtnShowtime = (Guna2Button)sender;
             string showtimeID = currBtnShowtime.Name;
+            DateTime conditionDate = DateTime.Now.AddMinutes(-5);
+            if(date < conditionDate)
+            {
+                MessageBox.Show("Phim đã chiếu");
+                return;
+            }    
             FormMenu.instance.openChildForm(new FormChairBooking(showtimeID));       
         }
 

@@ -19,6 +19,8 @@ namespace Movie_Ticket_Booking_System.View
         {
             InitializeComponent();
             this.movieID = movieID;
+            if (!FormMenu.instance.isAdmin)
+                btnConfirm.Text = "Xem lịch chiếu";
         }
 
         private void FormViewFilm_Load(object sender, EventArgs e)
@@ -35,7 +37,13 @@ namespace Movie_Ticket_Booking_System.View
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            new FormCreateShowTime(movieID).ShowDialog();
+            if (FormMenu.instance.isAdmin)
+                new FormCreateShowTime(movieID).ShowDialog();
+            else
+            {
+                FormMenu.instance.openChildForm(new FormViewShowTime());
+                this.Dispose();
+            }    
         }
     }
 }

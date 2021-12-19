@@ -41,13 +41,20 @@ namespace Movie_Ticket_Booking_System.View
             instance = this;
             this.info = info;
             //check admin account
+            /*isAdmin = this.info.Role == "Manager" ? true : false;*/
             isAdmin = false;
 
+            btnAddFilm.Visible = false;
+            btnHistory.Visible = false;
         }
 
       
         private void FormMenu_Load(object sender, EventArgs e)
         {
+            if(isAdmin)
+                btnAddFilm.Visible = true;
+            else btnHistory.Visible = true;
+
             leftBorderBtn = new Panel();
             panelMenu.Controls.Add(leftBorderBtn);
             activateButton(btnHome, Color.White);
@@ -151,6 +158,7 @@ namespace Movie_Ticket_Booking_System.View
         }
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            FormLogin.instance.Visible = true;
             this.Dispose();
         }
     }
