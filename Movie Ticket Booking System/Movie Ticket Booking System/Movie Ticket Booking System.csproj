@@ -61,6 +61,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chart\ConfigChart.cs" />
+    <Compile Include="Chart\SplineArea.cs" />
     <Compile Include="Models\ACCOUNT.cs" />
     <Compile Include="Models\CHAIR.cs" />
     <Compile Include="Models\ContextDB.cs" />

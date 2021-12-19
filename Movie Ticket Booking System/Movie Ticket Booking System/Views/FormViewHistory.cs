@@ -37,19 +37,17 @@ namespace Movie_Ticket_Booking_System.View
             string accountID = FormMenu.instance.info.AccountID;
             var query = context.TICKETS
                 .Where(x => x.AccountID == accountID)
-                .Join(context.MOVIES,
-                    ticket => ticket.MovieID,
-                    movie => movie.MovieID,
-                    (ticket, movie) => new
+                .Select(info => new
                     {
-                        movie.MovieID,
-                        movie.Name,
-                        movie.Time,
-                        movie.Price,
-                        ticket.BookingDate,
-                        ticket.SHOWTIME.MovieShowTime,
-                        ticket.TotalPrice,
-                        ticket.RoomID,
+                        info.TicketID,
+                        info.MovieID,
+                        info.SHOWTIME.MOVIE.Name,
+                        info.SHOWTIME.MOVIE.Time,
+                        info.SHOWTIME.MOVIE.Price,
+                        info.BookingDate,
+                        info.SHOWTIME.MovieShowTime,
+                        info.TotalPrice,
+                        info.RoomID,
                     })
                 .GroupBy(x => x.BookingDate)
                 .Select(x => new
@@ -58,6 +56,7 @@ namespace Movie_Ticket_Booking_System.View
                     SeatQuantity = x.Count(),
                     Info  = x.ToList()
                 })
+                .OrderByDescending(x => x.BookingDate)
                 .ToList();
 
             query.ForEach(x =>

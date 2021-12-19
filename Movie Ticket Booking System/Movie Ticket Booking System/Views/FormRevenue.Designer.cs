@@ -29,6 +29,21 @@ namespace Movie_Ticket_Booking_System.Views
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.Charts.WinForms.ChartFont chartFont1 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont2 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont3 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.ChartFont chartFont4 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid1 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick1 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont5 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid2 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.Tick tick2 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont6 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Grid grid3 = new Guna.Charts.WinForms.Grid();
+            Guna.Charts.WinForms.PointLabel pointLabel1 = new Guna.Charts.WinForms.PointLabel();
+            Guna.Charts.WinForms.ChartFont chartFont7 = new Guna.Charts.WinForms.ChartFont();
+            Guna.Charts.WinForms.Tick tick3 = new Guna.Charts.WinForms.Tick();
+            Guna.Charts.WinForms.ChartFont chartFont8 = new Guna.Charts.WinForms.ChartFont();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlRevenueWeek = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.lblRevenueWeek = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -42,6 +57,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.lblMoneyYear = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblRevenueYear = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.chart = new Guna.Charts.WinForms.GunaChart();
             this.pnlRevenueWeek.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.pnlRevenueMonth.SuspendLayout();
@@ -55,7 +71,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(487, 12);
+            this.lblTitle.Location = new System.Drawing.Point(487, 6);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(248, 39);
             this.lblTitle.TabIndex = 37;
@@ -68,7 +84,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.pnlRevenueWeek.Controls.Add(this.guna2PictureBox1);
             this.pnlRevenueWeek.Controls.Add(this.lblRevenueWeek);
             this.pnlRevenueWeek.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.pnlRevenueWeek.Location = new System.Drawing.Point(12, 91);
+            this.pnlRevenueWeek.Location = new System.Drawing.Point(12, 71);
             this.pnlRevenueWeek.Name = "pnlRevenueWeek";
             this.pnlRevenueWeek.Radius = 15;
             this.pnlRevenueWeek.ShadowColor = System.Drawing.Color.Silver;
@@ -105,7 +121,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.lblMoneyWeek.BackColor = System.Drawing.Color.Transparent;
             this.lblMoneyWeek.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblMoneyWeek.ForeColor = System.Drawing.Color.White;
-            this.lblMoneyWeek.Location = new System.Drawing.Point(98, 55);
+            this.lblMoneyWeek.Location = new System.Drawing.Point(96, 55);
             this.lblMoneyWeek.Name = "lblMoneyWeek";
             this.lblMoneyWeek.Size = new System.Drawing.Size(47, 30);
             this.lblMoneyWeek.TabIndex = 41;
@@ -118,7 +134,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.pnlRevenueMonth.Controls.Add(this.guna2PictureBox2);
             this.pnlRevenueMonth.Controls.Add(this.lblRevenueMonth);
             this.pnlRevenueMonth.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.pnlRevenueMonth.Location = new System.Drawing.Point(442, 91);
+            this.pnlRevenueMonth.Location = new System.Drawing.Point(442, 71);
             this.pnlRevenueMonth.Name = "pnlRevenueMonth";
             this.pnlRevenueMonth.Radius = 15;
             this.pnlRevenueMonth.ShadowColor = System.Drawing.Color.Silver;
@@ -131,7 +147,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.lblMoneyMonth.BackColor = System.Drawing.Color.Transparent;
             this.lblMoneyMonth.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblMoneyMonth.ForeColor = System.Drawing.Color.White;
-            this.lblMoneyMonth.Location = new System.Drawing.Point(98, 55);
+            this.lblMoneyMonth.Location = new System.Drawing.Point(65, 55);
             this.lblMoneyMonth.Name = "lblMoneyMonth";
             this.lblMoneyMonth.Size = new System.Drawing.Size(47, 30);
             this.lblMoneyMonth.TabIndex = 41;
@@ -142,10 +158,10 @@ namespace Movie_Ticket_Booking_System.Views
             this.guna2PictureBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.guna2PictureBox2.Image = global::Movie_Ticket_Booking_System.Properties.Resources.money;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(46, 47);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(22, 47);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
             this.guna2PictureBox2.ShadowDecoration.Parent = this.guna2PictureBox2;
-            this.guna2PictureBox2.Size = new System.Drawing.Size(44, 41);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(37, 41);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox2.TabIndex = 40;
             this.guna2PictureBox2.TabStop = false;
@@ -155,11 +171,11 @@ namespace Movie_Ticket_Booking_System.Views
             this.lblRevenueMonth.BackColor = System.Drawing.Color.Transparent;
             this.lblRevenueMonth.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblRevenueMonth.ForeColor = System.Drawing.Color.White;
-            this.lblRevenueMonth.Location = new System.Drawing.Point(46, 11);
+            this.lblRevenueMonth.Location = new System.Drawing.Point(22, 11);
             this.lblRevenueMonth.Name = "lblRevenueMonth";
             this.lblRevenueMonth.Size = new System.Drawing.Size(267, 34);
             this.lblRevenueMonth.TabIndex = 39;
-            this.lblRevenueMonth.Text = "Doanh thu trong tháng";
+            this.lblRevenueMonth.Text = "Doanh thu trong tháng ";
             // 
             // pnlRevenueYear
             // 
@@ -168,7 +184,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.pnlRevenueYear.Controls.Add(this.guna2PictureBox3);
             this.pnlRevenueYear.Controls.Add(this.lblRevenueYear);
             this.pnlRevenueYear.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.pnlRevenueYear.Location = new System.Drawing.Point(865, 91);
+            this.pnlRevenueYear.Location = new System.Drawing.Point(865, 71);
             this.pnlRevenueYear.Name = "pnlRevenueYear";
             this.pnlRevenueYear.Radius = 15;
             this.pnlRevenueYear.ShadowColor = System.Drawing.Color.Silver;
@@ -181,7 +197,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.lblMoneyYear.BackColor = System.Drawing.Color.Transparent;
             this.lblMoneyYear.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblMoneyYear.ForeColor = System.Drawing.Color.White;
-            this.lblMoneyYear.Location = new System.Drawing.Point(98, 55);
+            this.lblMoneyYear.Location = new System.Drawing.Point(70, 55);
             this.lblMoneyYear.Name = "lblMoneyYear";
             this.lblMoneyYear.Size = new System.Drawing.Size(47, 30);
             this.lblMoneyYear.TabIndex = 41;
@@ -192,7 +208,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.guna2PictureBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.guna2PictureBox3.Image = global::Movie_Ticket_Booking_System.Properties.Resources.money;
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(46, 47);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(20, 47);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.ShadowDecoration.Parent = this.guna2PictureBox3;
             this.guna2PictureBox3.Size = new System.Drawing.Size(44, 41);
@@ -205,18 +221,54 @@ namespace Movie_Ticket_Booking_System.Views
             this.lblRevenueYear.BackColor = System.Drawing.Color.Transparent;
             this.lblRevenueYear.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblRevenueYear.ForeColor = System.Drawing.Color.White;
-            this.lblRevenueYear.Location = new System.Drawing.Point(46, 11);
+            this.lblRevenueYear.Location = new System.Drawing.Point(20, 11);
             this.lblRevenueYear.Name = "lblRevenueYear";
             this.lblRevenueYear.Size = new System.Drawing.Size(251, 34);
             this.lblRevenueYear.TabIndex = 39;
-            this.lblRevenueYear.Text = "Doanh thu trong năm\r\n";
+            this.lblRevenueYear.Text = "Doanh thu trong năm\r\n ";
+            // 
+            // chart
+            // 
+            this.chart.BackColor = System.Drawing.Color.White;
+            chartFont1.FontName = "Arial";
+            this.chart.Legend.LabelFont = chartFont1;
+            this.chart.Location = new System.Drawing.Point(12, 205);
+            this.chart.Name = "chart";
+            this.chart.Size = new System.Drawing.Size(1202, 546);
+            this.chart.TabIndex = 44;
+            chartFont2.FontName = "Arial";
+            chartFont2.Size = 12;
+            chartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chart.Title.Font = chartFont2;
+            chartFont3.FontName = "Arial";
+            this.chart.Tooltips.BodyFont = chartFont3;
+            chartFont4.FontName = "Arial";
+            chartFont4.Size = 9;
+            chartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold;
+            this.chart.Tooltips.TitleFont = chartFont4;
+            this.chart.XAxes.GridLines = grid1;
+            chartFont5.FontName = "Arial";
+            tick1.Font = chartFont5;
+            this.chart.XAxes.Ticks = tick1;
+            this.chart.YAxes.GridLines = grid2;
+            chartFont6.FontName = "Arial";
+            tick2.Font = chartFont6;
+            this.chart.YAxes.Ticks = tick2;
+            this.chart.ZAxes.GridLines = grid3;
+            chartFont7.FontName = "Arial";
+            pointLabel1.Font = chartFont7;
+            this.chart.ZAxes.PointLabels = pointLabel1;
+            chartFont8.FontName = "Arial";
+            tick3.Font = chartFont8;
+            this.chart.ZAxes.Ticks = tick3;
             // 
             // FormRevenue
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(1217, 730);
+            this.ClientSize = new System.Drawing.Size(1217, 763);
+            this.Controls.Add(this.chart);
             this.Controls.Add(this.pnlRevenueYear);
             this.Controls.Add(this.pnlRevenueMonth);
             this.Controls.Add(this.pnlRevenueWeek);
@@ -254,5 +306,6 @@ namespace Movie_Ticket_Booking_System.Views
         private Guna.UI2.WinForms.Guna2HtmlLabel lblMoneyYear;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblRevenueYear;
+        private Guna.Charts.WinForms.GunaChart chart;
     }
 }
