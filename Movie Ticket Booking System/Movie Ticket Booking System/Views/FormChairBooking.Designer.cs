@@ -41,7 +41,6 @@ namespace Movie_Ticket_Booking_System.View
             this.lblPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTotalPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblDiscount = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptbMovie = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -56,7 +55,6 @@ namespace Movie_Ticket_Booking_System.View
             this.lblPriceChair = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbScreen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMovie)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,7 +126,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnBooking.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBooking.ForeColor = System.Drawing.Color.White;
             this.btnBooking.HoverState.Parent = this.btnBooking;
-            this.btnBooking.Location = new System.Drawing.Point(1081, 710);
+            this.btnBooking.Location = new System.Drawing.Point(1081, 680);
             this.btnBooking.Name = "btnBooking";
             this.btnBooking.ShadowDecoration.Parent = this.btnBooking;
             this.btnBooking.Size = new System.Drawing.Size(135, 45);
@@ -182,7 +180,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtCode.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtCode.HoverState.Parent = this.txtCode;
-            this.txtCode.Location = new System.Drawing.Point(787, 540);
+            this.txtCode.Location = new System.Drawing.Point(787, 523);
             this.txtCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCode.MaxLength = 10;
             this.txtCode.Name = "txtCode";
@@ -212,7 +210,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnVerify.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnVerify.ForeColor = System.Drawing.Color.White;
             this.btnVerify.HoverState.Parent = this.btnVerify;
-            this.btnVerify.Location = new System.Drawing.Point(1081, 540);
+            this.btnVerify.Location = new System.Drawing.Point(1081, 523);
             this.btnVerify.Name = "btnVerify";
             this.btnVerify.ShadowDecoration.Parent = this.btnVerify;
             this.btnVerify.Size = new System.Drawing.Size(135, 45);
@@ -225,7 +223,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(787, 644);
+            this.lblPrice.Location = new System.Drawing.Point(787, 619);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(93, 30);
             this.lblPrice.TabIndex = 11;
@@ -236,7 +234,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblTotalPrice.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPrice.Location = new System.Drawing.Point(785, 720);
+            this.lblTotalPrice.Location = new System.Drawing.Point(785, 695);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(99, 30);
             this.lblTotalPrice.TabIndex = 12;
@@ -247,27 +245,11 @@ namespace Movie_Ticket_Booking_System.View
             this.lblDiscount.BackColor = System.Drawing.Color.Transparent;
             this.lblDiscount.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblDiscount.ForeColor = System.Drawing.Color.White;
-            this.lblDiscount.Location = new System.Drawing.Point(787, 605);
+            this.lblDiscount.Location = new System.Drawing.Point(787, 580);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(123, 30);
             this.lblDiscount.TabIndex = 13;
             this.lblDiscount.Text = "Giảm giá(%): ";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.BackgroundImage = global::Movie_Ticket_Booking_System.Properties.Resources.film_color;
-            this.guna2PictureBox1.BorderRadius = 20;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::Movie_Ticket_Booking_System.Properties.Resources.film_color;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(984, 474);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
-            this.guna2PictureBox1.Size = new System.Drawing.Size(64, 55);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 9;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // ptbMovie
             // 
@@ -393,7 +375,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblPriceChair.BackColor = System.Drawing.Color.Transparent;
             this.lblPriceChair.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblPriceChair.ForeColor = System.Drawing.Color.White;
-            this.lblPriceChair.Location = new System.Drawing.Point(787, 683);
+            this.lblPriceChair.Location = new System.Drawing.Point(787, 658);
             this.lblPriceChair.Name = "lblPriceChair";
             this.lblPriceChair.Size = new System.Drawing.Size(98, 30);
             this.lblPriceChair.TabIndex = 24;
@@ -420,7 +402,6 @@ namespace Movie_Ticket_Booking_System.View
             this.Controls.Add(this.lblTotalPrice);
             this.Controls.Add(this.lblPrice);
             this.Controls.Add(this.btnVerify);
-            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.ptbMovie);
             this.Controls.Add(this.txtCode);
             this.Controls.Add(this.btnBack);
@@ -434,7 +415,6 @@ namespace Movie_Ticket_Booking_System.View
             this.Load += new System.EventHandler(this.FormChairBooking_Load);
             this.pnlRoom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbScreen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMovie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -450,7 +430,6 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2GradientButton btnBack;
         private Guna.UI2.WinForms.Guna2TextBox txtCode;
         private Guna.UI2.WinForms.Guna2PictureBox ptbMovie;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2GradientButton btnVerify;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblPrice;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTotalPrice;

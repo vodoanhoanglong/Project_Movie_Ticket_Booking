@@ -47,7 +47,6 @@ namespace Movie_Ticket_Booking_System.View
             isAdmin = this.info.Role == "Manager" ? true : false;
             /*isAdmin = true;*/
 
-            btnHistory.Visible = false;
             btnRevenue.Visible = false;
             btnAddFilm.Visible = false;
         }
@@ -60,7 +59,6 @@ namespace Movie_Ticket_Booking_System.View
                 btnRevenue.Visible = true;
                 btnAddFilm.Visible = true;
             }    
-            else btnHistory.Visible = true;
 
             leftBorderBtn = new Panel();
             panelMenu.Controls.Add(leftBorderBtn);
