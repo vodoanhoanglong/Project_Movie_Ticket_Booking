@@ -118,8 +118,8 @@ namespace Movie_Ticket_Booking_System.View
         {
             currBtnShowtime = (Guna2Button)sender;
             string showtimeID = currBtnShowtime.Name;
-            DateTime conditionDate = DateTime.Now.AddMinutes(-5);
-            if(date < conditionDate)
+            DateTime conditionDate = DateTime.Now.AddMinutes(5);
+            if(date.AddMinutes(-5) < DateTime.Now)
             {
                 MessageBox.Show("Phim đã chiếu");
                 return;

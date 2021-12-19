@@ -18,7 +18,7 @@ namespace Movie_Ticket_Booking_System.View
         private Guna2Button currSeat;
         private string showtimeID;
         private int roomID, movieID;
-        private decimal? subPrice;
+        private decimal currPercent = 0, subTotalPrice = 0;
         private List<string> chairBooked = new List<string>(); 
         public FormChairBooking(string showtimeID)
         {
@@ -38,15 +38,15 @@ namespace Movie_Ticket_Booking_System.View
         {
             var query = context.SHOWTIMES
                 .FirstOrDefault(x => x.ShowTimeID == showtimeID);
-
-            lblTotalPrice.Text += query.MOVIE.Price.ToString();
+   
+            this.subTotalPrice = query.MOVIE.Price;
+            lblTotalPrice.Text += this.subTotalPrice.ToString();
             lblDiscount.Text += "0";
             lblPrice.Text += query.MOVIE.Price.ToString();
             ptbMovie.ImageLocation = string.Format(@"..\..\Images\Movies\" + query.MovieID + ".jpg");
             lblShowtime.Text += query.MovieShowTime.TimeOfDay + " - " + query.MovieEndTime.TimeOfDay;
             lblRoom.Text += query.ROOM.RoomName;
             this.movieID = query.MovieID;
-            this.subPrice = query.MOVIE.Price;
             this.roomID = query.RoomID;
             this.lblName.Text = query.MOVIE.Name;
         }
@@ -81,21 +81,30 @@ namespace Movie_Ticket_Booking_System.View
                 MessageBox.Show("Ghế đã được đặt");
                 return;
             }
-            decimal total = Convert.ToDecimal(lblTotalPrice.Text.Split(' ')[2]);
+            
             string type = currSeat.Name.Substring(0, 1);
             lblTotalPrice.Text = "Tổng tiền: ";
             if (currSeat.FillColor == Color.Silver)
             {
                 currSeat.FillColor = Color.Black;
-                lblTotalPrice.Text += calculatorDiv(type, total).ToString();
+                subTotalPrice = calculatorDiv(type, subTotalPrice);
+                lblTotalPrice.Text += calculPercent();
                 chairBooked.Remove(currSeat.Name);
             }
             else
             {
                 currSeat.FillColor = Color.Silver;
-                lblTotalPrice.Text += calculatorSum(type, total).ToString();
+                subTotalPrice = calculatorSum(type, subTotalPrice);
+                lblTotalPrice.Text += calculPercent();
                 chairBooked.Add(currSeat.Name);
             }
+        }
+
+        private string calculPercent()
+        {
+            return currPercent == 0 ?
+                subTotalPrice.ToString()
+                : (Math.Round(subTotalPrice * (100 - currPercent) / 100)).ToString();
         }
 
         private decimal calculatorDiv(string type, decimal total)
@@ -168,6 +177,21 @@ namespace Movie_Ticket_Booking_System.View
         private void btnVerify_Click(object sender, EventArgs e)
         {
             string code = txtCode.Text;
+            if (btnVerify.Text == "Hủy")
+            {
+                txtCode.Text = "";
+                lblDiscount.Text = "Giảm giá(%): 0";
+                btnVerify.Text = "Xác thực";
+                currPercent = 0;
+                lblTotalPrice.Text = "Tổng tiền: " + this.subTotalPrice;
+                txtCode.ReadOnly = false;
+                return;
+            }    
+            if(code == "")
+            {
+                MessageBox.Show("Vui lòng nhập mã giảm giá");
+                return;
+            }
             var query = context.DISCOUNTS.FirstOrDefault(x => x.Code == code && x.AccountID == FormMenu.instance.info.AccountID);
             if (query == null)
                 MessageBox.Show("Mã giảm giá không hợp lệ");
@@ -176,13 +200,19 @@ namespace Movie_Ticket_Booking_System.View
             else
             {
                 lblDiscount.Text = "Giảm giá(%): " + query.Percent;
+                currPercent = Convert.ToDecimal(query.Percent);
+                lblTotalPrice.Text = "Tổng tiền: " + calculPercent();
+                btnVerify.Text = "Hủy";
+                txtCode.ReadOnly = true;
                 MessageBox.Show("Mã giảm giá hợp lệ");
             }
         }
 
         private void updateDiscount()
         {
-            DISCOUNT discount = context.DISCOUNTS.FirstOrDefault(x => x.AccountID == FormMenu.instance.info.AccountID);
+            DISCOUNT discount = context.DISCOUNTS
+                .FirstOrDefault(x => x.AccountID == FormMenu.instance.info.AccountID
+                && x.Code == txtCode.Text);
             discount.isActive = true;
             context.SaveChanges();
         }
@@ -202,6 +232,7 @@ namespace Movie_Ticket_Booking_System.View
         private void saveTicked(decimal totalPrice)
         {
             DateTime currDate = DateTime.Now;
+            int percent = Convert.ToInt32(lblDiscount.Text.Split(' ')[2]);
             chairBooked.ForEach(x =>
             {
                 CHAIR newChair = new CHAIR();
@@ -219,8 +250,8 @@ namespace Movie_Ticket_Booking_System.View
 
                 newTicket.TicketID = chairID;
                 newTicket.BookingDate = currDate;
-                newTicket.DiscountPercent = Convert.ToInt32(lblDiscount.Text.Split(' ')[2]);
-                newTicket.SubTotalPrice = this.subPrice;
+                newTicket.DiscountPercent = percent;
+                newTicket.SubTotalPrice = this.subTotalPrice;
                 newTicket.TotalPrice = totalPrice;
                 newTicket.AccountID = FormMenu.instance.info.AccountID;
                 newTicket.ShowTimeID = this.showtimeID;

@@ -46,6 +46,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.lblSubTotalPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelOverlay.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,7 @@ namespace Movie_Ticket_Booking_System.View
             // panelOverlay
             // 
             this.panelOverlay.BackColor = System.Drawing.Color.Transparent;
+            this.panelOverlay.Controls.Add(this.lblSubTotalPrice);
             this.panelOverlay.Controls.Add(this.lblTotalPriceSeat);
             this.panelOverlay.Controls.Add(this.lblTitle);
             this.panelOverlay.Controls.Add(this.btnCancelTicket);
@@ -86,7 +88,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblTotalPriceSeat.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalPriceSeat.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblTotalPriceSeat.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPriceSeat.Location = new System.Drawing.Point(13, 385);
+            this.lblTotalPriceSeat.Location = new System.Drawing.Point(12, 363);
             this.lblTotalPriceSeat.Name = "lblTotalPriceSeat";
             this.lblTotalPriceSeat.Size = new System.Drawing.Size(139, 32);
             this.lblTotalPriceSeat.TabIndex = 37;
@@ -159,7 +161,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblBookingDate.BackColor = System.Drawing.Color.Transparent;
             this.lblBookingDate.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblBookingDate.ForeColor = System.Drawing.Color.White;
-            this.lblBookingDate.Location = new System.Drawing.Point(12, 437);
+            this.lblBookingDate.Location = new System.Drawing.Point(12, 415);
             this.lblBookingDate.Name = "lblBookingDate";
             this.lblBookingDate.Size = new System.Drawing.Size(99, 32);
             this.lblBookingDate.TabIndex = 33;
@@ -170,7 +172,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalPrice.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblTotalPrice.ForeColor = System.Drawing.Color.White;
-            this.lblTotalPrice.Location = new System.Drawing.Point(12, 543);
+            this.lblTotalPrice.Location = new System.Drawing.Point(12, 553);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(115, 32);
             this.lblTotalPrice.TabIndex = 32;
@@ -181,7 +183,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblDisountPercent.BackColor = System.Drawing.Color.Transparent;
             this.lblDisountPercent.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblDisountPercent.ForeColor = System.Drawing.Color.White;
-            this.lblDisountPercent.Location = new System.Drawing.Point(12, 489);
+            this.lblDisountPercent.Location = new System.Drawing.Point(12, 506);
             this.lblDisountPercent.Name = "lblDisountPercent";
             this.lblDisountPercent.Size = new System.Drawing.Size(130, 32);
             this.lblDisountPercent.TabIndex = 31;
@@ -192,7 +194,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblSeat.BackColor = System.Drawing.Color.Transparent;
             this.lblSeat.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblSeat.ForeColor = System.Drawing.Color.White;
-            this.lblSeat.Location = new System.Drawing.Point(12, 333);
+            this.lblSeat.Location = new System.Drawing.Point(12, 313);
             this.lblSeat.Name = "lblSeat";
             this.lblSeat.Size = new System.Drawing.Size(48, 32);
             this.lblSeat.TabIndex = 30;
@@ -203,7 +205,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblRoom.BackColor = System.Drawing.Color.Transparent;
             this.lblRoom.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblRoom.ForeColor = System.Drawing.Color.White;
-            this.lblRoom.Location = new System.Drawing.Point(12, 222);
+            this.lblRoom.Location = new System.Drawing.Point(12, 212);
             this.lblRoom.Name = "lblRoom";
             this.lblRoom.Size = new System.Drawing.Size(74, 32);
             this.lblRoom.TabIndex = 29;
@@ -214,7 +216,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblShowTime.BackColor = System.Drawing.Color.Transparent;
             this.lblShowTime.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblShowTime.ForeColor = System.Drawing.Color.White;
-            this.lblShowTime.Location = new System.Drawing.Point(12, 278);
+            this.lblShowTime.Location = new System.Drawing.Point(12, 266);
             this.lblShowTime.Name = "lblShowTime";
             this.lblShowTime.Size = new System.Drawing.Size(112, 32);
             this.lblShowTime.TabIndex = 28;
@@ -268,6 +270,17 @@ namespace Movie_Ticket_Booking_System.View
             this.guna2ControlBox1.Size = new System.Drawing.Size(32, 25);
             this.guna2ControlBox1.TabIndex = 7;
             // 
+            // lblSubTotalPrice
+            // 
+            this.lblSubTotalPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblSubTotalPrice.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblSubTotalPrice.ForeColor = System.Drawing.Color.White;
+            this.lblSubTotalPrice.Location = new System.Drawing.Point(12, 460);
+            this.lblSubTotalPrice.Name = "lblSubTotalPrice";
+            this.lblSubTotalPrice.Size = new System.Drawing.Size(104, 32);
+            this.lblSubTotalPrice.TabIndex = 38;
+            this.lblSubTotalPrice.Text = "Tổng tiền: ";
+            // 
             // FormViewTicketDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,5 +318,6 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2GradientButton btnExport;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTitle;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTotalPriceSeat;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblSubTotalPrice;
     }
 }

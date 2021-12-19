@@ -53,7 +53,8 @@ namespace Movie_Ticket_Booking_System.View
                 + query.MovieID + ".jpg"));
             this.lblName.Text += query.SHOWTIME.MOVIE.Name;
             this.lblTime.Text += query.SHOWTIME.MOVIE.Time;
-            this.lblPrice.Text += query.SubTotalPrice;
+            this.lblPrice.Text += query.SHOWTIME.MOVIE.Price;
+            this.lblSubTotalPrice.Text += query.SubTotalPrice;
             this.lblRoom.Text += query.SHOWTIME.ROOM.RoomName;
             this.lblShowTime.Text += parseDate(query.SHOWTIME.MovieShowTime)
                 + " - " + parseDate(query.SHOWTIME.MovieEndTime);

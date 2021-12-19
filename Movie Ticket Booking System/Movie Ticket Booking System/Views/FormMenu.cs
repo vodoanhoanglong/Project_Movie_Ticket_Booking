@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using Movie_Ticket_Booking_System.Models;
+using Movie_Ticket_Booking_System.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,12 +27,14 @@ namespace Movie_Ticket_Booking_System.View
         private System.Drawing.Bitmap showtime = global::Movie_Ticket_Booking_System.Properties.Resources.showtime;
         private System.Drawing.Bitmap history = global::Movie_Ticket_Booking_System.Properties.Resources.history;
         private System.Drawing.Bitmap addFilm = global::Movie_Ticket_Booking_System.Properties.Resources.add_film;
+        private System.Drawing.Bitmap revenue = global::Movie_Ticket_Booking_System.Properties.Resources.revenue;
 
         private System.Drawing.Bitmap homeColor = global::Movie_Ticket_Booking_System.Properties.Resources.home_color;
         private System.Drawing.Bitmap filmColor = global::Movie_Ticket_Booking_System.Properties.Resources.film_color;
         private System.Drawing.Bitmap showtimeColor = global::Movie_Ticket_Booking_System.Properties.Resources.showtime_color;
         private System.Drawing.Bitmap historyColor = global::Movie_Ticket_Booking_System.Properties.Resources.history_color;
         private System.Drawing.Bitmap addFilmColor = global::Movie_Ticket_Booking_System.Properties.Resources.add_film_color;
+        private System.Drawing.Bitmap revenueColor = global::Movie_Ticket_Booking_System.Properties.Resources.revenue_color;
         public FormMenu(ACCOUNT info = null)
         {
             InitializeComponent();
@@ -41,18 +44,22 @@ namespace Movie_Ticket_Booking_System.View
             instance = this;
             this.info = info;
             //check admin account
-            /*isAdmin = this.info.Role == "Manager" ? true : false;*/
-            isAdmin = false;
+            isAdmin = this.info.Role == "Manager" ? true : false;
+            /*isAdmin = true;*/
 
-            btnAddFilm.Visible = false;
             btnHistory.Visible = false;
+            btnRevenue.Visible = false;
+            btnAddFilm.Visible = false;
         }
 
       
         private void FormMenu_Load(object sender, EventArgs e)
         {
             if(isAdmin)
+            {
+                btnRevenue.Visible = true;
                 btnAddFilm.Visible = true;
+            }    
             else btnHistory.Visible = true;
 
             leftBorderBtn = new Panel();
@@ -119,8 +126,11 @@ namespace Movie_Ticket_Booking_System.View
                 case "btnAddFilm":
                     currBtn.Image = checkColor ? addFilmColor : addFilm;
                     break;
-                default:
+                case "btnHistory":
                     currBtn.Image = checkColor ? historyColor : history;
+                    break;
+                default:
+                    currBtn.Image = checkColor ? revenueColor : revenue;
                     break;
             }
         }
@@ -156,6 +166,13 @@ namespace Movie_Ticket_Booking_System.View
             activateButton(sender, Color.White);
             openChildForm(new FormAddFilm());
         }
+
+        private void btnRevenue_Click(object sender, EventArgs e)
+        {
+            activateButton(sender, Color.White);
+            openChildForm(new FormRevenue());
+        }
+
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             FormLogin.instance.Visible = true;

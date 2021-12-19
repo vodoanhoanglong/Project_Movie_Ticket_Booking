@@ -224,7 +224,7 @@ namespace Movie_Ticket_Booking_System.View
             this.lblPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblPrice.ForeColor = System.Drawing.Color.White;
-            this.lblPrice.Location = new System.Drawing.Point(787, 614);
+            this.lblPrice.Location = new System.Drawing.Point(787, 653);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(93, 30);
             this.lblPrice.TabIndex = 11;
@@ -246,11 +246,11 @@ namespace Movie_Ticket_Booking_System.View
             this.lblDiscount.BackColor = System.Drawing.Color.Transparent;
             this.lblDiscount.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblDiscount.ForeColor = System.Drawing.Color.White;
-            this.lblDiscount.Location = new System.Drawing.Point(787, 653);
+            this.lblDiscount.Location = new System.Drawing.Point(787, 614);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(123, 30);
             this.lblDiscount.TabIndex = 13;
-            this.lblDiscount.Text = "Giảm giá(%):  ";
+            this.lblDiscount.Text = "Giảm giá(%): ";
             // 
             // guna2PictureBox1
             // 
