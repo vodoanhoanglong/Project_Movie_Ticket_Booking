@@ -26,3 +26,5 @@ D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug\Guna.Charts.WinForms.dll
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.Views.FormRevenue.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.csproj.AssemblyReference.cache
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.Views.FormProfile.resources
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.Views.FormChangePassword.resources

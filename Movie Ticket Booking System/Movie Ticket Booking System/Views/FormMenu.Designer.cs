@@ -430,6 +430,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnProfile.ShadowDecoration.Parent = this.btnProfile;
             this.btnProfile.Size = new System.Drawing.Size(33, 25);
             this.btnProfile.TabIndex = 9;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // FormMenu
             // 
@@ -464,7 +465,7 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnFilm;
-        private Guna.UI2.WinForms.Guna2Button btnShowTime;
+        public Guna.UI2.WinForms.Guna2Button btnShowTime;
         private Guna.UI2.WinForms.Guna2Button btnHistory;
         private Guna.UI2.WinForms.Guna2Button btnLogOut;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;

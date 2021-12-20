@@ -42,6 +42,7 @@ namespace Movie_Ticket_Booking_System.View
                 new FormCreateShowTime(movieID).ShowDialog();
             else
             {
+                FormMenu.instance.activateButton(FormMenu.instance.btnShowTime, Color.White);
                 FormMenu.instance.openChildForm(new FormViewShowTime());
                 this.Dispose();
             }    

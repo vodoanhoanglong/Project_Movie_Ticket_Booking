@@ -80,7 +80,7 @@ namespace Movie_Ticket_Booking_System.View
             childForm.Show();
         }
 
-        private void activateButton(object senderBtn, Color color)
+        public void activateButton(object senderBtn, Color color)
         {
             if (senderBtn != null)
             {
@@ -171,10 +171,19 @@ namespace Movie_Ticket_Booking_System.View
             openChildForm(new FormRevenue());
         }
 
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            disableButton();
+            currBtn = null;
+            leftBorderBtn.BackColor = Color.Transparent;
+            openChildForm(new FormProfile());
+        }
+
         private void btnLogOut_Click(object sender, EventArgs e)
         {
             FormLogin.instance.Visible = true;
             this.Dispose();
         }
+
     }
 }

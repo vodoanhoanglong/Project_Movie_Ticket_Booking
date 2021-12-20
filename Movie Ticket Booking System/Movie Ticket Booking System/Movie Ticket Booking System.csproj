@@ -85,6 +85,12 @@
     <Compile Include="Views\FormChairBooking.Designer.cs">
       <DependentUpon>FormChairBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\FormChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormChangePassword.Designer.cs">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,12 @@
     </Compile>
     <Compile Include="Views\FormCreateShowTime.Designer.cs">
       <DependentUpon>FormCreateShowTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormProfile.Designer.cs">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormRevenue.cs">
       <SubType>Form</SubType>
@@ -161,6 +173,9 @@
     <EmbeddedResource Include="Views\FormChairBooking.resx">
       <DependentUpon>FormChairBooking.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormChangePassword.resx">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormCreateShowTime.resx">
       <DependentUpon>FormCreateShowTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormProfile.resx">
+      <DependentUpon>FormProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormRevenue.resx">
       <DependentUpon>FormRevenue.cs</DependentUpon>
@@ -260,6 +278,9 @@
     <None Include="Resources\add_img.png" />
     <None Include="Resources\add_film.png" />
     <None Include="Resources\add_film_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dark_super_man.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

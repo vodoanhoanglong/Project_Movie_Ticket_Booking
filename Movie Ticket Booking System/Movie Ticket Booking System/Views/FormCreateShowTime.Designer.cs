@@ -100,11 +100,11 @@ namespace Movie_Ticket_Booking_System.View
             // lblTitle
             // 
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft YaHei UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.lblTitle.Location = new System.Drawing.Point(194, 12);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(191, 38);
+            this.lblTitle.Size = new System.Drawing.Size(178, 39);
             this.lblTitle.TabIndex = 12;
             this.lblTitle.Text = "Tạo lịch chiếu";
             // 
@@ -186,7 +186,7 @@ namespace Movie_Ticket_Booking_System.View
             this.guna2ControlBox1.Size = new System.Drawing.Size(32, 25);
             this.guna2ControlBox1.TabIndex = 16;
             // 
-            // FormShowTime
+            // FormCreateShowTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -200,7 +200,7 @@ namespace Movie_Ticket_Booking_System.View
             this.Controls.Add(this.dtpShowDate);
             this.Controls.Add(this.dtpShowTime);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormShowTime";
+            this.Name = "FormCreateShowTime";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormShowTime";
