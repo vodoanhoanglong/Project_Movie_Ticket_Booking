@@ -227,9 +227,9 @@ namespace Movie_Ticket_Booking_System.View
             decimal? balance = FormMenu.instance.info.Balance;
             decimal totalPrice = Convert.ToDecimal(lblTotalPrice.Text.Substring(11));
             if (chairBooked.Count == 0)
-                MessageBox.Show("Bạn chưa đặt ghế");
+                MessageBox.Show("Bạn chưa đặt ghế", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (balance < totalPrice)
-                MessageBox.Show("Bạn không đủ tiền \n" + "Số dư hiện tại: " + balance);
+                MessageBox.Show("Bạn không đủ tiền \n" + "Số dư hiện tại: " + balance, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
                 saveTicked(totalPrice);
         }
@@ -272,7 +272,7 @@ namespace Movie_Ticket_Booking_System.View
 
             if (lblDiscount.Text.Split(' ')[2] != "0")
                 updateDiscount();
-            MessageBox.Show("Đặt thành công");
+            MessageBox.Show("Đặt thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             FormMenu.instance.openChildForm(new FormViewShowTime());
         }
 
