@@ -16,10 +16,10 @@ namespace Movie_Ticket_Booking_System.Models
 
         public int? Percent { get; set; }
 
+        public bool isActive { get; set; }
+
         [StringLength(10)]
         public string AccountID { get; set; }
-
-        public bool isActive { get; set; }
 
         public virtual ACCOUNT ACCOUNT { get; set; }
     }

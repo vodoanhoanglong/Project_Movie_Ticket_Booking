@@ -9,11 +9,11 @@ namespace Movie_Ticket_Booking_System.Models
     [Table("CHAIR")]
     public partial class CHAIR
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CHAIR()
-        {
-            TICKETs = new HashSet<TICKET>();
-        }
+        [StringLength(50)]
+        public string ChairID { get; set; }
+
+        [StringLength(10)]
+        public string ChairName { get; set; }
 
         public int? Type { get; set; }
 
@@ -23,15 +23,11 @@ namespace Movie_Ticket_Booking_System.Models
 
         public int? RoomID { get; set; }
 
-        [StringLength(10)]
-        public string ChairName { get; set; }
-
         [StringLength(50)]
-        public string ChairID { get; set; }
+        public string TicketID { get; set; }
 
         public virtual ROOM ROOM { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TICKET> TICKETs { get; set; }
+        public virtual TICKET TICKET { get; set; }
     }
 }

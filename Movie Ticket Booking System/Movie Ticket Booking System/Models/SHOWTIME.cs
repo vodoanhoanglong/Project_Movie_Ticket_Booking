@@ -15,8 +15,6 @@ namespace Movie_Ticket_Booking_System.Models
             TICKETs = new HashSet<TICKET>();
         }
 
-        [Key]
-        [Column(Order = 0)]
         [StringLength(14)]
         public string ShowTimeID { get; set; }
 
@@ -24,14 +22,8 @@ namespace Movie_Ticket_Booking_System.Models
 
         public DateTime MovieEndTime { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int RoomID { get; set; }
 
-        [Key]
-        [Column(Order = 2)]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MovieID { get; set; }
 
         public virtual MOVIE MOVIE { get; set; }

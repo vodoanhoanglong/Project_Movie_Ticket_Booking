@@ -55,24 +55,9 @@ Create table SHOWTIME
 	RoomID int,
 	MovieID int,
 
-	PRIMARY KEY (ShowTimeID, RoomID, MovieID),
+	PRIMARY KEY (ShowTimeID),
 	FOREIGN KEY (RoomID) REFERENCES  ROOM(RoomID),
 	FOREIGN KEY (MovieID) REFERENCES  MOVIE(MovieID)
-)
-
-
- 
-Create table CHAIR
-(
-	ChairID varchar(50),
-	ChairName varchar(10),
-	[Type] int,
-	Price decimal,
-	haveBooked bit default 0,
-	RoomID int,
-
-	PRIMARY KEY(ChairID),
-	FOREIGN KEY (RoomID) REFERENCES  ROOM(RoomID)
 )
 
 
@@ -85,17 +70,27 @@ Create table TICKET
 	TotalPrice decimal,
 	AccountID varchar(10),
 	ShowTimeID varchar(14),
-	RoomID int,
-	MovieID int,
-	ChairID varchar(50),
 
-	PRIMARY KEY (TicketID, ShowTimeID, AccountID, RoomID, MovieID),
+	PRIMARY KEY (TicketID),
 	FOREIGN KEY (AccountID) REFERENCES ACCOUNT(AccountID),
-	FOREIGN KEY (ChairID) REFERENCES CHAIR(ChairID),
-	FOREIGN KEY (ShowTimeID, RoomID, MovieID) REFERENCES SHOWTIME(ShowTimeID, RoomID, MovieID),
+	FOREIGN KEY (ShowTimeID) REFERENCES SHOWTIME(ShowTimeID),
 )
 GO
 
+Create table CHAIR
+(
+	ChairID varchar(50),
+	ChairName varchar(10),
+	[Type] int,
+	Price decimal,
+	haveBooked bit default 0,
+	RoomID int,
+	TicketID varchar(50),
+
+	PRIMARY KEY(ChairID),
+	FOREIGN KEY (RoomID) REFERENCES  ROOM(RoomID),
+	FOREIGN KEY (TicketID) REFERENCES  TICKET(TicketID)
+)
 
 -- TAO QUYEN THEM, SUA XOA CHO NHOM NGUOI QUAN LY
 CREATE ROLE [Manager]
@@ -137,18 +132,6 @@ SET @AccountID = SUBSTRING(@AccountID,2,10)
 INSERT into ACCOUNT VALUES(@AccountID,@Password,@FullName,@Balance, @Role)
 GO
 
-CREATE PROC sp_AddChairByType(@Type int, @RoomID int)
-AS
-	DECLARE @Price DECIMAL
-	IF @Type = 0
-		SET @Price = 10000
-	ELSE IF @Type = 1
-		SET @Price = 15000
-	ELSE
-		SET @Price = 20000
-INSERT INTO CHAIR([Type], Price, RoomID) VALUES (@Type, @Price, @RoomID)
-GO
-
 
 -- TRIGGER
 
@@ -159,6 +142,6 @@ EXEC sp_SetAccountRole '0932765080', '1', N'Võ Đoàn Hoàng Long'
 EXEC sp_SetAccountRole '0909230102', '1', N'Tiểu Lợi'
 -- Insert room
 INSERT INTO ROOM(RoomName, ChairQuantity)
-VALUES (N'Y1', 10),
-	   (N'Y2', 10),
-	   (N'Y3', 10)
+VALUES (N'Y1', 80),
+	   (N'Y2', 80),
+	   (N'Y3', 80)

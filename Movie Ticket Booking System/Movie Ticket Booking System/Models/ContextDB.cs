@@ -38,27 +38,21 @@ namespace Movie_Ticket_Booking_System.Models
                 .Property(e => e.Role)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<ACCOUNT>()
-                .HasMany(e => e.TICKETs)
-                .WithRequired(e => e.ACCOUNT)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<CHAIR>()
-                .Property(e => e.Price)
-                .HasPrecision(18, 0);
+                .Property(e => e.ChairID)
+                .IsUnicode(false);
 
             modelBuilder.Entity<CHAIR>()
                 .Property(e => e.ChairName)
                 .IsUnicode(false);
 
             modelBuilder.Entity<CHAIR>()
-                .Property(e => e.ChairID)
-                .IsUnicode(false);
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
 
             modelBuilder.Entity<CHAIR>()
-                .HasMany(e => e.TICKETs)
-                .WithRequired(e => e.CHAIR)
-                .WillCascadeOnDelete(false);
+                .Property(e => e.TicketID)
+                .IsUnicode(false);
 
             modelBuilder.Entity<DISCOUNT>()
                 .Property(e => e.Code)
@@ -76,25 +70,13 @@ namespace Movie_Ticket_Booking_System.Models
                 .Property(e => e.Price)
                 .HasPrecision(18, 0);
 
-            modelBuilder.Entity<MOVIE>()
-                .HasMany(e => e.SHOWTIMEs)
-                .WithRequired(e => e.MOVIE)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<ROOM>()
-                .HasMany(e => e.SHOWTIMEs)
-                .WithRequired(e => e.ROOM)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<SHOWTIME>()
                 .Property(e => e.ShowTimeID)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<SHOWTIME>()
-                .HasMany(e => e.TICKETs)
-                .WithRequired(e => e.SHOWTIME)
-                .HasForeignKey(e => new { e.ShowTimeID, e.RoomID, e.MovieID })
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<TICKET>()
+                .Property(e => e.TicketID)
+                .IsUnicode(false);
 
             modelBuilder.Entity<TICKET>()
                 .Property(e => e.SubTotalPrice)
@@ -110,10 +92,6 @@ namespace Movie_Ticket_Booking_System.Models
 
             modelBuilder.Entity<TICKET>()
                 .Property(e => e.ShowTimeID)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TICKET>()
-                .Property(e => e.ChairID)
                 .IsUnicode(false);
         }
     }

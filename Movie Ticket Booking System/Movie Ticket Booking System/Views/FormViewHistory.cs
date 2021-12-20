@@ -37,47 +37,26 @@ namespace Movie_Ticket_Booking_System.View
             string accountID = FormMenu.instance.info.AccountID;
             var query = context.TICKETS
                 .Where(x => x.AccountID == accountID)
-                .Select(info => new
-                    {
-                        info.TicketID,
-                        info.MovieID,
-                        info.SHOWTIME.MOVIE.Name,
-                        info.SHOWTIME.MOVIE.Time,
-                        info.SHOWTIME.MOVIE.Price,
-                        info.BookingDate,
-                        info.SHOWTIME.MovieShowTime,
-                        info.TotalPrice,
-                        info.RoomID,
-                    })
-                .GroupBy(x => x.BookingDate)
-                .Select(x => new
-                {                   
-                    BookingDate = x.Key,
-                    SeatQuantity = x.Count(),
-                    Info  = x.ToList()
-                })
                 .OrderByDescending(x => x.BookingDate)
                 .ToList();
 
             query.ForEach(x =>
             {
-                var info = x.Info[0];
-                string id = x.BookingDate.ToString("yyyyMMddHHmmss");
-                string roomName = context.ROOMS.Find(info.RoomID).RoomName;
-                string timeStart = info.MovieShowTime.ToString("dd/MM/yyy HH:mm:ss");
+                string id = x.TicketID;
+                string timeStart = x.SHOWTIME.MovieShowTime.ToString("dd/MM/yyy HH:mm:ss");
 
                 setPanelHistory(id, containerX, containerY);
-                setPictureMovie(info.MovieID);
+                setPictureMovie(x.SHOWTIME.MovieID);
 
-                setLabel("moiveName" + id, "Tên phim: " + info.Name, labelX, labelY);
-                setLabel("movieTime" + id, "Thời lượng: " + info.Time, labelX, labelY += 50);
-                setLabel("moviePrice" + id, "Giá phim: " + info.Price, labelX, labelY += 50);
+                setLabel("moiveName" + id, "Tên phim: " + x.SHOWTIME.MOVIE.Name, labelX, labelY);
+                setLabel("movieTime" + id, "Thời lượng: " + x.SHOWTIME.MOVIE.Time, labelX, labelY += 50);
+                setLabel("moviePrice" + id, "Giá phim: " + x.SHOWTIME.MOVIE.Price, labelX, labelY += 50);
 
-                setLabel("roomName" + id, "Phòng: " + roomName, labelX += 300, labelY = 75);
+                setLabel("roomName" + id, "Phòng: " + x.SHOWTIME.ROOM.RoomName, labelX += 300, labelY = 75);
                 setLabel("timeStart" + id, "Lịch chiếu: " + timeStart, labelX, labelY += 50);
 
-                setLabel("seatQuantity" + id, "Số chỗ đã đặt: " + x.SeatQuantity, labelX += 400, labelY = 75);
-                setLabel("totalPrice" + id, "Tổng tiền: " + info.TotalPrice, labelX, labelY += 50);
+                setLabel("seatQuantity" + id, "Số chỗ đã đặt: " + x.CHAIRS.Count, labelX += 400, labelY = 75);
+                setLabel("totalPrice" + id, "Tổng tiền: " + x.TotalPrice, labelX, labelY += 50);
 
                 labelX = 185;
                 labelY = 25;

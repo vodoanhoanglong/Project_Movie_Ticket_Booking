@@ -14,12 +14,12 @@ namespace Movie_Ticket_Booking_System.View
     public partial class FormViewTicketDetail : Form
     {
         private ContextDB context = Program.context;
-        private string bookingDate, accountID = FormMenu.instance.info.AccountID;
+        private string ticketID, accountID = FormMenu.instance.info.AccountID;
         private DialogResult dlr;
-        public FormViewTicketDetail(string bookingDate)
+        public FormViewTicketDetail(string ticketID)
         {
             InitializeComponent();
-            this.bookingDate = bookingDate;
+            this.ticketID = ticketID;
         }
 
         private void FormViewTicketDetail_Load(object sender, EventArgs e)
@@ -39,18 +39,16 @@ namespace Movie_Ticket_Booking_System.View
 
         private void loadData()
         {
-            var queryChair = context.TICKETS
-                .AsEnumerable()
-                .Where(x => x.AccountID == this.accountID
-                && convertDateToString(x.BookingDate) == bookingDate)
-                .ToList();
+            var query = context.TICKETS
+                .Find(this.ticketID);
 
-            var query = queryChair
-                .FirstOrDefault();
+            var queryChair = query.CHAIRS
+                .Where(x => x.TicketID == this.ticketID)
+                .ToList();
 
             this.BackgroundImage = Image.FromFile(
                 string.Format(@"..\..\Images\Movies\"
-                + query.MovieID + ".jpg"));
+                + query.SHOWTIME.MovieID + ".jpg"));
             this.lblName.Text += query.SHOWTIME.MOVIE.Name;
             this.lblTime.Text += query.SHOWTIME.MOVIE.Time;
             this.lblPrice.Text += query.SHOWTIME.MOVIE.Price;
@@ -58,15 +56,16 @@ namespace Movie_Ticket_Booking_System.View
             this.lblRoom.Text += query.SHOWTIME.ROOM.RoomName;
             this.lblShowTime.Text += parseDate(query.SHOWTIME.MovieShowTime)
                 + " - " + parseDate(query.SHOWTIME.MovieEndTime);
-            this.lblTotalPriceSeat.Text += queryChair.Sum(x => x.CHAIR.Price).ToString();
+            this.lblTotalPriceSeat.Text += queryChair
+                .Sum(x => x.Price).ToString();
             this.lblBookingDate.Text += parseDate(query.BookingDate);
-            this.lblDisountPercent.Text += query.DiscountPercent == null ? 0 : query.DiscountPercent;
+            this.lblDisountPercent.Text += query.DiscountPercent;
             this.lblTotalPrice.Text += query.TotalPrice;
             int length = queryChair.Count;
             for (int index = 0; index < length; index++)
                 this.lblSeat.Text += index != length - 1
-                    ? queryChair[index].CHAIR.ChairName + ", "
-                    : queryChair[index].CHAIR.ChairName;
+                    ? queryChair[index].ChairName + ", "
+                    : queryChair[index].ChairName;
         }
 
         private void btnCancelTicket_Click(object sender, EventArgs e)
@@ -80,16 +79,14 @@ namespace Movie_Ticket_Booking_System.View
         private void removeTicket()
         {
             var query = context.TICKETS
-                .AsEnumerable()
-                .Where(x => x.AccountID == this.accountID
-                && convertDateToString(x.BookingDate) == bookingDate)
-                .ToList();
+                .Find(this.ticketID);
+            context.TICKETS.Remove(query);
 
-            query.ForEach(item =>
-            {
-                context.TICKETS.Remove(item);
-                context.CHAIRS.ToList().RemoveAll(x => x.ChairID == item.ChairID);
-            });
+            var queryChair = context.CHAIRS
+                .Where(x => x.TicketID == this.ticketID)
+                .ToList();
+            queryChair.ForEach(x => context.CHAIRS.Remove(x));
+            
             context.SaveChanges();
             MessageBox.Show("Hủy vé thành công");
             FormViewHistory.instance.loadData();

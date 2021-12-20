@@ -21,7 +21,7 @@ namespace Movie_Ticket_Booking_System.View
 
         private void FormHome_Load(object sender, EventArgs e)
         {
-            var query = context.MOVIES.Find(5);
+            /*var query = context.MOVIES.Find(5);
             this.BackgroundImage = Image.FromFile(
                 string.Format(@"..\..\Images\Movies\"
                 + query.MovieID + ".jpg"));
@@ -32,7 +32,7 @@ namespace Movie_Ticket_Booking_System.View
             this.ptbMovie1.ImageLocation = string.Format(@"..\..\Images\Movies\"
                 + 6 + ".jpg");
             this.ptbMovie2.ImageLocation = string.Format(@"..\..\Images\Movies\"
-                + 7 + ".jpg");
+                + 7 + ".jpg");*/
         }
     }
 }

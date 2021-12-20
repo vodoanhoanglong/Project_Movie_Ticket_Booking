@@ -16,7 +16,7 @@ namespace Movie_Ticket_Booking_System.View
     {
         private ContextDB context = Program.context;
         private Guna2Button currSeat;
-        private string showtimeID;
+        private string showtimeID, accountID = FormMenu.instance.info.AccountID;
         private int roomID, movieID;
         private decimal currPercent = 0, subTotalPrice = 0, currPriceChair = 0;
         private List<string> chairBooked = new List<string>(); 
@@ -55,7 +55,7 @@ namespace Movie_Ticket_Booking_System.View
         {
             string foundID = this.showtimeID + row + index;
             // để đây thì chưa tối ưu khi dữ liệu đầu vào lớn
-            var query = context.TICKETS.FirstOrDefault(found => found.TicketID == foundID);
+            var query = context.CHAIRS.Find(foundID);
 
             Guna2Button btnSeat = new Guna2Button();
             btnSeat.Text = index;
@@ -197,7 +197,7 @@ namespace Movie_Ticket_Booking_System.View
                 MessageBox.Show("Vui lòng nhập mã giảm giá");
                 return;
             }
-            var query = context.DISCOUNTS.FirstOrDefault(x => x.Code == code && x.AccountID == FormMenu.instance.info.AccountID);
+            var query = context.DISCOUNTS.FirstOrDefault(x => x.Code == code && x.AccountID == this.accountID);
             if (query == null)
                 MessageBox.Show("Mã giảm giá không hợp lệ");
             else if (query.isActive)
@@ -216,7 +216,7 @@ namespace Movie_Ticket_Booking_System.View
         private void updateDiscount()
         {
             DISCOUNT discount = context.DISCOUNTS
-                .FirstOrDefault(x => x.AccountID == FormMenu.instance.info.AccountID
+                .FirstOrDefault(x => x.AccountID == this.accountID
                 && x.Code == txtCode.Text);
             discount.isActive = true;
             context.SaveChanges();
@@ -238,34 +238,36 @@ namespace Movie_Ticket_Booking_System.View
         {
             DateTime currDate = DateTime.Now;
             int percent = Convert.ToInt32(lblDiscount.Text.Split(' ')[2]);
-            chairBooked.ForEach(x =>
+            string ticketID = currDate.ToString("yyyyMMddHHmmss") + this.accountID;
+
+            TICKET newTicket = new TICKET();
+            newTicket.TicketID = ticketID;
+            newTicket.BookingDate = currDate;
+            newTicket.DiscountPercent = percent;
+            newTicket.SubTotalPrice = this.subTotalPrice;
+            newTicket.TotalPrice = totalPrice;
+            newTicket.AccountID = this.accountID;
+            newTicket.ShowTimeID = this.showtimeID;
+            context.TICKETS.Add(newTicket);
+            context.SaveChanges();
+
+            this.chairBooked.ForEach(x =>
             {
-                CHAIR newChair = new CHAIR();
-                TICKET newTicket = new TICKET();
                 string type = x.Substring(0, 1);
                 string chairID = this.showtimeID + x;
 
+                CHAIR newChair = new CHAIR();
                 newChair.ChairID = chairID;
                 newChair.ChairName = x;
                 newChair.haveBooked = true;
                 newChair.Price = getType(type);
                 newChair.Type = Convert.ToInt32(getType(type, true));
                 newChair.RoomID = this.roomID;
+                newChair.TicketID = ticketID;
                 context.CHAIRS.Add(newChair);
-
-                newTicket.TicketID = chairID;
-                newTicket.BookingDate = currDate;
-                newTicket.DiscountPercent = percent;
-                newTicket.SubTotalPrice = this.subTotalPrice;
-                newTicket.TotalPrice = totalPrice;
-                newTicket.AccountID = FormMenu.instance.info.AccountID;
-                newTicket.ShowTimeID = this.showtimeID;
-                newTicket.RoomID = this.roomID;
-                newTicket.MovieID = this.movieID;
-                newTicket.ChairID = chairID;
-                context.TICKETS.Add(newTicket);
                 context.SaveChanges();
             });
+
             if (lblDiscount.Text.Split(' ')[2] != "0")
                 updateDiscount();
             MessageBox.Show("Đặt thành công");

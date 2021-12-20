@@ -36,20 +36,14 @@ namespace Movie_Ticket_Booking_System.Views
             List<double> arr = new List<double>();
             DateTime startDate;
 
-            var query = context.TICKETS
-                .GroupBy(x => new
-                {
-                    x.BookingDate,
-                    x.AccountID,
-                    x.TotalPrice
-                });
+            var query = context.TICKETS;
 
             while (day >= 0)
             {
                 decimal money;
                 startDate = DateTime.Today.AddDays(-day--).Date;
-                money = Convert.ToDecimal(query.Where(x => DbFunctions.TruncateTime(x.Key.BookingDate) == startDate)
-                .Sum(x => x.Key.TotalPrice));
+                money = Convert.ToDecimal(query.Where(x => DbFunctions.TruncateTime(x.BookingDate) == startDate)
+                .Sum(x => x.TotalPrice));
                 total += money;
                 arr.Add((double)money);
             };
@@ -59,10 +53,10 @@ namespace Movie_Ticket_Booking_System.Views
             SplineArea.data = arr;
             SplineArea.loadChart(chart);
 
-            this.lblMoneyYear.Text = query.AsEnumerable().Where(x => getYear(x.Key.BookingDate) == year)
-                .Sum(x => x.Key.TotalPrice).ToString() + " VNĐ";
-            this.lblMoneyMonth.Text = query.AsEnumerable().Where(x => getMonth(x.Key.BookingDate) == month)
-                .Sum(x => x.Key.TotalPrice).ToString() + " VNĐ";
+            this.lblMoneyYear.Text = query.AsEnumerable().Where(x => getYear(x.BookingDate) == year)
+                .Sum(x => x.TotalPrice).ToString() + " VNĐ";
+            this.lblMoneyMonth.Text = query.AsEnumerable().Where(x => getMonth(x.BookingDate) == month)
+                .Sum(x => x.TotalPrice).ToString() + " VNĐ";
             this.lblMoneyWeek.Text = total.ToString() + " VNĐ";
 
         }
