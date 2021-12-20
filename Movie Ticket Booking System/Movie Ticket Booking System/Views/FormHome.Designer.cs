@@ -29,87 +29,121 @@ namespace Movie_Ticket_Booking_System.View
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.timerSlider = new System.Windows.Forms.Timer(this.components);
-            this.ptbCarousel = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.thumb3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.thumb2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.thumb1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbCarousel)).BeginInit();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
+            this.panelOverlay = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblDes = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblMovieName = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.ptbMovie1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ptbMovie2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.panelOverlay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMovie1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMovie2)).BeginInit();
             this.SuspendLayout();
             // 
-            // timerSlider
+            // panelOverlay
             // 
-            this.timerSlider.Enabled = true;
-            this.timerSlider.Interval = 1;
-            this.timerSlider.Tick += new System.EventHandler(this.timerSlider_Tick);
+            this.panelOverlay.BackColor = System.Drawing.Color.Transparent;
+            this.panelOverlay.Controls.Add(this.ptbMovie2);
+            this.panelOverlay.Controls.Add(this.ptbMovie1);
+            this.panelOverlay.Controls.Add(this.lblTime);
+            this.panelOverlay.Controls.Add(this.lblDes);
+            this.panelOverlay.Controls.Add(this.lblMovieName);
+            this.panelOverlay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelOverlay.FillColor = System.Drawing.Color.Transparent;
+            this.panelOverlay.Location = new System.Drawing.Point(0, 0);
+            this.panelOverlay.Name = "panelOverlay";
+            this.panelOverlay.Radius = 20;
+            this.panelOverlay.ShadowColor = System.Drawing.Color.Black;
+            this.panelOverlay.ShadowDepth = 150;
+            this.panelOverlay.Size = new System.Drawing.Size(1233, 756);
+            this.panelOverlay.TabIndex = 1;
             // 
-            // ptbCarousel
+            // lblTime
             // 
-            this.ptbCarousel.BorderRadius = 20;
-            this.ptbCarousel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.ptbCarousel.ImageRotate = 0F;
-            this.ptbCarousel.Location = new System.Drawing.Point(141, 35);
-            this.ptbCarousel.Name = "ptbCarousel";
-            this.ptbCarousel.ShadowDecoration.Parent = this.ptbCarousel;
-            this.ptbCarousel.Size = new System.Drawing.Size(974, 380);
-            this.ptbCarousel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbCarousel.TabIndex = 0;
-            this.ptbCarousel.TabStop = false;
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(77, 223);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(101, 27);
+            this.lblTime.TabIndex = 11;
+            this.lblTime.Text = "Thời lượng";
             // 
-            // thumb3
+            // lblDes
             // 
-            this.thumb3.BackColor = System.Drawing.Color.Transparent;
-            this.thumb3.FillColor = System.Drawing.Color.Transparent;
-            this.thumb3.Location = new System.Drawing.Point(658, 401);
-            this.thumb3.Name = "thumb3";
-            this.thumb3.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.thumb3.Size = new System.Drawing.Size(50, 8);
-            this.thumb3.TabIndex = 4;
+            this.lblDes.BackColor = System.Drawing.Color.Transparent;
+            this.lblDes.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.lblDes.ForeColor = System.Drawing.Color.White;
+            this.lblDes.Location = new System.Drawing.Point(77, 269);
+            this.lblDes.MaximumSize = new System.Drawing.Size(500, 0);
+            this.lblDes.Name = "lblDes";
+            this.lblDes.Size = new System.Drawing.Size(500, 138);
+            this.lblDes.TabIndex = 10;
+            this.lblDes.Text = resources.GetString("lblDes.Text");
             // 
-            // thumb2
+            // lblMovieName
             // 
-            this.thumb2.BackColor = System.Drawing.Color.Transparent;
-            this.thumb2.FillColor = System.Drawing.Color.Transparent;
-            this.thumb2.Location = new System.Drawing.Point(602, 401);
-            this.thumb2.Name = "thumb2";
-            this.thumb2.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.thumb2.Size = new System.Drawing.Size(50, 8);
-            this.thumb2.TabIndex = 3;
+            this.lblMovieName.BackColor = System.Drawing.Color.Transparent;
+            this.lblMovieName.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMovieName.ForeColor = System.Drawing.Color.White;
+            this.lblMovieName.Location = new System.Drawing.Point(77, 172);
+            this.lblMovieName.Name = "lblMovieName";
+            this.lblMovieName.Size = new System.Drawing.Size(123, 39);
+            this.lblMovieName.TabIndex = 9;
+            this.lblMovieName.Text = "Tên phim";
             // 
-            // thumb1
+            // ptbMovie1
             // 
-            this.thumb1.BackColor = System.Drawing.Color.Transparent;
-            this.thumb1.FillColor = System.Drawing.Color.Transparent;
-            this.thumb1.Location = new System.Drawing.Point(546, 401);
-            this.thumb1.Name = "thumb1";
-            this.thumb1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.thumb1.Size = new System.Drawing.Size(50, 8);
-            this.thumb1.TabIndex = 2;
+            this.ptbMovie1.BorderRadius = 10;
+            this.ptbMovie1.ImageRotate = 0F;
+            this.ptbMovie1.Location = new System.Drawing.Point(703, 51);
+            this.ptbMovie1.Name = "ptbMovie1";
+            this.ptbMovie1.ShadowDecoration.Parent = this.ptbMovie1;
+            this.ptbMovie1.Size = new System.Drawing.Size(290, 309);
+            this.ptbMovie1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbMovie1.TabIndex = 12;
+            this.ptbMovie1.TabStop = false;
+            // 
+            // ptbMovie2
+            // 
+            this.ptbMovie2.BorderRadius = 10;
+            this.ptbMovie2.ImageRotate = 0F;
+            this.ptbMovie2.Location = new System.Drawing.Point(703, 390);
+            this.ptbMovie2.Name = "ptbMovie2";
+            this.ptbMovie2.ShadowDecoration.Parent = this.ptbMovie2;
+            this.ptbMovie2.Size = new System.Drawing.Size(290, 309);
+            this.ptbMovie2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbMovie2.TabIndex = 13;
+            this.ptbMovie2.TabStop = false;
             // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1233, 756);
-            this.Controls.Add(this.thumb3);
-            this.Controls.Add(this.thumb2);
-            this.Controls.Add(this.thumb1);
-            this.Controls.Add(this.ptbCarousel);
+            this.Controls.Add(this.panelOverlay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormHome";
             this.Text = "FormHome";
-            ((System.ComponentModel.ISupportInitialize)(this.ptbCarousel)).EndInit();
+            this.Load += new System.EventHandler(this.FormHome_Load);
+            this.panelOverlay.ResumeLayout(false);
+            this.panelOverlay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMovie1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMovie2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Timer timerSlider;
-        private Guna.UI2.WinForms.Guna2PictureBox ptbCarousel;
-        private Guna.UI2.WinForms.Guna2ShadowPanel thumb3;
-        private Guna.UI2.WinForms.Guna2ShadowPanel thumb2;
-        private Guna.UI2.WinForms.Guna2ShadowPanel thumb1;
+
+        private Guna.UI2.WinForms.Guna2ShadowPanel panelOverlay;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblTime;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblDes;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblMovieName;
+        private Guna.UI2.WinForms.Guna2PictureBox ptbMovie2;
+        private Guna.UI2.WinForms.Guna2PictureBox ptbMovie1;
     }
 }

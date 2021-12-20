@@ -33,11 +33,11 @@ namespace Movie_Ticket_Booking_System.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormViewFilm));
             this.elipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelOverlay = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lblDes = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2GradientButton();
             this.lblMovieName = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lblTime = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelOverlay.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +62,17 @@ namespace Movie_Ticket_Booking_System.View
             this.panelOverlay.Size = new System.Drawing.Size(1076, 697);
             this.panelOverlay.TabIndex = 0;
             // 
+            // lblTime
+            // 
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(664, 239);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(101, 27);
+            this.lblTime.TabIndex = 8;
+            this.lblTime.Text = "Thời lượng";
+            // 
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -80,12 +91,12 @@ namespace Movie_Ticket_Booking_System.View
             // lblDes
             // 
             this.lblDes.BackColor = System.Drawing.Color.Transparent;
-            this.lblDes.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
+            this.lblDes.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblDes.ForeColor = System.Drawing.Color.White;
             this.lblDes.Location = new System.Drawing.Point(664, 285);
             this.lblDes.MaximumSize = new System.Drawing.Size(400, 0);
             this.lblDes.Name = "lblDes";
-            this.lblDes.Size = new System.Drawing.Size(400, 211);
+            this.lblDes.Size = new System.Drawing.Size(400, 172);
             this.lblDes.TabIndex = 5;
             this.lblDes.Text = resources.GetString("lblDes.Text");
             // 
@@ -107,7 +118,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
-            this.btnConfirm.Location = new System.Drawing.Point(664, 539);
+            this.btnConfirm.Location = new System.Drawing.Point(664, 501);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
             this.btnConfirm.Size = new System.Drawing.Size(180, 45);
@@ -118,24 +129,13 @@ namespace Movie_Ticket_Booking_System.View
             // lblMovieName
             // 
             this.lblMovieName.BackColor = System.Drawing.Color.Transparent;
-            this.lblMovieName.Font = new System.Drawing.Font("Microsoft YaHei", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMovieName.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMovieName.ForeColor = System.Drawing.Color.White;
             this.lblMovieName.Location = new System.Drawing.Point(664, 188);
             this.lblMovieName.Name = "lblMovieName";
-            this.lblMovieName.Size = new System.Drawing.Size(132, 38);
+            this.lblMovieName.Size = new System.Drawing.Size(123, 39);
             this.lblMovieName.TabIndex = 2;
             this.lblMovieName.Text = "Tên phim";
-            // 
-            // lblTime
-            // 
-            this.lblTime.BackColor = System.Drawing.Color.Transparent;
-            this.lblTime.Font = new System.Drawing.Font("Microsoft YaHei", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(664, 239);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(111, 28);
-            this.lblTime.TabIndex = 8;
-            this.lblTime.Text = "Thời lượng";
             // 
             // FormViewFilm
             // 

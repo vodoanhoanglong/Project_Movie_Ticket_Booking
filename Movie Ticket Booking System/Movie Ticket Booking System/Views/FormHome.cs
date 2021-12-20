@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Movie_Ticket_Booking_System.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,7 @@ namespace Movie_Ticket_Booking_System.View
 {
     public partial class FormHome : Form
     {
-        private int imgNumber = 1;
-        private Color thumbColor = Color.FromArgb(229, 9, 20);
-        private Color thumbColorDefault = Color.FromArgb(25, 26, 31);
+        private ContextDB context = Program.context;
         public FormHome()
         {
             InitializeComponent();
@@ -22,49 +21,18 @@ namespace Movie_Ticket_Booking_System.View
 
         private void FormHome_Load(object sender, EventArgs e)
         {
-            
-        }
+            var query = context.MOVIES.Find(5);
+            this.BackgroundImage = Image.FromFile(
+                string.Format(@"..\..\Images\Movies\"
+                + query.MovieID + ".jpg"));
+            this.lblMovieName.Text = query.Name;
+            this.lblTime.Text = query.Time;
+            this.lblDes.Text = query.Des;
 
-        private void resetThumb()
-        {
-            thumb1.ShadowColor = thumbColorDefault;
-            thumb2.ShadowColor = thumbColorDefault;
-            thumb3.ShadowColor = thumbColorDefault;
-        }
-        private void loadThumb()
-        {
-            resetThumb();
-            if (imgNumber == 1)
-            {
-                thumb1.ShadowColor = thumbColor;
-                thumb1.ShadowDepth = 200;
-            }
-            else if (imgNumber == 2)
-            {
-                thumb2.ShadowColor = thumbColor;
-                thumb2.ShadowDepth = 200;
-            }
-            else
-            {
-                thumb3.ShadowColor = thumbColor;
-                thumb3.ShadowDepth = 200;
-            }
-        }
-
-        private void loadImgs()
-        {
-            timerSlider.Interval = 3000;
-            timerSlider.Start();
-            if (imgNumber > 3)
-                imgNumber = 1;
-            loadThumb();
-            ptbCarousel.ImageLocation = string.Format(@"D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\Images\Sliders\" + imgNumber + ".jpg");
-            imgNumber++;
-        }
-
-        private void timerSlider_Tick(object sender, EventArgs e)
-        {
-            loadImgs();
+            this.ptbMovie1.ImageLocation = string.Format(@"..\..\Images\Movies\"
+                + 6 + ".jpg");
+            this.ptbMovie2.ImageLocation = string.Format(@"..\..\Images\Movies\"
+                + 7 + ".jpg");
         }
     }
 }

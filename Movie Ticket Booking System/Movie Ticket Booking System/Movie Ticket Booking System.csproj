@@ -246,9 +246,6 @@
     <Folder Include="Images\Movies\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Images\Sliders\1.jpg" />
-    <Content Include="Images\Sliders\2.jpg" />
-    <Content Include="Images\Sliders\3.jpg" />
     <None Include="Resources\money.png" />
     <None Include="Resources\revenue1.png" />
     <None Include="Resources\revenue.png" />

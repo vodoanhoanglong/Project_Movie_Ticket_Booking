@@ -32,7 +32,8 @@ namespace Movie_Ticket_Booking_System.View
             this.BackgroundImage = Image.FromFile(
                 string.Format(@"..\..\Images\Movies\"
                 + movieID + ".jpg"));
-            btnConfirm.Location = new Point(lblDes.Location.X, lblDes.Location.Y + 50);
+            btnConfirm.Location = new Point(lblDes.Location.X, lblDes.Location.Y 
+                + lblDes.Height + 50);
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
