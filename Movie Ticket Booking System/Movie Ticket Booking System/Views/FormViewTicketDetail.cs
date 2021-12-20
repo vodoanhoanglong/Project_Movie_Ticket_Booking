@@ -80,13 +80,15 @@ namespace Movie_Ticket_Booking_System.View
         {
             var query = context.TICKETS
                 .Find(this.ticketID);
+
+            context.ACCOUNTS.Find(this.accountID).Balance += query.TotalPrice;
             context.TICKETS.Remove(query);
 
             var queryChair = context.CHAIRS
                 .Where(x => x.TicketID == this.ticketID)
                 .ToList();
             queryChair.ForEach(x => context.CHAIRS.Remove(x));
-            
+
             context.SaveChanges();
             MessageBox.Show("Hủy vé thành công");
             FormViewHistory.instance.loadData();

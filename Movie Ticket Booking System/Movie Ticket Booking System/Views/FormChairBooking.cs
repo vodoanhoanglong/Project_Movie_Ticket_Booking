@@ -240,6 +240,8 @@ namespace Movie_Ticket_Booking_System.View
             int percent = Convert.ToInt32(lblDiscount.Text.Split(' ')[2]);
             string ticketID = currDate.ToString("yyyyMMddHHmmss") + this.accountID;
 
+            context.ACCOUNTS.Find(this.accountID).Balance -= totalPrice;
+
             TICKET newTicket = new TICKET();
             newTicket.TicketID = ticketID;
             newTicket.BookingDate = currDate;
