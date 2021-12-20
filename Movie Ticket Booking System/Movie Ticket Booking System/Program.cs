@@ -47,7 +47,7 @@ namespace Movie_Ticket_Booking_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Application.Run(new FormMenu());
         }
     }
 }

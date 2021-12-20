@@ -21,31 +21,57 @@ namespace Movie_Ticket_Booking_System.View
         private Size sizePic = new Size(350, 355);
         private Guna2PictureBox overlay, currPicture;
         private Guna2HtmlLabel lblHover;
+        private string currKey = "";
+        private string allType = "Tất cả";
         public FormMovieStore()
         {
             InitializeComponent();
         }
         private void FormMovieStore_Load(object sender, EventArgs e)
-        { 
-            DataTable table = new DataTable();
-            table.Columns.Add("MovieID", typeof(int));
-            table.Columns.Add("Type", typeof(string));
-
-            DataRow row1 = table.NewRow();
-            row1["MovieID"] = 0;
-            row1["Type"] = "Sắp xếp theo tên";
-            table.Rows.InsertAt(row1, 0);
-
-            DataRow row2 = table.NewRow();
-            row2["MovieID"] = 1;
-            row2["Type"] = "Tăng dần theo giá";
-            table.Rows.InsertAt(row2, 1);
-
-            cbmFilter.ValueMember = "MovieID";
-            cbmFilter.DisplayMember = "Type";
-            cbmFilter.DataSource = table;
+        {
+            cbmFilter.SelectedIndex = 0;
         }
-        
+
+        private void cbmFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (currKey.Equals(""))
+                txtSearch.Text = "";
+            loadData(cbmFilter.SelectedItem.ToString());
+        }
+
+        private void loadData(string type)
+        {
+            MessageBox.Show("ok");
+            this.pnlContainer.Controls.Clear();
+            var query = context.MOVIES;
+            if(!currKey.Equals(""))
+            {
+                setLayout(query.Where(x => x.Name.Contains(currKey)).ToList());
+                return;
+            }
+            if (type.Equals(this.allType))
+                setLayout(query.ToList());
+            else
+                setLayout(query.Where(x => x.Type == type).ToList()); 
+        }
+
+        private void setLayout(List<MOVIE> query)
+        {
+            int height = 65, width = 35, count = 0;
+            query.ForEach(x =>
+            {
+                if (count == 3)
+                {
+                    height += 425;
+                    width = 35;
+                    count = 0;
+                }
+                setPicture(x.MovieID, width, height, x.Name);
+                width += 400;
+                count++;
+            });
+        }
+
         private int getMovieID()
         {
             return Convert.ToInt32(currPicture.Name.Substring(7));
@@ -131,46 +157,12 @@ namespace Movie_Ticket_Booking_System.View
             this.pnlContainer.Controls.Add(lblTitle);
         }
 
-        private void cbmFilter_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadData(Convert.ToInt32(cbmFilter.SelectedValue));
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            btnReset.Enabled = true;
-            loadData(2, txtSearch.Text);
+            currKey = txtSearch.Text;
+            cbmFilter.SelectedIndex = 0;
+            currKey = "";
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            btnReset.Enabled = false;
-            cbmFilter.SelectedValue = 0;
-            loadData(0);
-        }
-
-        private void loadData(int type, string name = null)
-        {
-            this.pnlContainer.Controls.Clear();
-            var query = type == 0 
-                ? context.MOVIES.OrderBy(x => x.Name)
-                : type == 1 
-                ? context.MOVIES.OrderBy(x => x.Price)
-                : context.MOVIES.Where(x => x.Name.Contains(name));
-
-            int height = 65, width = 35, count = 0;
-            query.ToList().ForEach(x =>
-            {
-                if (count == 3)
-                {
-                    height += 425;
-                    width = 35;
-                    count = 0;
-                }
-                setPicture(x.MovieID, width, height, x.Name);
-                width += 400;
-                count++;
-            });
-        }
     }
 }

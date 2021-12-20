@@ -30,7 +30,7 @@ namespace Movie_Ticket_Booking_System.View
 
         private void FormAddFilm_Load(object sender, EventArgs e)
         {
-
+            cbmFilter.SelectedIndex = 0;
         }
 
         private void btnAddFilm_Click(object sender, EventArgs e)
@@ -92,6 +92,7 @@ namespace Movie_Ticket_Booking_System.View
             newMovie.Des = txtDes.Text;
             newMovie.Price = Convert.ToDecimal(txtPrice.Text);
             newMovie.Time = txtTime.Text;
+            newMovie.Type = cbmFilter.SelectedItem.ToString();
             context.MOVIES.Add(newMovie);
             context.SaveChanges();
             string fileExt = System.IO.Path.GetExtension(selectedFile);

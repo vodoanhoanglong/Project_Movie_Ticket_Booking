@@ -34,9 +34,11 @@ Create table MOVIE
 	[Time] varchar(8),
 	[Des] nvarchar(MAX),
 	Price decimal,
+	[Type] nvarchar(MAX),
 	
 	PRIMARY KEY (MovieID),
 )
+
 
 Create table ROOM 
 (

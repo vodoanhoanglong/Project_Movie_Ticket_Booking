@@ -34,7 +34,6 @@ namespace Movie_Ticket_Booking_System.View
             this.pnlContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnReset = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SuspendLayout();
             // 
             // lblFilter
@@ -44,9 +43,9 @@ namespace Movie_Ticket_Booking_System.View
             this.lblFilter.ForeColor = System.Drawing.Color.White;
             this.lblFilter.Location = new System.Drawing.Point(12, 12);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(113, 39);
+            this.lblFilter.Size = new System.Drawing.Size(105, 39);
             this.lblFilter.TabIndex = 2;
-            this.lblFilter.Text = "Lọc theo";
+            this.lblFilter.Text = "Thể loại";
             this.lblFilter.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbmFilter
@@ -66,6 +65,15 @@ namespace Movie_Ticket_Booking_System.View
             this.cbmFilter.ForeColor = System.Drawing.Color.White;
             this.cbmFilter.HoverState.Parent = this.cbmFilter;
             this.cbmFilter.ItemHeight = 30;
+            this.cbmFilter.Items.AddRange(new object[] {
+            "Tất cả",
+            "Hành động",
+            "Viễn tưởng",
+            "Tình cảm",
+            "Kinh dị",
+            "Phiêu lưu",
+            "Hoạt hình",
+            "Khiêu dâm"});
             this.cbmFilter.ItemsAppearance.BackColor = System.Drawing.Color.Black;
             this.cbmFilter.ItemsAppearance.Parent = this.cbmFilter;
             this.cbmFilter.Location = new System.Drawing.Point(143, 15);
@@ -143,40 +151,12 @@ namespace Movie_Ticket_Booking_System.View
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnReset
-            // 
-            this.btnReset.Animated = true;
-            this.btnReset.BorderRadius = 20;
-            this.btnReset.CheckedState.Parent = this.btnReset;
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.CustomImages.Parent = this.btnReset;
-            this.btnReset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReset.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReset.DisabledState.Parent = this.btnReset;
-            this.btnReset.Enabled = false;
-            this.btnReset.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.btnReset.FillColor2 = System.Drawing.Color.Transparent;
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.ForeColor = System.Drawing.Color.White;
-            this.btnReset.HoverState.Parent = this.btnReset;
-            this.btnReset.Location = new System.Drawing.Point(980, 12);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.ShadowDecoration.Parent = this.btnReset;
-            this.btnReset.Size = new System.Drawing.Size(128, 39);
-            this.btnReset.TabIndex = 37;
-            this.btnReset.Text = "Đặt lại";
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
             // FormMovieStore
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1217, 717);
-            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pnlContainer);
@@ -198,6 +178,5 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2Panel pnlContainer;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2GradientButton btnSearch;
-        private Guna.UI2.WinForms.Guna2GradientButton btnReset;
     }
 }

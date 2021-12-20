@@ -37,6 +37,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnAddFilm = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnAdd = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnChangeImg = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.cbmFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAddImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtMovieName.PlaceholderText = "Tên phim";
             this.txtMovieName.SelectedText = "";
             this.txtMovieName.ShadowDecoration.Parent = this.txtMovieName;
-            this.txtMovieName.Size = new System.Drawing.Size(316, 49);
+            this.txtMovieName.Size = new System.Drawing.Size(275, 49);
             this.txtMovieName.TabIndex = 2;
             this.txtMovieName.TextOffset = new System.Drawing.Point(5, 0);
             // 
@@ -92,7 +93,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtTime.HoverState.Parent = this.txtTime;
-            this.txtTime.Location = new System.Drawing.Point(1084, 13);
+            this.txtTime.Location = new System.Drawing.Point(873, 13);
             this.txtTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTime.MaxLength = 8;
             this.txtTime.Name = "txtTime";
@@ -126,7 +127,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPrice.HoverState.Parent = this.txtPrice;
-            this.txtPrice.Location = new System.Drawing.Point(724, 13);
+            this.txtPrice.Location = new System.Drawing.Point(674, 13);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrice.MaxLength = 7;
             this.txtPrice.Name = "txtPrice";
@@ -134,7 +135,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtPrice.PlaceholderText = "Giá phim";
             this.txtPrice.SelectedText = "";
             this.txtPrice.ShadowDecoration.Parent = this.txtPrice;
-            this.txtPrice.Size = new System.Drawing.Size(316, 49);
+            this.txtPrice.Size = new System.Drawing.Size(167, 49);
             this.txtPrice.TabIndex = 4;
             this.txtPrice.TextOffset = new System.Drawing.Point(5, 0);
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
@@ -159,7 +160,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtDes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtDes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtDes.HoverState.Parent = this.txtDes;
-            this.txtDes.Location = new System.Drawing.Point(368, 13);
+            this.txtDes.Location = new System.Drawing.Point(325, 13);
             this.txtDes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDes.Name = "txtDes";
             this.txtDes.PasswordChar = '\0';
@@ -261,12 +262,47 @@ namespace Movie_Ticket_Booking_System.View
             this.btnChangeImg.Text = "Xóa ảnh";
             this.btnChangeImg.Click += new System.EventHandler(this.btnChangeImg_Click);
             // 
+            // cbmFilter
+            // 
+            this.cbmFilter.BackColor = System.Drawing.Color.Transparent;
+            this.cbmFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.cbmFilter.BorderRadius = 15;
+            this.cbmFilter.BorderThickness = 2;
+            this.cbmFilter.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbmFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbmFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbmFilter.FillColor = System.Drawing.Color.Transparent;
+            this.cbmFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbmFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbmFilter.FocusedState.Parent = this.cbmFilter;
+            this.cbmFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.cbmFilter.ForeColor = System.Drawing.Color.White;
+            this.cbmFilter.HoverState.Parent = this.cbmFilter;
+            this.cbmFilter.ItemHeight = 30;
+            this.cbmFilter.Items.AddRange(new object[] {
+            "Hành động",
+            "Viễn tưởng",
+            "Tình cảm",
+            "Kinh dị",
+            "Phiêu lưu",
+            "Hoạt hình",
+            "Khiêu dâm"});
+            this.cbmFilter.ItemsAppearance.BackColor = System.Drawing.Color.Black;
+            this.cbmFilter.ItemsAppearance.Parent = this.cbmFilter;
+            this.cbmFilter.Location = new System.Drawing.Point(1036, 20);
+            this.cbmFilter.Name = "cbmFilter";
+            this.cbmFilter.ShadowDecoration.Parent = this.cbmFilter;
+            this.cbmFilter.Size = new System.Drawing.Size(182, 36);
+            this.cbmFilter.TabIndex = 11;
+            this.cbmFilter.TextOffset = new System.Drawing.Point(5, 0);
+            // 
             // FormAddFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1217, 767);
+            this.Controls.Add(this.cbmFilter);
             this.Controls.Add(this.btnChangeImg);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnAddFilm);
@@ -293,5 +329,6 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2CircleButton btnAddFilm;
         private Guna.UI2.WinForms.Guna2GradientButton btnAdd;
         private Guna.UI2.WinForms.Guna2GradientButton btnChangeImg;
+        private Guna.UI2.WinForms.Guna2ComboBox cbmFilter;
     }
 }
