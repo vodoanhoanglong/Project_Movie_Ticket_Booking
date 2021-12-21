@@ -41,7 +41,6 @@ namespace Movie_Ticket_Booking_System.View
 
         private void loadData(string type)
         {
-            MessageBox.Show("ok");
             this.pnlContainer.Controls.Clear();
             var query = context.MOVIES;
             if(!currKey.Equals(""))

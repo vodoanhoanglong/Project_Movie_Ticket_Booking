@@ -76,6 +76,13 @@ namespace Movie_Ticket_Booking_System.View
             else return;
         }
 
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            Report.PrintRP printRP = new Report.PrintRP();
+            printRP.printTicket(this.ticketID);
+            printRP.Show();
+        }
+
         private void removeTicket()
         {
             var query = context.TICKETS

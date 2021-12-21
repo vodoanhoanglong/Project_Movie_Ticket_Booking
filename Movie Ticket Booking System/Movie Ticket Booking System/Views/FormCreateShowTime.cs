@@ -39,7 +39,7 @@ namespace Movie_Ticket_Booking_System.View
         }
 
         private DateTime getTimeStart()
-        {          
+        {
             return dtpShowDate.Value.Date + dtpShowTime.Value.TimeOfDay;
         }
 
@@ -75,13 +75,13 @@ namespace Movie_Ticket_Booking_System.View
             if (!checkShowTime())
                 saveShowTime();
             else
-                MessageBox.Show("Đã bị trùng lịch");
+                MessageBox.Show("Đã bị trùng lịch", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private bool checkShowTime()
         {
             int roomID = Convert.ToInt32(cmbRoom.SelectedValue);
-            DateTime currMinutes, setTimeStart = getTimeStart(), 
+            DateTime currMinutes, setTimeStart = getTimeStart(),
                 setTimeEnd = getTimeEndWithTimeClean(), dtpDate = setTimeStart.Date;
             TimeSpan timeRemaining = setTimeEnd.TimeOfDay - setTimeStart.TimeOfDay,
                 dtpTimeStart = setTimeStart.TimeOfDay,
@@ -114,7 +114,7 @@ namespace Movie_Ticket_Booking_System.View
         private void saveShowTime()
         {
             SHOWTIME createST = new SHOWTIME();
-            
+
             createST.ShowTimeID = DateTime.Now.ToString("yyyyMMddHHmmss");
             createST.MovieShowTime = parseDate(getTimeStart());
             createST.MovieEndTime = getTimeEnd();
@@ -122,7 +122,7 @@ namespace Movie_Ticket_Booking_System.View
             createST.RoomID = getRoomID();
             context.SHOWTIMES.Add(createST);
             context.SaveChanges();
-            MessageBox.Show("Tạo thành công");
+            MessageBox.Show("Tạo thành công","Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Dispose();
         }
     }

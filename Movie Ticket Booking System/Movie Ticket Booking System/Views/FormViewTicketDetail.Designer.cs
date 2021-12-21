@@ -32,6 +32,7 @@ namespace Movie_Ticket_Booking_System.View
             this.components = new System.ComponentModel.Container();
             this.Elipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.panelOverlay = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblSubTotalPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTotalPriceSeat = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnCancelTicket = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -46,7 +47,6 @@ namespace Movie_Ticket_Booking_System.View
             this.lblPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.lblSubTotalPrice = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelOverlay.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,17 @@ namespace Movie_Ticket_Booking_System.View
             this.panelOverlay.ShadowDepth = 150;
             this.panelOverlay.Size = new System.Drawing.Size(600, 700);
             this.panelOverlay.TabIndex = 1;
+            // 
+            // lblSubTotalPrice
+            // 
+            this.lblSubTotalPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblSubTotalPrice.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.lblSubTotalPrice.ForeColor = System.Drawing.Color.White;
+            this.lblSubTotalPrice.Location = new System.Drawing.Point(12, 460);
+            this.lblSubTotalPrice.Name = "lblSubTotalPrice";
+            this.lblSubTotalPrice.Size = new System.Drawing.Size(104, 32);
+            this.lblSubTotalPrice.TabIndex = 38;
+            this.lblSubTotalPrice.Text = "Tổng tiền: ";
             // 
             // lblTotalPriceSeat
             // 
@@ -155,6 +166,7 @@ namespace Movie_Ticket_Booking_System.View
             this.btnExport.Size = new System.Drawing.Size(135, 45);
             this.btnExport.TabIndex = 34;
             this.btnExport.Text = "Xuất hóa đơn";
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // lblBookingDate
             // 
@@ -269,17 +281,6 @@ namespace Movie_Ticket_Booking_System.View
             this.guna2ControlBox1.ShadowDecoration.Parent = this.guna2ControlBox1;
             this.guna2ControlBox1.Size = new System.Drawing.Size(32, 25);
             this.guna2ControlBox1.TabIndex = 7;
-            // 
-            // lblSubTotalPrice
-            // 
-            this.lblSubTotalPrice.BackColor = System.Drawing.Color.Transparent;
-            this.lblSubTotalPrice.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblSubTotalPrice.ForeColor = System.Drawing.Color.White;
-            this.lblSubTotalPrice.Location = new System.Drawing.Point(12, 460);
-            this.lblSubTotalPrice.Name = "lblSubTotalPrice";
-            this.lblSubTotalPrice.Size = new System.Drawing.Size(104, 32);
-            this.lblSubTotalPrice.TabIndex = 38;
-            this.lblSubTotalPrice.Text = "Tổng tiền: ";
             // 
             // FormViewTicketDetail
             // 

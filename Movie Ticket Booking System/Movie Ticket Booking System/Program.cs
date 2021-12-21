@@ -1,6 +1,4 @@
-﻿using Movie_Ticket_Booking_System.View;
-using Movie_Ticket_Booking_System.Models;
-using Movie_Ticket_Booking_System.View;
+﻿using Movie_Ticket_Booking_System.Models;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,6 +7,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Movie_Ticket_Booking_System.View;
 
 namespace Movie_Ticket_Booking_System
 {
@@ -47,7 +46,7 @@ namespace Movie_Ticket_Booking_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMenu());
+            Application.Run(new FormLogin());
         }
     }
 }

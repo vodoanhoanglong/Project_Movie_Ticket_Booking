@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b4515cbd-3683-498f-85f2-75a74d3e6f2a": {
+      "ProjectGuid": "b4515cbd-3683-498f-85f2-75a74d3e6f2a",
+      "DisplayName": "Movie Ticket Booking System",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
