@@ -12,9 +12,9 @@ namespace Movie_Ticket_Booking_System.Report
         {
             InitializeComponent();
         }
-        public void loadTicketInfo(string ticketID)
-        {
-            pTicketID.Value = ticketID;
+        public void loadTicketInfo(TicketDetails ticket)
+        {         
+            objectDataSource1.DataSource = ticket;
         }
     }
 }

@@ -18,14 +18,14 @@ namespace Movie_Ticket_Booking_System.Report
             InitializeComponent();
         }
 
-        public void printTicket(string ticketID)
+        public void printTicket(TicketDetails ticket)
         {
             Rp_DetailTicket report = new Rp_DetailTicket();
             foreach(DevExpress.XtraReports.Parameters.Parameter p in report.Parameters)
             {
                 p.Visible = false;
             }
-            report.loadTicketInfo(ticketID);
+            report.loadTicketInfo(ticket);
             documentViewer1.DocumentSource = report;
             report.CreateDocument();
         }

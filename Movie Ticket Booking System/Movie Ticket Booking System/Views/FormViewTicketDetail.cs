@@ -1,4 +1,5 @@
 ﻿using Movie_Ticket_Booking_System.Models;
+using Movie_Ticket_Booking_System.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace Movie_Ticket_Booking_System.View
         private ContextDB context = Program.context;
         private string ticketID, accountID = FormMenu.instance.info.AccountID;
         private DialogResult dlr;
+        private TicketDetails ticket = null;
         public FormViewTicketDetail(string ticketID)
         {
             InitializeComponent();
@@ -46,26 +48,38 @@ namespace Movie_Ticket_Booking_System.View
                 .Where(x => x.TicketID == this.ticketID)
                 .ToList();
 
+            string movieName = query.SHOWTIME.MOVIE.Name,
+                showTime = parseDate(query.SHOWTIME.MovieShowTime)
+                + " - " + parseDate(query.SHOWTIME.MovieEndTime),
+                room = query.SHOWTIME.ROOM.RoomName;
+            decimal? subTotalPrice = query.SubTotalPrice,
+                totalPrice = query.TotalPrice;
+            int? discountPercent = query.DiscountPercent;
+
+
+
             this.BackgroundImage = Image.FromFile(
                 string.Format(@"..\..\Images\Movies\"
                 + query.SHOWTIME.MovieID + ".jpg"));
-            this.lblName.Text += query.SHOWTIME.MOVIE.Name;
+            this.lblName.Text += movieName;
             this.lblTime.Text += query.SHOWTIME.MOVIE.Time;
             this.lblPrice.Text += query.SHOWTIME.MOVIE.Price;
-            this.lblSubTotalPrice.Text += query.SubTotalPrice;
-            this.lblRoom.Text += query.SHOWTIME.ROOM.RoomName;
-            this.lblShowTime.Text += parseDate(query.SHOWTIME.MovieShowTime)
-                + " - " + parseDate(query.SHOWTIME.MovieEndTime);
+            this.lblSubTotalPrice.Text += subTotalPrice;
+            this.lblRoom.Text += room;
+            this.lblShowTime.Text += showTime;
             this.lblTotalPriceSeat.Text += queryChair
                 .Sum(x => x.Price).ToString();
             this.lblBookingDate.Text += parseDate(query.BookingDate);
-            this.lblDisountPercent.Text += query.DiscountPercent;
-            this.lblTotalPrice.Text += query.TotalPrice;
+            this.lblDisountPercent.Text += discountPercent;
+            this.lblTotalPrice.Text += totalPrice;
             int length = queryChair.Count;
             for (int index = 0; index < length; index++)
                 this.lblSeat.Text += index != length - 1
                     ? queryChair[index].ChairName + ", "
                     : queryChair[index].ChairName;
+
+            ticket = new TicketDetails(this.ticketID, movieName, showTime, room, lblSeat.Text.Substring(4),
+                subTotalPrice, discountPercent, totalPrice);
         }
 
         private void btnCancelTicket_Click(object sender, EventArgs e)
@@ -79,7 +93,7 @@ namespace Movie_Ticket_Booking_System.View
         private void btnExport_Click(object sender, EventArgs e)
         {
             Report.PrintRP printRP = new Report.PrintRP();
-            printRP.printTicket(this.ticketID);
+            printRP.printTicket(this.ticket);
             printRP.Show();
         }
 

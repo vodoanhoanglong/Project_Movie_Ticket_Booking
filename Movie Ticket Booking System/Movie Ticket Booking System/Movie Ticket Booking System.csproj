@@ -110,6 +110,7 @@
     <Compile Include="Report\Rp_DetailTicket.Designer.cs">
       <DependentUpon>Rp_DetailTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\TicketDetails.cs" />
     <Compile Include="Views\FormAddFilm.cs">
       <SubType>Form</SubType>
     </Compile>
