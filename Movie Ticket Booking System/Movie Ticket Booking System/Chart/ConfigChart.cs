@@ -15,13 +15,26 @@ namespace Movie_Ticket_Booking_System.Chart
             ChartConfig config = new ChartConfig();
             Color gridColor = Color.FromArgb(49, 52, 82);
             Color foreColor = Color.FromArgb(177, 182, 205);
-            Color[] colors = new Color[] { Color.FromArgb(140, 81, 165), Color.FromArgb(203, 94, 152), Color.FromArgb(244, 123, 138), Color.FromArgb(255, 163, 127), Color.FromArgb(255, 210, 133) };
+            List<Color> colors = new List<Color>()
+            {
+                Color.FromArgb(233, 196, 106),
+                Color.FromArgb(244, 162, 97),
+                Color.FromArgb(231, 111, 81),
+                Color.FromArgb(244, 123, 138),
+                Color.FromArgb(239, 71, 111),
+                Color.FromArgb(203, 94, 152),
+                Color.FromArgb(140, 81, 165),
+            };
+            List<Color> colorsPoint = new List<Color>()
+            {
+                Color.FromArgb(84, 193, 254)
+            };
 
             var chartFont = new Guna.Charts.WinForms.ChartFont()
             {
                 FontName = "Segoe UI",
-                Size = 10,
-                Style = Guna.Charts.WinForms.ChartFontStyle.Normal
+                Size = 12,
+                Style = Guna.Charts.WinForms.ChartFontStyle.Bold
             };
 
             config.Title.ForeColor = foreColor;
@@ -48,8 +61,8 @@ namespace Movie_Ticket_Booking_System.Chart
 
             config.PaletteCustomColors.FillColors.AddRange(colors);
             config.PaletteCustomColors.BorderColors.AddRange(colors);
-            config.PaletteCustomColors.PointFillColors.AddRange(colors);
-            config.PaletteCustomColors.PointBorderColors.AddRange(colors);
+            config.PaletteCustomColors.PointFillColors.AddRange(new List<Color>() { Color.FromArgb(238, 238, 242) });
+            config.PaletteCustomColors.PointBorderColors.AddRange(colorsPoint);
 
             return config;
         }
