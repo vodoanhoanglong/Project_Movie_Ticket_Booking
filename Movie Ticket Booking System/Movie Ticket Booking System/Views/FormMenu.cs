@@ -44,8 +44,8 @@ namespace Movie_Ticket_Booking_System.View
             instance = this;
             this.info = info;
             //check admin account
-            /*isAdmin = this.info.Role == "Manager" ? true : false;*/
-            isAdmin = true;
+            isAdmin = this.info.Role == "Manager" ? true : false;
+            /*isAdmin = true;*/
 
             btnRevenue.Visible = false;
             btnAddFilm.Visible = false;

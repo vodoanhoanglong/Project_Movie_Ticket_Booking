@@ -1,5 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 using Movie_Ticket_Booking_System.Models;
+using Movie_Ticket_Booking_System.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -153,7 +154,16 @@ namespace Movie_Ticket_Booking_System.View
             lblTitle.AutoSize = true;
             lblTitle.MaximumSize = new Size(280, 0);
             lblTitle.TextAlignment = ContentAlignment.MiddleCenter;
+            lblTitle.Cursor = Cursors.Hand;
+            if(FormMenu.instance.isAdmin)
+                lblTitle.Click += this.lblTitle_Click;
             this.pnlContainer.Controls.Add(lblTitle);
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+            currPicture.Controls.Clear();
+            new FormEditFilm(getMovieID()).ShowDialog();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

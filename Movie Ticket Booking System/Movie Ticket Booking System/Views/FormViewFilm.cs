@@ -1,4 +1,5 @@
 ﻿using Movie_Ticket_Booking_System.Models;
+using Movie_Ticket_Booking_System.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

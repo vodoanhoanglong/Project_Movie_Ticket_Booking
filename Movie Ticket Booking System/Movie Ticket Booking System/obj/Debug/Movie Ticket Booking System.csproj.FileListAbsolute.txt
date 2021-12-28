@@ -427,3 +427,4 @@ D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\bin\Debug
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.Report.PrintRP.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.Report.Rp_DetailTicket.resources
 D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie Ticket Booking System.exe.licenses
+D:\SQL Project\Movie Ticket Booking System\Movie Ticket Booking System\obj\Debug\Movie_Ticket_Booking_System.Views.FormEditFilm.resources
