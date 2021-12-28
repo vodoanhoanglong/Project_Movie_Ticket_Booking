@@ -94,14 +94,16 @@ namespace Movie_Ticket_Booking_System.Views
             // 
             // lblMoneyWeek
             // 
+            this.lblMoneyWeek.AutoSize = false;
             this.lblMoneyWeek.BackColor = System.Drawing.Color.Transparent;
             this.lblMoneyWeek.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblMoneyWeek.ForeColor = System.Drawing.Color.White;
-            this.lblMoneyWeek.Location = new System.Drawing.Point(96, 55);
+            this.lblMoneyWeek.Location = new System.Drawing.Point(53, 55);
             this.lblMoneyWeek.Name = "lblMoneyWeek";
-            this.lblMoneyWeek.Size = new System.Drawing.Size(47, 30);
+            this.lblMoneyWeek.Size = new System.Drawing.Size(251, 29);
             this.lblMoneyWeek.TabIndex = 41;
             this.lblMoneyWeek.Text = "VNĐ";
+            this.lblMoneyWeek.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
             // guna2PictureBox1
             // 
@@ -145,14 +147,16 @@ namespace Movie_Ticket_Booking_System.Views
             // 
             // lblMoneyMonth
             // 
+            this.lblMoneyMonth.AutoSize = false;
             this.lblMoneyMonth.BackColor = System.Drawing.Color.Transparent;
             this.lblMoneyMonth.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblMoneyMonth.ForeColor = System.Drawing.Color.White;
             this.lblMoneyMonth.Location = new System.Drawing.Point(65, 55);
             this.lblMoneyMonth.Name = "lblMoneyMonth";
-            this.lblMoneyMonth.Size = new System.Drawing.Size(47, 30);
+            this.lblMoneyMonth.Size = new System.Drawing.Size(251, 29);
             this.lblMoneyMonth.TabIndex = 41;
             this.lblMoneyMonth.Text = "VNĐ";
+            this.lblMoneyMonth.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
             // guna2PictureBox2
             // 
@@ -196,14 +200,16 @@ namespace Movie_Ticket_Booking_System.Views
             // 
             // lblMoneyYear
             // 
+            this.lblMoneyYear.AutoSize = false;
             this.lblMoneyYear.BackColor = System.Drawing.Color.Transparent;
             this.lblMoneyYear.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             this.lblMoneyYear.ForeColor = System.Drawing.Color.White;
             this.lblMoneyYear.Location = new System.Drawing.Point(70, 55);
             this.lblMoneyYear.Name = "lblMoneyYear";
-            this.lblMoneyYear.Size = new System.Drawing.Size(47, 30);
+            this.lblMoneyYear.Size = new System.Drawing.Size(251, 29);
             this.lblMoneyYear.TabIndex = 41;
             this.lblMoneyYear.Text = "VNĐ";
+            this.lblMoneyYear.TextAlignment = System.Drawing.ContentAlignment.TopCenter;
             // 
             // guna2PictureBox3
             // 
@@ -308,13 +314,10 @@ namespace Movie_Ticket_Booking_System.Views
             this.Text = "FormRevenue";
             this.Load += new System.EventHandler(this.FormRevenue_Load);
             this.pnlRevenueWeek.ResumeLayout(false);
-            this.pnlRevenueWeek.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.pnlRevenueMonth.ResumeLayout(false);
-            this.pnlRevenueMonth.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.pnlRevenueYear.ResumeLayout(false);
-            this.pnlRevenueYear.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

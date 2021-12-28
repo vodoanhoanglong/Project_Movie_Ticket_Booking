@@ -1,6 +1,7 @@
 ﻿
 using Movie_Ticket_Booking_System;
 using Movie_Ticket_Booking_System.Models;
+using Movie_Ticket_Booking_System.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -114,7 +115,7 @@ namespace Movie_Ticket_Booking_System.View
                 x.Password == txtPassword.Text).FirstOrDefault();
             if (query != null)
             {
-                new FormMenu(query).Show();
+                new FormLoadingOverlay(query).ShowDialog();
                 this.Visible = false;
             }
             else

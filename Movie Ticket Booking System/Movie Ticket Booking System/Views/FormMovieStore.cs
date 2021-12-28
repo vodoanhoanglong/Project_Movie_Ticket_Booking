@@ -31,12 +31,12 @@ namespace Movie_Ticket_Booking_System.View
         private void FormMovieStore_Load(object sender, EventArgs e)
         {
             cbmFilter.SelectedIndex = 0;
+            loadData(allType);
         }
 
-        private void cbmFilter_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbmFilter_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            if (currKey.Equals(""))
-                txtSearch.Text = "";
+            txtSearch.Text = "";
             loadData(cbmFilter.SelectedItem.ToString());
         }
 
@@ -166,12 +166,12 @@ namespace Movie_Ticket_Booking_System.View
             new FormEditFilm(getMovieID()).ShowDialog();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
             currKey = txtSearch.Text;
             cbmFilter.SelectedIndex = 0;
+            loadData(this.allType) ;
             currKey = "";
         }
-
     }
 }

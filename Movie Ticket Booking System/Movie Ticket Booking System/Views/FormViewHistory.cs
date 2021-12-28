@@ -18,6 +18,7 @@ namespace Movie_Ticket_Booking_System.View
         private Guna2ShadowPanel pnlHistory, currPnl;
         private Guna2PictureBox ptbMovie;
         private Guna2HtmlLabel lblInfo;
+        private string currKey = "";
         public static FormViewHistory instance;
         public FormViewHistory()
         {
@@ -30,15 +31,32 @@ namespace Movie_Ticket_Booking_System.View
             loadData();
         }
 
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            currKey = txtSearch.Text;
+            loadData();
+            currKey = "";
+        }
+
+
         public void loadData()
+        {
+            string accountID = FormMenu.instance.info.AccountID;
+            var query = currKey.Equals("") ? context.TICKETS
+                .Where(x => x.AccountID == accountID)
+                .OrderByDescending(x => x.BookingDate)
+                .ToList() : context.TICKETS
+                .Where(x => x.AccountID == accountID
+                && x.SHOWTIME.MOVIE.Name.Contains(currKey))
+                .OrderByDescending(x => x.BookingDate).ToList();
+
+            setLayout(query);
+        }
+
+        private void setLayout(List<TICKET> query)
         {
             pnlContainer.Controls.Clear();
             int containerX = 15, containerY = 15, labelX = 185, labelY = 25;
-            string accountID = FormMenu.instance.info.AccountID;
-            var query = context.TICKETS
-                .Where(x => x.AccountID == accountID)
-                .OrderByDescending(x => x.BookingDate)
-                .ToList();
 
             query.ForEach(x =>
             {

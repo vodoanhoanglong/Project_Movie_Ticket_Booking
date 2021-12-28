@@ -33,7 +33,9 @@ namespace Movie_Ticket_Booking_System.Views
             year = now.Year;
             loadData(month, year);
             toogleSwitch.Checked = false;
+            
         }
+
 
         private void toogleSwitch_CheckedChanged(object sender, EventArgs e)
         {
@@ -45,9 +47,9 @@ namespace Movie_Ticket_Booking_System.Views
             {
                 lblTitle.Text = "Doanh thu cụm rạp";
                 MixedBarAndLine.loadChart(chart, "bar");
-                lblMoneyYear.Text = revenueYear + "VNĐ";
-                lblMoneyMonth.Text = revenueMonth + "VNĐ";
-                lblMoneyWeek.Text = revenueWeek + "VNĐ";
+                lblMoneyYear.Text = revenueYear;
+                lblMoneyMonth.Text = revenueMonth;
+                lblMoneyWeek.Text = revenueWeek;
                 lblRevenueWeek.Text = "Doanh thu trong tuần";
                 lblRevenueMonth.Text = "Doanh thu tháng " + month;
                 lblRevenueYear.Text = "Doanh thu năm " + year;
@@ -56,9 +58,9 @@ namespace Movie_Ticket_Booking_System.Views
             {
                 lblTitle.Text = "Số vé bán cụm rạp";
                 MixedBarAndLine.loadChart(chart, "line");
-                lblMoneyYear.Text = quantityYear + "Vé";
-                lblMoneyMonth.Text = quantityMonth + "Vé";
-                lblMoneyWeek.Text = quantityWeek + "Vé";
+                lblMoneyYear.Text = quantityYear + " Vé";
+                lblMoneyMonth.Text = quantityMonth + " Vé";
+                lblMoneyWeek.Text = quantityWeek + " Vé";
                 lblRevenueWeek.Text = "Vé bán trong tuần";
                 lblRevenueMonth.Text = "Vé bán tháng " + month;
                 lblRevenueYear.Text = "Vé bán năm " + year;

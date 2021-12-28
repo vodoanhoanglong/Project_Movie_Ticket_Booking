@@ -33,7 +33,6 @@ namespace Movie_Ticket_Booking_System.View
             this.cbmFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnlContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnSearch = new Guna.UI2.WinForms.Guna2GradientButton();
             this.SuspendLayout();
             // 
             // lblFilter
@@ -82,7 +81,7 @@ namespace Movie_Ticket_Booking_System.View
             this.cbmFilter.Size = new System.Drawing.Size(250, 36);
             this.cbmFilter.TabIndex = 3;
             this.cbmFilter.TextOffset = new System.Drawing.Point(5, 0);
-            this.cbmFilter.SelectedIndexChanged += new System.EventHandler(this.cbmFilter_SelectedIndexChanged);
+            this.cbmFilter.SelectionChangeCommitted += new System.EventHandler(this.cbmFilter_SelectionChangeCommitted);
             // 
             // pnlContainer
             // 
@@ -124,32 +123,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtSearch.Size = new System.Drawing.Size(362, 36);
             this.txtSearch.TabIndex = 6;
             this.txtSearch.TextOffset = new System.Drawing.Point(5, 0);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Animated = true;
-            this.btnSearch.BorderRadius = 20;
-            this.btnSearch.CheckedState.Parent = this.btnSearch;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.CustomImages.Parent = this.btnSearch;
-            this.btnSearch.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSearch.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSearch.DisabledState.Parent = this.btnSearch;
-            this.btnSearch.FillColor = System.Drawing.Color.Transparent;
-            this.btnSearch.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.HoverState.Parent = this.btnSearch;
-            this.btnSearch.Location = new System.Drawing.Point(833, 12);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
-            this.btnSearch.Size = new System.Drawing.Size(128, 39);
-            this.btnSearch.TabIndex = 36;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // FormMovieStore
             // 
@@ -157,7 +131,6 @@ namespace Movie_Ticket_Booking_System.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1217, 717);
-            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pnlContainer);
             this.Controls.Add(this.cbmFilter);
@@ -177,6 +150,5 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2ComboBox cbmFilter;
         private Guna.UI2.WinForms.Guna2Panel pnlContainer;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private Guna.UI2.WinForms.Guna2GradientButton btnSearch;
     }
 }

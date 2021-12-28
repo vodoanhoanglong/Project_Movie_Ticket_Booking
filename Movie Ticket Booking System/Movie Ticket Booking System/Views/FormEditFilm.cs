@@ -54,8 +54,21 @@ namespace Movie_Ticket_Booking_System.Views
             else updateData();
         }
 
+        private bool checkTrigger()
+        {
+            DateTime date = DateTime.Now;
+            int count = context.TICKETS.Where(x => x.SHOWTIME.MovieShowTime > date
+            && x.SHOWTIME.MovieID == id).Count();
+            return count == 0 ? true : false;
+        }
+
         private void updateData()
         {
+            if(!checkTrigger())
+            {
+                MessageBox.Show("Phim đã có người đặt");
+                return;
+            }
             MOVIE movieUpdate = findData();
             movieUpdate.Name = txtMovieName.Text;
             movieUpdate.Des = txtDes.Text;

@@ -113,7 +113,7 @@ GO
 --GO
 
 --PROC
-
+-- 1. Tạo proc phân quyền cho người dùng khi đăng ký tài khoản
 CREATE PROC sp_SetAccountRole(@AccountID varchar(11), @Password varchar(max), 
 								@FullName nvarchar(30), @Role varchar(10)='Standard',
 								@Balance decimal=100000)
@@ -136,7 +136,104 @@ GO
 
 
 -- TRIGGER
+-- 1. Không cho phép sửa thông tin phim khi phim đó đang có lịch chiếu
+CREATE TRIGGER trg_CheckFilm ON MOVIE
+AFTER UPDATE AS
+BEGIN
+	DECLARE @check int
+	SELECT @check =  Count(*) 
+	FROM TICKET t,
+		SHOWTIME s, INSERTED i
+	WHERE  t.ShowTimeID = s.ShowTimeID 
+		AND s.MovieID = i.MovieID
+		AND s.MovieShowTime > getdate()
+	IF(@check > 0)
+		BEGIN
+			ROLLBACK TRAN
+			RETURN
+		END
+END
+GO
+-- 2. Khi người dùng ở trong phòng đặt vé vượt quá thời gian chiếu
+CREATE TRIGGER trg_checkTicketBooking ON TICKET
+AFTER INSERT AS
+BEGIN
+	DECLARE @check int
+	SELECT @check =  Count(*) 
+	FROM TICKET t,
+		SHOWTIME s, INSERTED i
+	WHERE  t.ShowTimeID = s.ShowTimeID 
+		AND i.TicketID = t.TicketID
+		AND i.BookingDate > DATEADD(minute, -5, s.MovieShowTime)
+	IF(@check > 0)
+		BEGIN
+			ROLLBACK TRAN
+			RETURN
+		END
+END
+GO
 
+-- 3. Khi 2 người cùng đặt vé cùng ghế tại 1 thời điểm
+CREATE TRIGGER trg_checkTicketBookingSameTime ON TICKET
+AFTER INSERT AS
+BEGIN
+	DECLARE @check int
+	SELECT @check =  Count(*) 
+	FROM TICKET t,
+		SHOWTIME s, INSERTED i
+	WHERE  t.ShowTimeID = s.ShowTimeID 
+		AND i.TicketID = t.TicketID
+		AND (SELECT Count(*) FROM TICKET tk, CHAIR c 
+		WHERE tk.TicketID = c.TicketID AND i.TicketID = c.TicketID)
+		> 0
+	IF(@check > 0)
+		BEGIN
+			ROLLBACK TRAN
+			RETURN
+		END
+END
+GO
+-- 4. Kiểm tra tạo lịch chiếu không trùng các lịch chiếu khác khi cùng phòng
+CREATE TRIGGER trg_checkShowTime ON SHOWTIME
+AFTER INSERT AS
+BEGIN 
+	DECLARE @check int
+	SELECT @check =  Count(*) 
+	FROM ROOM r,
+		SHOWTIME s, INSERTED i
+	WHERE  r.RoomID = s.RoomID 
+		AND i.ShowTimeID = s.ShowTimeID
+		AND (SELECT Count(*) FROM SHOWTIME sh, ROOM ro 
+		WHERE i.ShowTimeID = sh.ShowTimeID AND 
+		sh.RoomID = i.RoomID 
+		AND i.MovieShowTime BETWEEN sh.MovieShowTime AND sh.MovieEndTime
+		AND i.MovieEndTime BETWEEN sh.MovieShowTime AND sh.MovieEndTime)
+		> 0
+	IF(@check > 0)
+		BEGIN
+			ROLLBACK TRAN
+			RETURN
+		END
+END
+GO
+-- 5. Kiểm tra nếu tiền không đủ thì không cho thanh toán
+CREATE TRIGGER trg_checkMoney ON TICKET
+AFTER INSERT AS
+BEGIN 
+	DECLARE @check int
+	SELECT @check =  Count(*) 
+	FROM TICKET t,
+		ACCOUNT a, INSERTED i
+	WHERE  t.AccountID = a.AccountID
+	AND t.TicketID = i.TicketID
+	AND a.Balance < i.TotalPrice
+	IF(@check > 0)
+		BEGIN
+			ROLLBACK TRAN
+			RETURN
+		END
+END
+GO
 
 -- Insert admin account
 EXEC sp_SetAccountRole '0932765080', '1', N'Võ Đoàn Hoàng Long'
