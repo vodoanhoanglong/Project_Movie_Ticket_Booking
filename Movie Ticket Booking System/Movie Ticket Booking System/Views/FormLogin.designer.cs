@@ -44,8 +44,11 @@ namespace Movie_Ticket_Booking_System.View
             this.btnConfirm = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtFullName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ptbTitle = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbTitle)).BeginInit();
             this.SuspendLayout();
             // 
             // Elipse
@@ -98,6 +101,8 @@ namespace Movie_Ticket_Booking_System.View
             // panel
             // 
             this.panel.BackColor = System.Drawing.Color.Transparent;
+            this.panel.Controls.Add(this.guna2PictureBox1);
+            this.panel.Controls.Add(this.ptbTitle);
             this.panel.Controls.Add(this.lblSwitchPanel);
             this.panel.Controls.Add(this.txtPhoneNumber);
             this.panel.Controls.Add(this.txtPasswordConfirm);
@@ -106,7 +111,6 @@ namespace Movie_Ticket_Booking_System.View
             this.panel.Controls.Add(this.btnConfirm);
             this.panel.Controls.Add(this.txtPassword);
             this.panel.Controls.Add(this.txtFullName);
-            this.panel.Controls.Add(this.guna2HtmlLabel3);
             this.panel.FillColor = System.Drawing.Color.Transparent;
             this.panel.Location = new System.Drawing.Point(417, 47);
             this.panel.Name = "panel";
@@ -136,6 +140,7 @@ namespace Movie_Ticket_Booking_System.View
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Animated = true;
+            this.txtPhoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.txtPhoneNumber.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPhoneNumber.BorderRadius = 5;
             this.txtPhoneNumber.BorderThickness = 2;
@@ -172,6 +177,7 @@ namespace Movie_Ticket_Booking_System.View
             // txtPasswordConfirm
             // 
             this.txtPasswordConfirm.Animated = true;
+            this.txtPasswordConfirm.BackColor = System.Drawing.Color.Transparent;
             this.txtPasswordConfirm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPasswordConfirm.BorderRadius = 5;
             this.txtPasswordConfirm.BorderThickness = 2;
@@ -248,6 +254,7 @@ namespace Movie_Ticket_Booking_System.View
             // btnConfirm
             // 
             this.btnConfirm.Animated = true;
+            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
             this.btnConfirm.BorderRadius = 5;
             this.btnConfirm.CheckedState.Parent = this.btnConfirm;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -278,6 +285,7 @@ namespace Movie_Ticket_Booking_System.View
             // txtPassword
             // 
             this.txtPassword.Animated = true;
+            this.txtPassword.BackColor = System.Drawing.Color.Transparent;
             this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPassword.BorderRadius = 5;
             this.txtPassword.BorderThickness = 2;
@@ -313,6 +321,7 @@ namespace Movie_Ticket_Booking_System.View
             // txtFullName
             // 
             this.txtFullName.Animated = true;
+            this.txtFullName.BackColor = System.Drawing.Color.Transparent;
             this.txtFullName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtFullName.BorderRadius = 5;
             this.txtFullName.BorderThickness = 2;
@@ -345,16 +354,29 @@ namespace Movie_Ticket_Booking_System.View
             this.txtFullName.TabIndex = 1;
             this.txtFullName.TextOffset = new System.Drawing.Point(5, 0);
             // 
-            // guna2HtmlLabel3
+            // guna2PictureBox1
             // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Microsoft YaHei UI", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(92, 30);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(225, 72);
-            this.guna2HtmlLabel3.TabIndex = 0;
-            this.guna2HtmlLabel3.Text = "NETFLIX";
+            this.guna2PictureBox1.Image = global::Movie_Ticket_Booking_System.Properties.Resources.logo_title;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(46, 82);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(316, 60);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 11;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // ptbTitle
+            // 
+            this.ptbTitle.Image = global::Movie_Ticket_Booking_System.Properties.Resources.logo;
+            this.ptbTitle.ImageRotate = 0F;
+            this.ptbTitle.Location = new System.Drawing.Point(147, 0);
+            this.ptbTitle.Name = "ptbTitle";
+            this.ptbTitle.ShadowDecoration.Parent = this.ptbTitle;
+            this.ptbTitle.Size = new System.Drawing.Size(107, 95);
+            this.ptbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbTitle.TabIndex = 10;
+            this.ptbTitle.TabStop = false;
             // 
             // FormLogin
             // 
@@ -373,6 +395,8 @@ namespace Movie_Ticket_Booking_System.View
             this.Text = "FormLogin";
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbTitle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -392,7 +416,8 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2GradientButton btnConfirm;
         private Guna.UI2.WinForms.Guna2TextBox txtPassword;
         private Guna.UI2.WinForms.Guna2TextBox txtFullName;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private System.Windows.Forms.LinkLabel lblSwitchPanel;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox ptbTitle;
     }
 }

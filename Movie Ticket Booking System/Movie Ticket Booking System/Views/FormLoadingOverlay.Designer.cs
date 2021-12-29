@@ -46,7 +46,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.progressIndicator.BackColor = System.Drawing.Color.Transparent;
             this.progressIndicator.Location = new System.Drawing.Point(461, 192);
             this.progressIndicator.Name = "progressIndicator";
-            this.progressIndicator.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.progressIndicator.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.progressIndicator.ShadowDecoration.BorderRadius = 15;
             this.progressIndicator.ShadowDecoration.Color = System.Drawing.Color.Gray;
             this.progressIndicator.ShadowDecoration.Depth = 10;

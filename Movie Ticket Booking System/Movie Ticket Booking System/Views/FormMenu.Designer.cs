@@ -34,7 +34,6 @@ namespace Movie_Ticket_Booking_System.View
             this.ShadowForm = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.panelMenu = new Guna.UI2.WinForms.Guna2Panel();
             this.panelTitle = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.panelContent = new Guna.UI2.WinForms.Guna2Panel();
@@ -46,9 +45,11 @@ namespace Movie_Ticket_Booking_System.View
             this.btnShowTime = new Guna.UI2.WinForms.Guna2Button();
             this.btnFilm = new Guna.UI2.WinForms.Guna2Button();
             this.btnHome = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptbTitle = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTitle)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +87,7 @@ namespace Movie_Ticket_Booking_System.View
             // 
             // panelTitle
             // 
-            this.panelTitle.Controls.Add(this.guna2HtmlLabel3);
+            this.panelTitle.Controls.Add(this.guna2PictureBox1);
             this.panelTitle.Controls.Add(this.ptbTitle);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitle.Location = new System.Drawing.Point(0, 0);
@@ -94,17 +95,6 @@ namespace Movie_Ticket_Booking_System.View
             this.panelTitle.ShadowDecoration.Parent = this.panelTitle;
             this.panelTitle.Size = new System.Drawing.Size(200, 145);
             this.panelTitle.TabIndex = 0;
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(71, 37);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(109, 39);
-            this.guna2HtmlLabel3.TabIndex = 1;
-            this.guna2HtmlLabel3.Text = "NETFLIX";
             // 
             // guna2ControlBox2
             // 
@@ -426,15 +416,27 @@ namespace Movie_Ticket_Booking_System.View
             this.btnHome.TextOffset = new System.Drawing.Point(28, 0);
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::Movie_Ticket_Booking_System.Properties.Resources.logo_title;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(0, 82);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(200, 60);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 1;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // ptbTitle
             // 
-            this.ptbTitle.Image = global::Movie_Ticket_Booking_System.Properties.Resources.film_title;
+            this.ptbTitle.Image = global::Movie_Ticket_Booking_System.Properties.Resources.logo;
             this.ptbTitle.ImageRotate = 0F;
-            this.ptbTitle.Location = new System.Drawing.Point(10, 33);
+            this.ptbTitle.Location = new System.Drawing.Point(43, 3);
             this.ptbTitle.Name = "ptbTitle";
             this.ptbTitle.ShadowDecoration.Parent = this.ptbTitle;
-            this.ptbTitle.Size = new System.Drawing.Size(50, 48);
-            this.ptbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ptbTitle.Size = new System.Drawing.Size(105, 95);
+            this.ptbTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbTitle.TabIndex = 0;
             this.ptbTitle.TabStop = false;
             // 
@@ -455,7 +457,7 @@ namespace Movie_Ticket_Booking_System.View
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitle.ResumeLayout(false);
-            this.panelTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbTitle)).EndInit();
             this.ResumeLayout(false);
 
@@ -467,8 +469,6 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2ShadowForm ShadowForm;
         private Guna.UI2.WinForms.Guna2Panel panelMenu;
         private Guna.UI2.WinForms.Guna2Panel panelTitle;
-        private Guna.UI2.WinForms.Guna2PictureBox ptbTitle;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2Button btnHome;
         private Guna.UI2.WinForms.Guna2Button btnFilm;
         public Guna.UI2.WinForms.Guna2Button btnShowTime;
@@ -480,5 +480,7 @@ namespace Movie_Ticket_Booking_System.View
         private Guna.UI2.WinForms.Guna2Button btnProfile;
         private Guna.UI2.WinForms.Guna2Button btnRevenue;
         private Guna.UI2.WinForms.Guna2Button btnAddFilm;
+        private Guna.UI2.WinForms.Guna2PictureBox ptbTitle;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }
