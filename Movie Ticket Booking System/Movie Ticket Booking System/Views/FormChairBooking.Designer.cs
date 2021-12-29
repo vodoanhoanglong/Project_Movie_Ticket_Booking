@@ -87,9 +87,9 @@ namespace Movie_Ticket_Booking_System.View
             this.pnlRoom.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.pnlRoom.Location = new System.Drawing.Point(15, 64);
             this.pnlRoom.Name = "pnlRoom";
-            this.pnlRoom.Radius = 15;
-            this.pnlRoom.ShadowColor = System.Drawing.Color.Silver;
-            this.pnlRoom.ShadowDepth = 200;
+            this.pnlRoom.Radius = 5;
+            this.pnlRoom.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.pnlRoom.ShadowDepth = 150;
             this.pnlRoom.Size = new System.Drawing.Size(753, 662);
             this.pnlRoom.TabIndex = 2;
             // 
@@ -111,7 +111,8 @@ namespace Movie_Ticket_Booking_System.View
             // btnBooking
             // 
             this.btnBooking.Animated = true;
-            this.btnBooking.BorderRadius = 20;
+            this.btnBooking.BackColor = System.Drawing.Color.Transparent;
+            this.btnBooking.BorderRadius = 5;
             this.btnBooking.CheckedState.Parent = this.btnBooking;
             this.btnBooking.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBooking.CustomImages.Parent = this.btnBooking;
@@ -128,6 +129,10 @@ namespace Movie_Ticket_Booking_System.View
             this.btnBooking.HoverState.Parent = this.btnBooking;
             this.btnBooking.Location = new System.Drawing.Point(1081, 680);
             this.btnBooking.Name = "btnBooking";
+            this.btnBooking.ShadowDecoration.BorderRadius = 10;
+            this.btnBooking.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnBooking.ShadowDecoration.Depth = 10;
+            this.btnBooking.ShadowDecoration.Enabled = true;
             this.btnBooking.ShadowDecoration.Parent = this.btnBooking;
             this.btnBooking.Size = new System.Drawing.Size(135, 45);
             this.btnBooking.TabIndex = 5;
@@ -137,7 +142,8 @@ namespace Movie_Ticket_Booking_System.View
             // btnBack
             // 
             this.btnBack.Animated = true;
-            this.btnBack.BorderRadius = 20;
+            this.btnBack.BackColor = System.Drawing.Color.Transparent;
+            this.btnBack.BorderRadius = 5;
             this.btnBack.CheckedState.Parent = this.btnBack;
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.CustomImages.Parent = this.btnBack;
@@ -154,6 +160,10 @@ namespace Movie_Ticket_Booking_System.View
             this.btnBack.HoverState.Parent = this.btnBack;
             this.btnBack.Location = new System.Drawing.Point(12, 4);
             this.btnBack.Name = "btnBack";
+            this.btnBack.ShadowDecoration.BorderRadius = 10;
+            this.btnBack.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnBack.ShadowDecoration.Depth = 10;
+            this.btnBack.ShadowDecoration.Enabled = true;
             this.btnBack.ShadowDecoration.Parent = this.btnBack;
             this.btnBack.Size = new System.Drawing.Size(131, 45);
             this.btnBack.TabIndex = 6;
@@ -163,8 +173,9 @@ namespace Movie_Ticket_Booking_System.View
             // txtCode
             // 
             this.txtCode.Animated = true;
+            this.txtCode.BackColor = System.Drawing.Color.Transparent;
             this.txtCode.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtCode.BorderRadius = 20;
+            this.txtCode.BorderRadius = 5;
             this.txtCode.BorderThickness = 2;
             this.txtCode.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCode.DefaultText = "";
@@ -187,6 +198,9 @@ namespace Movie_Ticket_Booking_System.View
             this.txtCode.PasswordChar = '\0';
             this.txtCode.PlaceholderText = "Mã giảm giá (nếu có)";
             this.txtCode.SelectedText = "";
+            this.txtCode.ShadowDecoration.BorderRadius = 10;
+            this.txtCode.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtCode.ShadowDecoration.Enabled = true;
             this.txtCode.ShadowDecoration.Parent = this.txtCode;
             this.txtCode.Size = new System.Drawing.Size(251, 47);
             this.txtCode.TabIndex = 7;
@@ -195,7 +209,8 @@ namespace Movie_Ticket_Booking_System.View
             // btnVerify
             // 
             this.btnVerify.Animated = true;
-            this.btnVerify.BorderRadius = 20;
+            this.btnVerify.BackColor = System.Drawing.Color.Transparent;
+            this.btnVerify.BorderRadius = 5;
             this.btnVerify.CheckedState.Parent = this.btnVerify;
             this.btnVerify.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVerify.CustomImages.Parent = this.btnVerify;
@@ -212,6 +227,10 @@ namespace Movie_Ticket_Booking_System.View
             this.btnVerify.HoverState.Parent = this.btnVerify;
             this.btnVerify.Location = new System.Drawing.Point(1081, 523);
             this.btnVerify.Name = "btnVerify";
+            this.btnVerify.ShadowDecoration.BorderRadius = 10;
+            this.btnVerify.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnVerify.ShadowDecoration.Depth = 10;
+            this.btnVerify.ShadowDecoration.Enabled = true;
             this.btnVerify.ShadowDecoration.Parent = this.btnVerify;
             this.btnVerify.Size = new System.Drawing.Size(135, 45);
             this.btnVerify.TabIndex = 10;
@@ -253,10 +272,15 @@ namespace Movie_Ticket_Booking_System.View
             // 
             // ptbMovie
             // 
-            this.ptbMovie.BorderRadius = 15;
+            this.ptbMovie.BackColor = System.Drawing.Color.Transparent;
+            this.ptbMovie.BorderRadius = 5;
             this.ptbMovie.ImageRotate = 0F;
             this.ptbMovie.Location = new System.Drawing.Point(787, 68);
             this.ptbMovie.Name = "ptbMovie";
+            this.ptbMovie.ShadowDecoration.BorderRadius = 10;
+            this.ptbMovie.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.ptbMovie.ShadowDecoration.Depth = 10;
+            this.ptbMovie.ShadowDecoration.Enabled = true;
             this.ptbMovie.ShadowDecoration.Parent = this.ptbMovie;
             this.ptbMovie.Size = new System.Drawing.Size(429, 436);
             this.ptbMovie.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -29,10 +29,6 @@ namespace Movie_Ticket_Booking_System.View
             loadData();
         }
 
-        private string convertDateToString(DateTime date)
-        {
-            return date.ToString("yyyyMMddHHmmss");
-        }
 
         private string parseDate(DateTime date)
         {
@@ -101,6 +97,13 @@ namespace Movie_Ticket_Booking_System.View
         {
             var query = context.TICKETS
                 .Find(this.ticketID);
+
+            DateTime currDate = DateTime.Now;
+            if(currDate > query.SHOWTIME.MovieShowTime.AddMinutes(-5))
+            {
+                MessageBox.Show("Phim đã chiếu không thể hủy");
+                return;
+            }
 
             context.ACCOUNTS.Find(this.accountID).Balance += query.TotalPrice;
             context.TICKETS.Remove(query);

@@ -103,7 +103,7 @@ namespace Movie_Ticket_Booking_System.View
             // btnConfirm
             // 
             this.btnConfirm.Animated = true;
-            this.btnConfirm.BorderRadius = 20;
+            this.btnConfirm.BorderRadius = 5;
             this.btnConfirm.CheckedState.Parent = this.btnConfirm;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.CustomImages.Parent = this.btnConfirm;
@@ -115,11 +115,15 @@ namespace Movie_Ticket_Booking_System.View
             this.btnConfirm.DisabledState.Parent = this.btnConfirm;
             this.btnConfirm.FillColor = System.Drawing.Color.Transparent;
             this.btnConfirm.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
             this.btnConfirm.Location = new System.Drawing.Point(664, 501);
             this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.ShadowDecoration.BorderRadius = 10;
+            this.btnConfirm.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnConfirm.ShadowDecoration.Depth = 10;
+            this.btnConfirm.ShadowDecoration.Enabled = true;
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
             this.btnConfirm.Size = new System.Drawing.Size(180, 45);
             this.btnConfirm.TabIndex = 4;

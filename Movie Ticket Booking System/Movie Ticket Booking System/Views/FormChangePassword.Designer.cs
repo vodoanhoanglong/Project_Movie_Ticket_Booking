@@ -45,7 +45,7 @@ namespace Movie_Ticket_Booking_System.Views
             // 
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(161, 12);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(241, 39);
@@ -55,8 +55,9 @@ namespace Movie_Ticket_Booking_System.Views
             // txtNewPassConfirm
             // 
             this.txtNewPassConfirm.Animated = true;
+            this.txtNewPassConfirm.BackColor = System.Drawing.Color.Transparent;
             this.txtNewPassConfirm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtNewPassConfirm.BorderRadius = 20;
+            this.txtNewPassConfirm.BorderRadius = 5;
             this.txtNewPassConfirm.BorderThickness = 2;
             this.txtNewPassConfirm.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNewPassConfirm.DefaultText = "";
@@ -78,6 +79,9 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtNewPassConfirm.PasswordChar = '\0';
             this.txtNewPassConfirm.PlaceholderText = "Nhập lại mật khẩu mới";
             this.txtNewPassConfirm.SelectedText = "";
+            this.txtNewPassConfirm.ShadowDecoration.BorderRadius = 10;
+            this.txtNewPassConfirm.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtNewPassConfirm.ShadowDecoration.Enabled = true;
             this.txtNewPassConfirm.ShadowDecoration.Parent = this.txtNewPassConfirm;
             this.txtNewPassConfirm.Size = new System.Drawing.Size(316, 47);
             this.txtNewPassConfirm.TabIndex = 17;
@@ -100,22 +104,27 @@ namespace Movie_Ticket_Booking_System.Views
             this.gtsShowPassword.Animated = true;
             this.gtsShowPassword.BackColor = System.Drawing.Color.Transparent;
             this.gtsShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.gtsShowPassword.CheckedState.BorderRadius = 10;
+            this.gtsShowPassword.CheckedState.BorderRadius = 5;
             this.gtsShowPassword.CheckedState.BorderThickness = 2;
             this.gtsShowPassword.CheckedState.FillColor = System.Drawing.Color.Silver;
             this.gtsShowPassword.CheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(1)))), ((int)(((byte)(68)))));
+            this.gtsShowPassword.CheckedState.InnerBorderRadius = 1;
             this.gtsShowPassword.CheckedState.InnerColor = System.Drawing.Color.Black;
             this.gtsShowPassword.CheckedState.Parent = this.gtsShowPassword;
             this.gtsShowPassword.Location = new System.Drawing.Point(121, 298);
             this.gtsShowPassword.Name = "gtsShowPassword";
+            this.gtsShowPassword.ShadowDecoration.BorderRadius = 10;
+            this.gtsShowPassword.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.gtsShowPassword.ShadowDecoration.Enabled = true;
             this.gtsShowPassword.ShadowDecoration.Parent = this.gtsShowPassword;
             this.gtsShowPassword.Size = new System.Drawing.Size(49, 22);
             this.gtsShowPassword.TabIndex = 15;
             this.gtsShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.gtsShowPassword.UncheckedState.BorderRadius = 10;
+            this.gtsShowPassword.UncheckedState.BorderRadius = 5;
             this.gtsShowPassword.UncheckedState.BorderThickness = 2;
             this.gtsShowPassword.UncheckedState.FillColor = System.Drawing.Color.Black;
             this.gtsShowPassword.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.gtsShowPassword.UncheckedState.InnerBorderRadius = 1;
             this.gtsShowPassword.UncheckedState.InnerColor = System.Drawing.Color.Silver;
             this.gtsShowPassword.UncheckedState.Parent = this.gtsShowPassword;
             this.gtsShowPassword.CheckedChanged += new System.EventHandler(this.gtsShowPassword_CheckedChanged);
@@ -123,8 +132,9 @@ namespace Movie_Ticket_Booking_System.Views
             // txtNewPass
             // 
             this.txtNewPass.Animated = true;
+            this.txtNewPass.BackColor = System.Drawing.Color.Transparent;
             this.txtNewPass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtNewPass.BorderRadius = 20;
+            this.txtNewPass.BorderRadius = 5;
             this.txtNewPass.BorderThickness = 2;
             this.txtNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNewPass.DefaultText = "";
@@ -146,6 +156,9 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtNewPass.PasswordChar = '\0';
             this.txtNewPass.PlaceholderText = "Mật khẩu mới";
             this.txtNewPass.SelectedText = "";
+            this.txtNewPass.ShadowDecoration.BorderRadius = 10;
+            this.txtNewPass.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtNewPass.ShadowDecoration.Enabled = true;
             this.txtNewPass.ShadowDecoration.Parent = this.txtNewPass;
             this.txtNewPass.Size = new System.Drawing.Size(316, 47);
             this.txtNewPass.TabIndex = 14;
@@ -155,8 +168,9 @@ namespace Movie_Ticket_Booking_System.Views
             // txtOldPass
             // 
             this.txtOldPass.Animated = true;
+            this.txtOldPass.BackColor = System.Drawing.Color.Transparent;
             this.txtOldPass.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtOldPass.BorderRadius = 20;
+            this.txtOldPass.BorderRadius = 5;
             this.txtOldPass.BorderThickness = 2;
             this.txtOldPass.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtOldPass.DefaultText = "";
@@ -178,6 +192,9 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtOldPass.PasswordChar = '\0';
             this.txtOldPass.PlaceholderText = "Mật khẩu cũ";
             this.txtOldPass.SelectedText = "";
+            this.txtOldPass.ShadowDecoration.BorderRadius = 10;
+            this.txtOldPass.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtOldPass.ShadowDecoration.Enabled = true;
             this.txtOldPass.ShadowDecoration.Parent = this.txtOldPass;
             this.txtOldPass.Size = new System.Drawing.Size(316, 47);
             this.txtOldPass.TabIndex = 18;
@@ -207,7 +224,8 @@ namespace Movie_Ticket_Booking_System.Views
             // btnConfirm
             // 
             this.btnConfirm.Animated = true;
-            this.btnConfirm.BorderRadius = 20;
+            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.BorderRadius = 5;
             this.btnConfirm.CheckedState.Parent = this.btnConfirm;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.CustomImages.Parent = this.btnConfirm;
@@ -219,11 +237,15 @@ namespace Movie_Ticket_Booking_System.Views
             this.btnConfirm.DisabledState.Parent = this.btnConfirm;
             this.btnConfirm.FillColor = System.Drawing.Color.Transparent;
             this.btnConfirm.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
             this.btnConfirm.Location = new System.Drawing.Point(194, 353);
             this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.ShadowDecoration.BorderRadius = 10;
+            this.btnConfirm.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnConfirm.ShadowDecoration.Depth = 10;
+            this.btnConfirm.ShadowDecoration.Enabled = true;
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
             this.btnConfirm.Size = new System.Drawing.Size(146, 45);
             this.btnConfirm.TabIndex = 20;

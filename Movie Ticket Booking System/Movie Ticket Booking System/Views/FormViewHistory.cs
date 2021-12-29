@@ -90,8 +90,8 @@ namespace Movie_Ticket_Booking_System.View
                 .FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             pnlHistory.Location = new System.Drawing.Point(x, y);
             pnlHistory.Name = id;
-            pnlHistory.Radius = 10;
-            pnlHistory.ShadowColor = System.Drawing.Color.Silver;
+            pnlHistory.Radius = 5;
+            pnlHistory.ShadowColor = System.Drawing.Color.FromArgb(229, 9, 20);
             pnlHistory.Size = new System.Drawing.Size(1178, 173);
             pnlHistory.Click += this.pnlHistory_Click;
             this.pnlContainer.Controls.Add(pnlHistory);

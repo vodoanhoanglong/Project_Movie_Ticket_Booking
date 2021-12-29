@@ -28,7 +28,7 @@ namespace Movie_Ticket_Booking_System.Chart
                 lineDataset.FillColor = Color.FromArgb(84, 193, 254);
                 lineDataset.Label = "Số lượng vé";
                 lineDataset.BorderColor = lineDataset.FillColor;
-                lineDataset.PointBorderWidth = 5;
+                lineDataset.PointBorderWidth = 1;
                 lineDataset.PointRadius = 5;
                 lineDataset.PointStyle = PointStyle.Circle;
 

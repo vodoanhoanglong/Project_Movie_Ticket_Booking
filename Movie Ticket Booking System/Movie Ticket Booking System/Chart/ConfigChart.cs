@@ -61,7 +61,7 @@ namespace Movie_Ticket_Booking_System.Chart
 
             config.PaletteCustomColors.FillColors.AddRange(colors);
             config.PaletteCustomColors.BorderColors.AddRange(colors);
-            config.PaletteCustomColors.PointFillColors.AddRange(new List<Color>() { Color.FromArgb(238, 238, 242) });
+            config.PaletteCustomColors.PointFillColors.AddRange(new List<Color>() { Color.FromArgb(229, 9, 20) });
             config.PaletteCustomColors.PointBorderColors.AddRange(colorsPoint);
 
             return config;

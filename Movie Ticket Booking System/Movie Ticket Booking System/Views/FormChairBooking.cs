@@ -19,7 +19,8 @@ namespace Movie_Ticket_Booking_System.View
         private string showtimeID, accountID = FormMenu.instance.info.AccountID;
         private int roomID, movieID;
         private decimal currPercent = 0, subTotalPrice = 0, currPriceChair = 0;
-        private List<string> chairBooked = new List<string>(); 
+        private List<string> chairBooked = new List<string>();
+        private DateTime timeStart;
         public FormChairBooking(string showtimeID)
         {
             InitializeComponent();
@@ -38,7 +39,9 @@ namespace Movie_Ticket_Booking_System.View
         {
             var query = context.SHOWTIMES
                 .FirstOrDefault(x => x.ShowTimeID == showtimeID);
-   
+
+            this.timeStart = query.MovieShowTime;
+
             this.subTotalPrice = query.MOVIE.Price;
             lblTotalPrice.Text += this.subTotalPrice.ToString();
             lblDiscount.Text += "0";
@@ -237,6 +240,11 @@ namespace Movie_Ticket_Booking_System.View
         private void saveTicked(decimal totalPrice)
         {
             DateTime currDate = DateTime.Now;
+            if(currDate > timeStart.AddMinutes(-5))
+            {
+                MessageBox.Show("Thời gian chiếu phim đã bắt đầu");
+                return;
+            }
             int percent = Convert.ToInt32(lblDiscount.Text.Split(' ')[2]);
             string ticketID = currDate.ToString("yyyyMMddHHmmss") + this.accountID;
 

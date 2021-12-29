@@ -30,7 +30,6 @@ namespace Movie_Ticket_Booking_System.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.Elipse = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.DragControl = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.ShadowForm = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
@@ -138,7 +137,7 @@ namespace Movie_Ticket_Booking_System.View
             // 
             this.txtPhoneNumber.Animated = true;
             this.txtPhoneNumber.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtPhoneNumber.BorderRadius = 20;
+            this.txtPhoneNumber.BorderRadius = 5;
             this.txtPhoneNumber.BorderThickness = 2;
             this.txtPhoneNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPhoneNumber.DefaultText = "";
@@ -150,7 +149,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtPhoneNumber.FillColor = System.Drawing.Color.Transparent;
             this.txtPhoneNumber.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPhoneNumber.FocusedState.Parent = this.txtPhoneNumber;
-            this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPhoneNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtPhoneNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPhoneNumber.HoverState.Parent = this.txtPhoneNumber;
@@ -161,6 +160,9 @@ namespace Movie_Ticket_Booking_System.View
             this.txtPhoneNumber.PasswordChar = '\0';
             this.txtPhoneNumber.PlaceholderText = "Số điện thoại";
             this.txtPhoneNumber.SelectedText = "";
+            this.txtPhoneNumber.ShadowDecoration.BorderRadius = 10;
+            this.txtPhoneNumber.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtPhoneNumber.ShadowDecoration.Enabled = true;
             this.txtPhoneNumber.ShadowDecoration.Parent = this.txtPhoneNumber;
             this.txtPhoneNumber.Size = new System.Drawing.Size(316, 49);
             this.txtPhoneNumber.TabIndex = 8;
@@ -171,7 +173,7 @@ namespace Movie_Ticket_Booking_System.View
             // 
             this.txtPasswordConfirm.Animated = true;
             this.txtPasswordConfirm.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtPasswordConfirm.BorderRadius = 20;
+            this.txtPasswordConfirm.BorderRadius = 5;
             this.txtPasswordConfirm.BorderThickness = 2;
             this.txtPasswordConfirm.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPasswordConfirm.DefaultText = "";
@@ -183,7 +185,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtPasswordConfirm.FillColor = System.Drawing.Color.Transparent;
             this.txtPasswordConfirm.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPasswordConfirm.FocusedState.Parent = this.txtPasswordConfirm;
-            this.txtPasswordConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPasswordConfirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordConfirm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtPasswordConfirm.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPasswordConfirm.HoverState.Parent = this.txtPasswordConfirm;
@@ -193,6 +195,9 @@ namespace Movie_Ticket_Booking_System.View
             this.txtPasswordConfirm.PasswordChar = '\0';
             this.txtPasswordConfirm.PlaceholderText = "Nhập lại mật khẩu";
             this.txtPasswordConfirm.SelectedText = "";
+            this.txtPasswordConfirm.ShadowDecoration.BorderRadius = 10;
+            this.txtPasswordConfirm.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtPasswordConfirm.ShadowDecoration.Enabled = true;
             this.txtPasswordConfirm.ShadowDecoration.Parent = this.txtPasswordConfirm;
             this.txtPasswordConfirm.Size = new System.Drawing.Size(316, 49);
             this.txtPasswordConfirm.TabIndex = 7;
@@ -202,11 +207,11 @@ namespace Movie_Ticket_Booking_System.View
             // lblShowPass
             // 
             this.lblShowPass.BackColor = System.Drawing.Color.Transparent;
-            this.lblShowPass.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblShowPass.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShowPass.ForeColor = System.Drawing.Color.Silver;
-            this.lblShowPass.Location = new System.Drawing.Point(101, 447);
+            this.lblShowPass.Location = new System.Drawing.Point(101, 446);
             this.lblShowPass.Name = "lblShowPass";
-            this.lblShowPass.Size = new System.Drawing.Size(124, 24);
+            this.lblShowPass.Size = new System.Drawing.Size(115, 23);
             this.lblShowPass.TabIndex = 6;
             this.lblShowPass.Text = "Hiện mật khẩu";
             // 
@@ -215,22 +220,27 @@ namespace Movie_Ticket_Booking_System.View
             this.gtsShowPassword.Animated = true;
             this.gtsShowPassword.BackColor = System.Drawing.Color.Transparent;
             this.gtsShowPassword.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.gtsShowPassword.CheckedState.BorderRadius = 10;
+            this.gtsShowPassword.CheckedState.BorderRadius = 5;
             this.gtsShowPassword.CheckedState.BorderThickness = 2;
             this.gtsShowPassword.CheckedState.FillColor = System.Drawing.Color.Silver;
             this.gtsShowPassword.CheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(1)))), ((int)(((byte)(68)))));
+            this.gtsShowPassword.CheckedState.InnerBorderRadius = 1;
             this.gtsShowPassword.CheckedState.InnerColor = System.Drawing.Color.Black;
             this.gtsShowPassword.CheckedState.Parent = this.gtsShowPassword;
             this.gtsShowPassword.Location = new System.Drawing.Point(46, 447);
             this.gtsShowPassword.Name = "gtsShowPassword";
+            this.gtsShowPassword.ShadowDecoration.BorderRadius = 10;
+            this.gtsShowPassword.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.gtsShowPassword.ShadowDecoration.Enabled = true;
             this.gtsShowPassword.ShadowDecoration.Parent = this.gtsShowPassword;
             this.gtsShowPassword.Size = new System.Drawing.Size(49, 22);
             this.gtsShowPassword.TabIndex = 5;
             this.gtsShowPassword.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.gtsShowPassword.UncheckedState.BorderRadius = 10;
+            this.gtsShowPassword.UncheckedState.BorderRadius = 5;
             this.gtsShowPassword.UncheckedState.BorderThickness = 2;
             this.gtsShowPassword.UncheckedState.FillColor = System.Drawing.Color.Black;
             this.gtsShowPassword.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.gtsShowPassword.UncheckedState.InnerBorderRadius = 1;
             this.gtsShowPassword.UncheckedState.InnerColor = System.Drawing.Color.Silver;
             this.gtsShowPassword.UncheckedState.Parent = this.gtsShowPassword;
             this.gtsShowPassword.CheckedChanged += new System.EventHandler(this.gtsShowPassword_CheckedChanged);
@@ -238,7 +248,7 @@ namespace Movie_Ticket_Booking_System.View
             // btnConfirm
             // 
             this.btnConfirm.Animated = true;
-            this.btnConfirm.BorderRadius = 20;
+            this.btnConfirm.BorderRadius = 5;
             this.btnConfirm.CheckedState.Parent = this.btnConfirm;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.CustomImages.Parent = this.btnConfirm;
@@ -255,6 +265,10 @@ namespace Movie_Ticket_Booking_System.View
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
             this.btnConfirm.Location = new System.Drawing.Point(111, 493);
             this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.ShadowDecoration.BorderRadius = 10;
+            this.btnConfirm.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnConfirm.ShadowDecoration.Depth = 10;
+            this.btnConfirm.ShadowDecoration.Enabled = true;
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
             this.btnConfirm.Size = new System.Drawing.Size(180, 45);
             this.btnConfirm.TabIndex = 3;
@@ -265,7 +279,7 @@ namespace Movie_Ticket_Booking_System.View
             // 
             this.txtPassword.Animated = true;
             this.txtPassword.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtPassword.BorderRadius = 20;
+            this.txtPassword.BorderRadius = 5;
             this.txtPassword.BorderThickness = 2;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultText = "";
@@ -277,7 +291,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtPassword.FillColor = System.Drawing.Color.Transparent;
             this.txtPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPassword.FocusedState.Parent = this.txtPassword;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPassword.HoverState.Parent = this.txtPassword;
@@ -287,6 +301,9 @@ namespace Movie_Ticket_Booking_System.View
             this.txtPassword.PasswordChar = '\0';
             this.txtPassword.PlaceholderText = "Mật khẩu";
             this.txtPassword.SelectedText = "";
+            this.txtPassword.ShadowDecoration.BorderRadius = 10;
+            this.txtPassword.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtPassword.ShadowDecoration.Enabled = true;
             this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
             this.txtPassword.Size = new System.Drawing.Size(316, 49);
             this.txtPassword.TabIndex = 2;
@@ -297,7 +314,7 @@ namespace Movie_Ticket_Booking_System.View
             // 
             this.txtFullName.Animated = true;
             this.txtFullName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtFullName.BorderRadius = 20;
+            this.txtFullName.BorderRadius = 5;
             this.txtFullName.BorderThickness = 2;
             this.txtFullName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtFullName.DefaultText = "";
@@ -309,7 +326,7 @@ namespace Movie_Ticket_Booking_System.View
             this.txtFullName.FillColor = System.Drawing.Color.Transparent;
             this.txtFullName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtFullName.FocusedState.Parent = this.txtFullName;
-            this.txtFullName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtFullName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtFullName.HoverState.Parent = this.txtFullName;
@@ -320,6 +337,9 @@ namespace Movie_Ticket_Booking_System.View
             this.txtFullName.PasswordChar = '\0';
             this.txtFullName.PlaceholderText = "Họ tên";
             this.txtFullName.SelectedText = "";
+            this.txtFullName.ShadowDecoration.BorderRadius = 10;
+            this.txtFullName.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtFullName.ShadowDecoration.Enabled = true;
             this.txtFullName.ShadowDecoration.Parent = this.txtFullName;
             this.txtFullName.Size = new System.Drawing.Size(316, 49);
             this.txtFullName.TabIndex = 1;
@@ -341,7 +361,6 @@ namespace Movie_Ticket_Booking_System.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1200, 750);
             this.Controls.Add(this.panel);

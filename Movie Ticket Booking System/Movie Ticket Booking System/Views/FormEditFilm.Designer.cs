@@ -60,7 +60,7 @@ namespace Movie_Ticket_Booking_System.Views
             // 
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(429, 12);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(316, 39);
@@ -71,7 +71,7 @@ namespace Movie_Ticket_Booking_System.Views
             // 
             this.cbmFilter.BackColor = System.Drawing.Color.Transparent;
             this.cbmFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.cbmFilter.BorderRadius = 15;
+            this.cbmFilter.BorderRadius = 5;
             this.cbmFilter.BorderThickness = 2;
             this.cbmFilter.Cursor = System.Windows.Forms.Cursors.Default;
             this.cbmFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -90,12 +90,14 @@ namespace Movie_Ticket_Booking_System.Views
             "Tình cảm",
             "Kinh dị",
             "Phiêu lưu",
-            "Hoạt hình",
-            "Khiêu dâm"});
-            this.cbmFilter.ItemsAppearance.BackColor = System.Drawing.Color.Black;
+            "Hoạt hình"});
+            this.cbmFilter.ItemsAppearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.cbmFilter.ItemsAppearance.Parent = this.cbmFilter;
             this.cbmFilter.Location = new System.Drawing.Point(504, 348);
             this.cbmFilter.Name = "cbmFilter";
+            this.cbmFilter.ShadowDecoration.BorderRadius = 10;
+            this.cbmFilter.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.cbmFilter.ShadowDecoration.Enabled = true;
             this.cbmFilter.ShadowDecoration.Parent = this.cbmFilter;
             this.cbmFilter.Size = new System.Drawing.Size(241, 36);
             this.cbmFilter.TabIndex = 23;
@@ -104,8 +106,9 @@ namespace Movie_Ticket_Booking_System.Views
             // txtDes
             // 
             this.txtDes.Animated = true;
+            this.txtDes.BackColor = System.Drawing.Color.Transparent;
             this.txtDes.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtDes.BorderRadius = 20;
+            this.txtDes.BorderRadius = 5;
             this.txtDes.BorderThickness = 2;
             this.txtDes.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDes.DefaultText = "";
@@ -117,7 +120,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtDes.FillColor = System.Drawing.Color.Transparent;
             this.txtDes.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtDes.FocusedState.Parent = this.txtDes;
-            this.txtDes.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtDes.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtDes.HoverState.Parent = this.txtDes;
@@ -129,6 +132,9 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtDes.PlaceholderText = "Mô tả";
             this.txtDes.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtDes.SelectedText = "";
+            this.txtDes.ShadowDecoration.BorderRadius = 10;
+            this.txtDes.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtDes.ShadowDecoration.Enabled = true;
             this.txtDes.ShadowDecoration.Parent = this.txtDes;
             this.txtDes.Size = new System.Drawing.Size(456, 231);
             this.txtDes.TabIndex = 22;
@@ -137,8 +143,9 @@ namespace Movie_Ticket_Booking_System.Views
             // txtPrice
             // 
             this.txtPrice.Animated = true;
+            this.txtPrice.BackColor = System.Drawing.Color.Transparent;
             this.txtPrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtPrice.BorderRadius = 20;
+            this.txtPrice.BorderRadius = 5;
             this.txtPrice.BorderThickness = 2;
             this.txtPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPrice.DefaultText = "";
@@ -150,7 +157,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtPrice.FillColor = System.Drawing.Color.Transparent;
             this.txtPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPrice.FocusedState.Parent = this.txtPrice;
-            this.txtPrice.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtPrice.HoverState.Parent = this.txtPrice;
@@ -161,6 +168,9 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtPrice.PasswordChar = '\0';
             this.txtPrice.PlaceholderText = "Giá phim";
             this.txtPrice.SelectedText = "";
+            this.txtPrice.ShadowDecoration.BorderRadius = 10;
+            this.txtPrice.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtPrice.ShadowDecoration.Enabled = true;
             this.txtPrice.ShadowDecoration.Parent = this.txtPrice;
             this.txtPrice.Size = new System.Drawing.Size(241, 49);
             this.txtPrice.TabIndex = 21;
@@ -169,8 +179,9 @@ namespace Movie_Ticket_Booking_System.Views
             // txtTime
             // 
             this.txtTime.Animated = true;
+            this.txtTime.BackColor = System.Drawing.Color.Transparent;
             this.txtTime.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtTime.BorderRadius = 20;
+            this.txtTime.BorderRadius = 5;
             this.txtTime.BorderThickness = 2;
             this.txtTime.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTime.DefaultText = "00:00:00";
@@ -182,7 +193,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtTime.FillColor = System.Drawing.Color.Transparent;
             this.txtTime.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtTime.FocusedState.Parent = this.txtTime;
-            this.txtTime.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTime.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtTime.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtTime.HoverState.Parent = this.txtTime;
@@ -194,6 +205,9 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtTime.PlaceholderText = "";
             this.txtTime.SelectedText = "";
             this.txtTime.SelectionStart = 8;
+            this.txtTime.ShadowDecoration.BorderRadius = 10;
+            this.txtTime.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtTime.ShadowDecoration.Enabled = true;
             this.txtTime.ShadowDecoration.Parent = this.txtTime;
             this.txtTime.Size = new System.Drawing.Size(241, 49);
             this.txtTime.TabIndex = 20;
@@ -202,8 +216,9 @@ namespace Movie_Ticket_Booking_System.Views
             // txtMovieName
             // 
             this.txtMovieName.Animated = true;
+            this.txtMovieName.BackColor = System.Drawing.Color.Transparent;
             this.txtMovieName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtMovieName.BorderRadius = 20;
+            this.txtMovieName.BorderRadius = 5;
             this.txtMovieName.BorderThickness = 2;
             this.txtMovieName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMovieName.DefaultText = "";
@@ -215,7 +230,7 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtMovieName.FillColor = System.Drawing.Color.Transparent;
             this.txtMovieName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtMovieName.FocusedState.Parent = this.txtMovieName;
-            this.txtMovieName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMovieName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMovieName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.txtMovieName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
             this.txtMovieName.HoverState.Parent = this.txtMovieName;
@@ -226,6 +241,9 @@ namespace Movie_Ticket_Booking_System.Views
             this.txtMovieName.PasswordChar = '\0';
             this.txtMovieName.PlaceholderText = "Tên phim";
             this.txtMovieName.SelectedText = "";
+            this.txtMovieName.ShadowDecoration.BorderRadius = 10;
+            this.txtMovieName.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtMovieName.ShadowDecoration.Enabled = true;
             this.txtMovieName.ShadowDecoration.Parent = this.txtMovieName;
             this.txtMovieName.Size = new System.Drawing.Size(462, 49);
             this.txtMovieName.TabIndex = 19;
@@ -234,7 +252,8 @@ namespace Movie_Ticket_Booking_System.Views
             // btnEdit
             // 
             this.btnEdit.Animated = true;
-            this.btnEdit.BorderRadius = 20;
+            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BorderRadius = 5;
             this.btnEdit.CheckedState.Parent = this.btnEdit;
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.CustomImages.Parent = this.btnEdit;
@@ -251,6 +270,10 @@ namespace Movie_Ticket_Booking_System.Views
             this.btnEdit.HoverState.Parent = this.btnEdit;
             this.btnEdit.Location = new System.Drawing.Point(992, 504);
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.ShadowDecoration.BorderRadius = 10;
+            this.btnEdit.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnEdit.ShadowDecoration.Depth = 10;
+            this.btnEdit.ShadowDecoration.Enabled = true;
             this.btnEdit.ShadowDecoration.Parent = this.btnEdit;
             this.btnEdit.Size = new System.Drawing.Size(187, 45);
             this.btnEdit.TabIndex = 25;
@@ -325,11 +348,16 @@ namespace Movie_Ticket_Booking_System.Views
             // 
             // ptbAddImg
             // 
-            this.ptbAddImg.BorderRadius = 20;
+            this.ptbAddImg.BackColor = System.Drawing.Color.Transparent;
+            this.ptbAddImg.BorderRadius = 5;
             this.ptbAddImg.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(193)))), ((int)(((byte)(200)))), ((int)(((byte)(207)))));
             this.ptbAddImg.ImageRotate = 0F;
             this.ptbAddImg.Location = new System.Drawing.Point(776, 138);
             this.ptbAddImg.Name = "ptbAddImg";
+            this.ptbAddImg.ShadowDecoration.BorderRadius = 10;
+            this.ptbAddImg.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.ptbAddImg.ShadowDecoration.Depth = 10;
+            this.ptbAddImg.ShadowDecoration.Enabled = true;
             this.ptbAddImg.ShadowDecoration.Parent = this.ptbAddImg;
             this.ptbAddImg.Size = new System.Drawing.Size(403, 334);
             this.ptbAddImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -341,7 +369,8 @@ namespace Movie_Ticket_Booking_System.Views
             // btnChangeImg
             // 
             this.btnChangeImg.Animated = true;
-            this.btnChangeImg.BorderRadius = 20;
+            this.btnChangeImg.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangeImg.BorderRadius = 5;
             this.btnChangeImg.CheckedState.Parent = this.btnChangeImg;
             this.btnChangeImg.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangeImg.CustomImages.Parent = this.btnChangeImg;
@@ -358,6 +387,10 @@ namespace Movie_Ticket_Booking_System.Views
             this.btnChangeImg.HoverState.Parent = this.btnChangeImg;
             this.btnChangeImg.Location = new System.Drawing.Point(531, 417);
             this.btnChangeImg.Name = "btnChangeImg";
+            this.btnChangeImg.ShadowDecoration.BorderRadius = 10;
+            this.btnChangeImg.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnChangeImg.ShadowDecoration.Depth = 10;
+            this.btnChangeImg.ShadowDecoration.Enabled = true;
             this.btnChangeImg.ShadowDecoration.Parent = this.btnChangeImg;
             this.btnChangeImg.Size = new System.Drawing.Size(187, 45);
             this.btnChangeImg.TabIndex = 33;
@@ -367,7 +400,8 @@ namespace Movie_Ticket_Booking_System.Views
             // btnCancel
             // 
             this.btnCancel.Animated = true;
-            this.btnCancel.BorderRadius = 20;
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.BorderRadius = 5;
             this.btnCancel.CheckedState.Parent = this.btnCancel;
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.CustomImages.Parent = this.btnCancel;
@@ -384,6 +418,10 @@ namespace Movie_Ticket_Booking_System.Views
             this.btnCancel.HoverState.Parent = this.btnCancel;
             this.btnCancel.Location = new System.Drawing.Point(776, 504);
             this.btnCancel.Name = "btnCancel";
+            this.btnCancel.ShadowDecoration.BorderRadius = 10;
+            this.btnCancel.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnCancel.ShadowDecoration.Depth = 10;
+            this.btnCancel.ShadowDecoration.Enabled = true;
             this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
             this.btnCancel.Size = new System.Drawing.Size(187, 45);
             this.btnCancel.TabIndex = 34;

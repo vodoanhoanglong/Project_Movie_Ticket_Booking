@@ -127,7 +127,7 @@ namespace Movie_Ticket_Booking_System.View
         {
             Guna2PictureBox picture = new Guna2PictureBox();
             picture.Cursor = Cursors.Hand;
-            picture.BorderRadius = 20;
+            picture.BorderRadius = 5;
             picture.ImageLocation = string.Format(@"..\..\Images\Movies\" + id + ".jpg");
             picture.ImageRotate = 0F;
             picture.Location = new System.Drawing.Point(width, height);
@@ -136,6 +136,10 @@ namespace Movie_Ticket_Booking_System.View
             picture.Size = sizePic;
             picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             picture.TabStop = false;
+            picture.ShadowDecoration.BorderRadius = 10;
+            picture.ShadowDecoration.Color = Color.FromArgb(229, 9, 20);
+            picture.ShadowDecoration.Depth = 10;
+            picture.ShadowDecoration.Enabled = true;
             picture.MouseHover += this.picture_MouseHover;
             this.pnlContainer.Controls.Add(picture);
             setLabel(id, title, picture);

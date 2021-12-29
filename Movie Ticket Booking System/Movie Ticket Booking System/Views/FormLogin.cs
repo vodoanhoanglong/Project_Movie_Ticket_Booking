@@ -1,6 +1,7 @@
 ﻿
 using Movie_Ticket_Booking_System;
 using Movie_Ticket_Booking_System.Models;
+using Movie_Ticket_Booking_System.Properties;
 using Movie_Ticket_Booking_System.Views;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace Movie_Ticket_Booking_System.View
     public partial class FormLogin : Form
     {
         private const int percentDiscount = 10;
+        private Bitmap background = Resources.background_login;
         ContextDB context = Program.context;
         public static FormLogin instance;
         public FormLogin()
@@ -33,6 +35,8 @@ namespace Movie_Ticket_Booking_System.View
             panel.Location = new Point(
                 this.ClientSize.Width / 2 - panel.Size.Width / 2,
                 this.ClientSize.Height / 2 - panel.Size.Height / 2);
+
+            this.BackgroundImage = background;
 
             setPanelSignIn();
         }

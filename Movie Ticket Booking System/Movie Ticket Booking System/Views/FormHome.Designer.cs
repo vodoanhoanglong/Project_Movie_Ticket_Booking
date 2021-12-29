@@ -32,6 +32,7 @@ namespace Movie_Ticket_Booking_System.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             this.panelOverlay = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.progressBar = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2GradientButton();
             this.ptbMovie2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptbMovie1 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -39,7 +40,6 @@ namespace Movie_Ticket_Booking_System.View
             this.lblDes = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblMovieName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.progressBar = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.timerProgressBar = new System.Windows.Forms.Timer(this.components);
             this.panelOverlay.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbMovie2)).BeginInit();
@@ -66,10 +66,27 @@ namespace Movie_Ticket_Booking_System.View
             this.panelOverlay.Size = new System.Drawing.Size(1233, 756);
             this.panelOverlay.TabIndex = 1;
             // 
+            // progressBar
+            // 
+            this.progressBar.BorderRadius = 5;
+            this.progressBar.FillColor = System.Drawing.Color.Transparent;
+            this.progressBar.Location = new System.Drawing.Point(943, 378);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.progressBar.ProgressColor2 = System.Drawing.Color.DarkGray;
+            this.progressBar.ShadowDecoration.BorderRadius = 10;
+            this.progressBar.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.progressBar.ShadowDecoration.Depth = 10;
+            this.progressBar.ShadowDecoration.Enabled = true;
+            this.progressBar.ShadowDecoration.Parent = this.progressBar;
+            this.progressBar.Size = new System.Drawing.Size(266, 10);
+            this.progressBar.TabIndex = 15;
+            this.progressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
             // btnConfirm
             // 
             this.btnConfirm.Animated = true;
-            this.btnConfirm.BorderRadius = 20;
+            this.btnConfirm.BorderRadius = 5;
             this.btnConfirm.CheckedState.Parent = this.btnConfirm;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.CustomImages.Parent = this.btnConfirm;
@@ -81,11 +98,15 @@ namespace Movie_Ticket_Booking_System.View
             this.btnConfirm.DisabledState.Parent = this.btnConfirm;
             this.btnConfirm.FillColor = System.Drawing.Color.Transparent;
             this.btnConfirm.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
             this.btnConfirm.Location = new System.Drawing.Point(40, 450);
             this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.ShadowDecoration.BorderRadius = 10;
+            this.btnConfirm.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnConfirm.ShadowDecoration.Depth = 10;
+            this.btnConfirm.ShadowDecoration.Enabled = true;
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
             this.btnConfirm.Size = new System.Drawing.Size(156, 45);
             this.btnConfirm.TabIndex = 14;
@@ -94,11 +115,15 @@ namespace Movie_Ticket_Booking_System.View
             // 
             // ptbMovie2
             // 
-            this.ptbMovie2.BorderRadius = 10;
+            this.ptbMovie2.BorderRadius = 5;
             this.ptbMovie2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbMovie2.ImageRotate = 0F;
             this.ptbMovie2.Location = new System.Drawing.Point(943, 406);
             this.ptbMovie2.Name = "ptbMovie2";
+            this.ptbMovie2.ShadowDecoration.BorderRadius = 10;
+            this.ptbMovie2.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.ptbMovie2.ShadowDecoration.Depth = 10;
+            this.ptbMovie2.ShadowDecoration.Enabled = true;
             this.ptbMovie2.ShadowDecoration.Parent = this.ptbMovie2;
             this.ptbMovie2.Size = new System.Drawing.Size(266, 335);
             this.ptbMovie2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -107,11 +132,15 @@ namespace Movie_Ticket_Booking_System.View
             // 
             // ptbMovie1
             // 
-            this.ptbMovie1.BorderRadius = 10;
+            this.ptbMovie1.BorderRadius = 5;
             this.ptbMovie1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ptbMovie1.ImageRotate = 0F;
             this.ptbMovie1.Location = new System.Drawing.Point(943, 25);
             this.ptbMovie1.Name = "ptbMovie1";
+            this.ptbMovie1.ShadowDecoration.BorderRadius = 10;
+            this.ptbMovie1.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.ptbMovie1.ShadowDecoration.Depth = 10;
+            this.ptbMovie1.ShadowDecoration.Enabled = true;
             this.ptbMovie1.ShadowDecoration.Parent = this.ptbMovie1;
             this.ptbMovie1.Size = new System.Drawing.Size(266, 335);
             this.ptbMovie1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -156,21 +185,6 @@ namespace Movie_Ticket_Booking_System.View
             // 
             this.timer.Interval = 4000;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // progressBar
-            // 
-            this.progressBar.BorderRadius = 5;
-            this.progressBar.FillColor = System.Drawing.Color.Transparent;
-            this.progressBar.Location = new System.Drawing.Point(943, 378);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.progressBar.ProgressColor2 = System.Drawing.Color.DarkGray;
-            this.progressBar.ShadowDecoration.BorderRadius = 10;
-            this.progressBar.ShadowDecoration.Color = System.Drawing.Color.Silver;
-            this.progressBar.ShadowDecoration.Parent = this.progressBar;
-            this.progressBar.Size = new System.Drawing.Size(266, 10);
-            this.progressBar.TabIndex = 15;
-            this.progressBar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // timerProgressBar
             // 

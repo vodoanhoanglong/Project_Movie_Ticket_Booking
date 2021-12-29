@@ -38,7 +38,8 @@ namespace Movie_Ticket_Booking_System.View
             // btnToday
             // 
             this.btnToday.Animated = true;
-            this.btnToday.BorderRadius = 20;
+            this.btnToday.BackColor = System.Drawing.Color.Transparent;
+            this.btnToday.BorderRadius = 5;
             this.btnToday.CheckedState.Parent = this.btnToday;
             this.btnToday.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnToday.CustomImages.Parent = this.btnToday;
@@ -55,6 +56,10 @@ namespace Movie_Ticket_Booking_System.View
             this.btnToday.HoverState.Parent = this.btnToday;
             this.btnToday.Location = new System.Drawing.Point(268, 12);
             this.btnToday.Name = "btnToday";
+            this.btnToday.ShadowDecoration.BorderRadius = 10;
+            this.btnToday.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnToday.ShadowDecoration.Depth = 10;
+            this.btnToday.ShadowDecoration.Enabled = true;
             this.btnToday.ShadowDecoration.Parent = this.btnToday;
             this.btnToday.Size = new System.Drawing.Size(180, 45);
             this.btnToday.TabIndex = 4;
@@ -64,7 +69,8 @@ namespace Movie_Ticket_Booking_System.View
             // btnTomorrow
             // 
             this.btnTomorrow.Animated = true;
-            this.btnTomorrow.BorderRadius = 20;
+            this.btnTomorrow.BackColor = System.Drawing.Color.Transparent;
+            this.btnTomorrow.BorderRadius = 5;
             this.btnTomorrow.CheckedState.Parent = this.btnTomorrow;
             this.btnTomorrow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnTomorrow.CustomImages.Parent = this.btnTomorrow;
@@ -81,6 +87,10 @@ namespace Movie_Ticket_Booking_System.View
             this.btnTomorrow.HoverState.Parent = this.btnTomorrow;
             this.btnTomorrow.Location = new System.Drawing.Point(509, 12);
             this.btnTomorrow.Name = "btnTomorrow";
+            this.btnTomorrow.ShadowDecoration.BorderRadius = 10;
+            this.btnTomorrow.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnTomorrow.ShadowDecoration.Depth = 10;
+            this.btnTomorrow.ShadowDecoration.Enabled = true;
             this.btnTomorrow.ShadowDecoration.Parent = this.btnTomorrow;
             this.btnTomorrow.Size = new System.Drawing.Size(180, 45);
             this.btnTomorrow.TabIndex = 5;
@@ -90,7 +100,8 @@ namespace Movie_Ticket_Booking_System.View
             // btnAfterTomorrow
             // 
             this.btnAfterTomorrow.Animated = true;
-            this.btnAfterTomorrow.BorderRadius = 20;
+            this.btnAfterTomorrow.BackColor = System.Drawing.Color.Transparent;
+            this.btnAfterTomorrow.BorderRadius = 5;
             this.btnAfterTomorrow.CheckedState.Parent = this.btnAfterTomorrow;
             this.btnAfterTomorrow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAfterTomorrow.CustomImages.Parent = this.btnAfterTomorrow;
@@ -107,6 +118,10 @@ namespace Movie_Ticket_Booking_System.View
             this.btnAfterTomorrow.HoverState.Parent = this.btnAfterTomorrow;
             this.btnAfterTomorrow.Location = new System.Drawing.Point(751, 12);
             this.btnAfterTomorrow.Name = "btnAfterTomorrow";
+            this.btnAfterTomorrow.ShadowDecoration.BorderRadius = 10;
+            this.btnAfterTomorrow.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnAfterTomorrow.ShadowDecoration.Depth = 10;
+            this.btnAfterTomorrow.ShadowDecoration.Enabled = true;
             this.btnAfterTomorrow.ShadowDecoration.Parent = this.btnAfterTomorrow;
             this.btnAfterTomorrow.Size = new System.Drawing.Size(180, 45);
             this.btnAfterTomorrow.TabIndex = 6;

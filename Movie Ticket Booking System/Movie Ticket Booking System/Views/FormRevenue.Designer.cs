@@ -88,7 +88,8 @@ namespace Movie_Ticket_Booking_System.Views
             this.pnlRevenueWeek.Location = new System.Drawing.Point(12, 71);
             this.pnlRevenueWeek.Name = "pnlRevenueWeek";
             this.pnlRevenueWeek.Radius = 5;
-            this.pnlRevenueWeek.ShadowColor = System.Drawing.Color.Silver;
+            this.pnlRevenueWeek.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.pnlRevenueWeek.ShadowDepth = 150;
             this.pnlRevenueWeek.Size = new System.Drawing.Size(349, 108);
             this.pnlRevenueWeek.TabIndex = 38;
             // 
@@ -141,7 +142,8 @@ namespace Movie_Ticket_Booking_System.Views
             this.pnlRevenueMonth.Location = new System.Drawing.Point(442, 71);
             this.pnlRevenueMonth.Name = "pnlRevenueMonth";
             this.pnlRevenueMonth.Radius = 5;
-            this.pnlRevenueMonth.ShadowColor = System.Drawing.Color.Silver;
+            this.pnlRevenueMonth.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.pnlRevenueMonth.ShadowDepth = 150;
             this.pnlRevenueMonth.Size = new System.Drawing.Size(349, 108);
             this.pnlRevenueMonth.TabIndex = 42;
             // 
@@ -194,7 +196,8 @@ namespace Movie_Ticket_Booking_System.Views
             this.pnlRevenueYear.Location = new System.Drawing.Point(865, 71);
             this.pnlRevenueYear.Name = "pnlRevenueYear";
             this.pnlRevenueYear.Radius = 5;
-            this.pnlRevenueYear.ShadowColor = System.Drawing.Color.Silver;
+            this.pnlRevenueYear.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.pnlRevenueYear.ShadowDepth = 150;
             this.pnlRevenueYear.Size = new System.Drawing.Size(349, 108);
             this.pnlRevenueYear.TabIndex = 43;
             // 
@@ -277,22 +280,27 @@ namespace Movie_Ticket_Booking_System.Views
             this.toogleSwitch.Animated = true;
             this.toogleSwitch.BackColor = System.Drawing.Color.Transparent;
             this.toogleSwitch.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.toogleSwitch.CheckedState.BorderRadius = 10;
+            this.toogleSwitch.CheckedState.BorderRadius = 5;
             this.toogleSwitch.CheckedState.BorderThickness = 2;
             this.toogleSwitch.CheckedState.FillColor = System.Drawing.Color.Silver;
             this.toogleSwitch.CheckedState.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(1)))), ((int)(((byte)(68)))));
+            this.toogleSwitch.CheckedState.InnerBorderRadius = 1;
             this.toogleSwitch.CheckedState.InnerColor = System.Drawing.Color.Black;
             this.toogleSwitch.CheckedState.Parent = this.toogleSwitch;
             this.toogleSwitch.Location = new System.Drawing.Point(758, 13);
             this.toogleSwitch.Name = "toogleSwitch";
+            this.toogleSwitch.ShadowDecoration.BorderRadius = 10;
+            this.toogleSwitch.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.toogleSwitch.ShadowDecoration.Enabled = true;
             this.toogleSwitch.ShadowDecoration.Parent = this.toogleSwitch;
             this.toogleSwitch.Size = new System.Drawing.Size(49, 22);
             this.toogleSwitch.TabIndex = 46;
             this.toogleSwitch.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.toogleSwitch.UncheckedState.BorderRadius = 10;
+            this.toogleSwitch.UncheckedState.BorderRadius = 5;
             this.toogleSwitch.UncheckedState.BorderThickness = 2;
             this.toogleSwitch.UncheckedState.FillColor = System.Drawing.Color.Black;
             this.toogleSwitch.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
+            this.toogleSwitch.UncheckedState.InnerBorderRadius = 1;
             this.toogleSwitch.UncheckedState.InnerColor = System.Drawing.Color.Silver;
             this.toogleSwitch.UncheckedState.Parent = this.toogleSwitch;
             this.toogleSwitch.CheckedChanged += new System.EventHandler(this.toogleSwitch_CheckedChanged);

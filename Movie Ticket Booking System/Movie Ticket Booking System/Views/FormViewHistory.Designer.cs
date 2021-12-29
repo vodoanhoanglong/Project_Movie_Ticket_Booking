@@ -57,8 +57,9 @@ namespace Movie_Ticket_Booking_System.View
             // txtSearch
             // 
             this.txtSearch.Animated = true;
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
             this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtSearch.BorderRadius = 15;
+            this.txtSearch.BorderRadius = 5;
             this.txtSearch.BorderThickness = 2;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.DefaultText = "";
@@ -81,6 +82,9 @@ namespace Movie_Ticket_Booking_System.View
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Tìm kiếm";
             this.txtSearch.SelectedText = "";
+            this.txtSearch.ShadowDecoration.BorderRadius = 10;
+            this.txtSearch.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtSearch.ShadowDecoration.Enabled = true;
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
             this.txtSearch.Size = new System.Drawing.Size(362, 36);
             this.txtSearch.TabIndex = 25;

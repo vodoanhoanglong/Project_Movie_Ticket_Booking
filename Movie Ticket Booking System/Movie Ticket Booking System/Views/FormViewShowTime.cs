@@ -82,7 +82,7 @@ namespace Movie_Ticket_Booking_System.View
         private void setPicture(int id, int width, int height)
         {
             Guna2PictureBox picture = new Guna2PictureBox();
-            picture.BorderRadius = 10;
+            picture.BorderRadius = 5;
             picture.ImageLocation = string.Format(@"..\..\Images\Movies\" + id + ".jpg");
             picture.ImageRotate = 0F;
             picture.Location = new System.Drawing.Point(width, height);
@@ -91,6 +91,10 @@ namespace Movie_Ticket_Booking_System.View
             picture.Size = sizePic;
             picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             picture.TabStop = false;
+            picture.ShadowDecoration.BorderRadius = 10;
+            picture.ShadowDecoration.Color = Color.FromArgb(229, 9, 20);
+            picture.ShadowDecoration.Depth = 10;
+            picture.ShadowDecoration.Enabled = true;
             this.panelViewShowTime.Controls.Add(picture);
         }
 
@@ -102,13 +106,17 @@ namespace Movie_Ticket_Booking_System.View
             btnShowtime.FillColor = Color.Black;
             btnShowtime.HoverState.ForeColor = Color.FromArgb(229, 9, 20);
             btnShowtime.Cursor = Cursors.Hand;
-            btnShowtime.BorderRadius = 20;
-            btnShowtime.BorderThickness = 2;
+            btnShowtime.BorderRadius = 5;
+            btnShowtime.BorderThickness = 0;
             btnShowtime.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
             btnShowtime.ForeColor = System.Drawing.Color.White;
             btnShowtime.Location = new Point(width, height);
             btnShowtime.Name = id;
             btnShowtime.Size = new Size(130, 65);
+            btnShowtime.ShadowDecoration.BorderRadius = 10;
+            btnShowtime.ShadowDecoration.Color = Color.FromArgb(229, 9, 20);
+            btnShowtime.ShadowDecoration.Depth = 10;
+            btnShowtime.ShadowDecoration.Enabled = true;
             btnShowtime.Click += delegate (object sender, EventArgs e) 
             { this.btnShowtime_Click(sender, e, dateStart); };
             this.panelViewShowTime.Controls.Add(btnShowtime);

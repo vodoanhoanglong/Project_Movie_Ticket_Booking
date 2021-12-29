@@ -189,7 +189,7 @@ namespace Movie_Ticket_Booking_System.Views
             // 
             this.btnChangePass.Animated = true;
             this.btnChangePass.BackColor = System.Drawing.Color.Transparent;
-            this.btnChangePass.BorderRadius = 20;
+            this.btnChangePass.BorderRadius = 5;
             this.btnChangePass.CheckedState.Parent = this.btnChangePass;
             this.btnChangePass.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChangePass.CustomImages.Parent = this.btnChangePass;
@@ -206,6 +206,10 @@ namespace Movie_Ticket_Booking_System.Views
             this.btnChangePass.HoverState.Parent = this.btnChangePass;
             this.btnChangePass.Location = new System.Drawing.Point(1041, 649);
             this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.ShadowDecoration.BorderRadius = 10;
+            this.btnChangePass.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnChangePass.ShadowDecoration.Depth = 10;
+            this.btnChangePass.ShadowDecoration.Enabled = true;
             this.btnChangePass.ShadowDecoration.Parent = this.btnChangePass;
             this.btnChangePass.Size = new System.Drawing.Size(148, 48);
             this.btnChangePass.TabIndex = 43;

@@ -30,9 +30,9 @@ namespace Movie_Ticket_Booking_System.View
         private void InitializeComponent()
         {
             this.lblFilter = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.cbmFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.pnlContainer = new Guna.UI2.WinForms.Guna2Panel();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cbmFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.SuspendLayout();
             // 
             // lblFilter
@@ -47,42 +47,6 @@ namespace Movie_Ticket_Booking_System.View
             this.lblFilter.Text = "Thể loại";
             this.lblFilter.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cbmFilter
-            // 
-            this.cbmFilter.BackColor = System.Drawing.Color.Transparent;
-            this.cbmFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.cbmFilter.BorderRadius = 15;
-            this.cbmFilter.BorderThickness = 2;
-            this.cbmFilter.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbmFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbmFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbmFilter.FillColor = System.Drawing.Color.Transparent;
-            this.cbmFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbmFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbmFilter.FocusedState.Parent = this.cbmFilter;
-            this.cbmFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.cbmFilter.ForeColor = System.Drawing.Color.White;
-            this.cbmFilter.HoverState.Parent = this.cbmFilter;
-            this.cbmFilter.ItemHeight = 30;
-            this.cbmFilter.Items.AddRange(new object[] {
-            "Tất cả",
-            "Hành động",
-            "Viễn tưởng",
-            "Tình cảm",
-            "Kinh dị",
-            "Phiêu lưu",
-            "Hoạt hình",
-            "Khiêu dâm"});
-            this.cbmFilter.ItemsAppearance.BackColor = System.Drawing.Color.Black;
-            this.cbmFilter.ItemsAppearance.Parent = this.cbmFilter;
-            this.cbmFilter.Location = new System.Drawing.Point(143, 15);
-            this.cbmFilter.Name = "cbmFilter";
-            this.cbmFilter.ShadowDecoration.Parent = this.cbmFilter;
-            this.cbmFilter.Size = new System.Drawing.Size(250, 36);
-            this.cbmFilter.TabIndex = 3;
-            this.cbmFilter.TextOffset = new System.Drawing.Point(5, 0);
-            this.cbmFilter.SelectionChangeCommitted += new System.EventHandler(this.cbmFilter_SelectionChangeCommitted);
-            // 
             // pnlContainer
             // 
             this.pnlContainer.AutoScroll = true;
@@ -95,8 +59,9 @@ namespace Movie_Ticket_Booking_System.View
             // txtSearch
             // 
             this.txtSearch.Animated = true;
+            this.txtSearch.BackColor = System.Drawing.Color.Transparent;
             this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.txtSearch.BorderRadius = 15;
+            this.txtSearch.BorderRadius = 5;
             this.txtSearch.BorderThickness = 2;
             this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSearch.DefaultText = "";
@@ -119,11 +84,52 @@ namespace Movie_Ticket_Booking_System.View
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "Tìm phim";
             this.txtSearch.SelectedText = "";
+            this.txtSearch.ShadowDecoration.BorderRadius = 10;
+            this.txtSearch.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.txtSearch.ShadowDecoration.Enabled = true;
             this.txtSearch.ShadowDecoration.Parent = this.txtSearch;
             this.txtSearch.Size = new System.Drawing.Size(362, 36);
             this.txtSearch.TabIndex = 6;
             this.txtSearch.TextOffset = new System.Drawing.Point(5, 0);
             this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
+            // cbmFilter
+            // 
+            this.cbmFilter.BackColor = System.Drawing.Color.Transparent;
+            this.cbmFilter.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.cbmFilter.BorderRadius = 5;
+            this.cbmFilter.BorderThickness = 2;
+            this.cbmFilter.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbmFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbmFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbmFilter.FillColor = System.Drawing.Color.Transparent;
+            this.cbmFilter.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbmFilter.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbmFilter.FocusedState.Parent = this.cbmFilter;
+            this.cbmFilter.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.cbmFilter.ForeColor = System.Drawing.Color.White;
+            this.cbmFilter.HoverState.Parent = this.cbmFilter;
+            this.cbmFilter.ItemHeight = 30;
+            this.cbmFilter.Items.AddRange(new object[] {
+            "Tất cả",
+            "Hành động",
+            "Viễn tưởng",
+            "Tình cảm",
+            "Kinh dị",
+            "Phiêu lưu",
+            "Hoạt hình"});
+            this.cbmFilter.ItemsAppearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
+            this.cbmFilter.ItemsAppearance.Parent = this.cbmFilter;
+            this.cbmFilter.Location = new System.Drawing.Point(141, 13);
+            this.cbmFilter.Name = "cbmFilter";
+            this.cbmFilter.ShadowDecoration.BorderRadius = 10;
+            this.cbmFilter.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.cbmFilter.ShadowDecoration.Enabled = true;
+            this.cbmFilter.ShadowDecoration.Parent = this.cbmFilter;
+            this.cbmFilter.Size = new System.Drawing.Size(241, 36);
+            this.cbmFilter.TabIndex = 24;
+            this.cbmFilter.TextOffset = new System.Drawing.Point(5, 0);
+            this.cbmFilter.SelectionChangeCommitted += new System.EventHandler(this.cbmFilter_SelectionChangeCommitted);
             // 
             // FormMovieStore
             // 
@@ -131,9 +137,9 @@ namespace Movie_Ticket_Booking_System.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1217, 717);
+            this.Controls.Add(this.cbmFilter);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.pnlContainer);
-            this.Controls.Add(this.cbmFilter);
             this.Controls.Add(this.lblFilter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormMovieStore";
@@ -147,8 +153,8 @@ namespace Movie_Ticket_Booking_System.View
         #endregion
 
         private Guna.UI2.WinForms.Guna2HtmlLabel lblFilter;
-        private Guna.UI2.WinForms.Guna2ComboBox cbmFilter;
         private Guna.UI2.WinForms.Guna2Panel pnlContainer;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
+        private Guna.UI2.WinForms.Guna2ComboBox cbmFilter;
     }
 }

@@ -291,30 +291,6 @@
     <None Include="Resources\film_title.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\home.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\film.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\showtime.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\history.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home_color.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\history_color.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\showtime_color.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\film_color.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\logout.png" />
   </ItemGroup>
   <ItemGroup>
@@ -329,8 +305,6 @@
   <ItemGroup>
     <None Include="Resources\money.png" />
     <None Include="Resources\revenue1.png" />
-    <None Include="Resources\revenue.png" />
-    <None Include="Resources\revenue_color.png" />
     <None Include="Resources\screen.jpg" />
     <None Include="Resources\screen.png" />
     <None Include="Resources\seat_couple.png" />
@@ -339,14 +313,57 @@
     <None Include="Resources\seat_normal.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\add_img.png" />
-    <None Include="Resources\add_film.png" />
-    <None Include="Resources\add_film_color.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dark_super_man.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bhd-star-cinema.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_film_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\history_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\revenue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\revenue_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showtime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showtime_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\film_color.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

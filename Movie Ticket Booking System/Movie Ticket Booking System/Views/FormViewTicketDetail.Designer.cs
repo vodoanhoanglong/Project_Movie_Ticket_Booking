@@ -119,7 +119,7 @@ namespace Movie_Ticket_Booking_System.View
             // btnCancelTicket
             // 
             this.btnCancelTicket.Animated = true;
-            this.btnCancelTicket.BorderRadius = 20;
+            this.btnCancelTicket.BorderRadius = 5;
             this.btnCancelTicket.CheckedState.Parent = this.btnCancelTicket;
             this.btnCancelTicket.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelTicket.CustomImages.Parent = this.btnCancelTicket;
@@ -136,6 +136,10 @@ namespace Movie_Ticket_Booking_System.View
             this.btnCancelTicket.HoverState.Parent = this.btnCancelTicket;
             this.btnCancelTicket.Location = new System.Drawing.Point(280, 621);
             this.btnCancelTicket.Name = "btnCancelTicket";
+            this.btnCancelTicket.ShadowDecoration.BorderRadius = 10;
+            this.btnCancelTicket.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnCancelTicket.ShadowDecoration.Depth = 10;
+            this.btnCancelTicket.ShadowDecoration.Enabled = true;
             this.btnCancelTicket.ShadowDecoration.Parent = this.btnCancelTicket;
             this.btnCancelTicket.Size = new System.Drawing.Size(135, 45);
             this.btnCancelTicket.TabIndex = 35;
@@ -145,7 +149,7 @@ namespace Movie_Ticket_Booking_System.View
             // btnExport
             // 
             this.btnExport.Animated = true;
-            this.btnExport.BorderRadius = 20;
+            this.btnExport.BorderRadius = 5;
             this.btnExport.CheckedState.Parent = this.btnExport;
             this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExport.CustomImages.Parent = this.btnExport;
@@ -162,6 +166,10 @@ namespace Movie_Ticket_Booking_System.View
             this.btnExport.HoverState.Parent = this.btnExport;
             this.btnExport.Location = new System.Drawing.Point(444, 621);
             this.btnExport.Name = "btnExport";
+            this.btnExport.ShadowDecoration.BorderRadius = 10;
+            this.btnExport.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnExport.ShadowDecoration.Depth = 10;
+            this.btnExport.ShadowDecoration.Enabled = true;
             this.btnExport.ShadowDecoration.Parent = this.btnExport;
             this.btnExport.Size = new System.Drawing.Size(135, 45);
             this.btnExport.TabIndex = 34;

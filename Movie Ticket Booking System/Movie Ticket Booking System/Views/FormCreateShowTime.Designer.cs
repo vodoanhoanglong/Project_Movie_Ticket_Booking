@@ -45,7 +45,7 @@ namespace Movie_Ticket_Booking_System.View
             this.dtpShowDate.Animated = true;
             this.dtpShowDate.BackColor = System.Drawing.Color.Transparent;
             this.dtpShowDate.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.dtpShowDate.BorderRadius = 20;
+            this.dtpShowDate.BorderRadius = 5;
             this.dtpShowDate.BorderThickness = 2;
             this.dtpShowDate.Checked = true;
             this.dtpShowDate.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
@@ -61,6 +61,9 @@ namespace Movie_Ticket_Booking_System.View
             this.dtpShowDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpShowDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpShowDate.Name = "dtpShowDate";
+            this.dtpShowDate.ShadowDecoration.BorderRadius = 10;
+            this.dtpShowDate.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.dtpShowDate.ShadowDecoration.Enabled = true;
             this.dtpShowDate.ShadowDecoration.Parent = this.dtpShowDate;
             this.dtpShowDate.Size = new System.Drawing.Size(132, 44);
             this.dtpShowDate.TabIndex = 11;
@@ -71,7 +74,7 @@ namespace Movie_Ticket_Booking_System.View
             this.dtpShowTime.Animated = true;
             this.dtpShowTime.BackColor = System.Drawing.Color.Transparent;
             this.dtpShowTime.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.dtpShowTime.BorderRadius = 20;
+            this.dtpShowTime.BorderRadius = 5;
             this.dtpShowTime.BorderThickness = 2;
             this.dtpShowTime.Checked = true;
             this.dtpShowTime.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
@@ -86,6 +89,9 @@ namespace Movie_Ticket_Booking_System.View
             this.dtpShowTime.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpShowTime.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpShowTime.Name = "dtpShowTime";
+            this.dtpShowTime.ShadowDecoration.BorderRadius = 10;
+            this.dtpShowTime.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.dtpShowTime.ShadowDecoration.Enabled = true;
             this.dtpShowTime.ShadowDecoration.Parent = this.dtpShowTime;
             this.dtpShowTime.ShowUpDown = true;
             this.dtpShowTime.Size = new System.Drawing.Size(132, 44);
@@ -101,7 +107,7 @@ namespace Movie_Ticket_Booking_System.View
             // 
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(194, 12);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(178, 39);
@@ -112,7 +118,7 @@ namespace Movie_Ticket_Booking_System.View
             // 
             this.cmbRoom.BackColor = System.Drawing.Color.Transparent;
             this.cmbRoom.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.cmbRoom.BorderRadius = 15;
+            this.cmbRoom.BorderRadius = 5;
             this.cmbRoom.BorderThickness = 2;
             this.cmbRoom.Cursor = System.Windows.Forms.Cursors.Default;
             this.cmbRoom.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -128,6 +134,9 @@ namespace Movie_Ticket_Booking_System.View
             this.cmbRoom.ItemsAppearance.Parent = this.cmbRoom;
             this.cmbRoom.Location = new System.Drawing.Point(154, 178);
             this.cmbRoom.Name = "cmbRoom";
+            this.cmbRoom.ShadowDecoration.BorderRadius = 10;
+            this.cmbRoom.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.cmbRoom.ShadowDecoration.Enabled = true;
             this.cmbRoom.ShadowDecoration.Parent = this.cmbRoom;
             this.cmbRoom.Size = new System.Drawing.Size(285, 36);
             this.cmbRoom.TabIndex = 14;
@@ -148,7 +157,8 @@ namespace Movie_Ticket_Booking_System.View
             // btnConfirm
             // 
             this.btnConfirm.Animated = true;
-            this.btnConfirm.BorderRadius = 20;
+            this.btnConfirm.BackColor = System.Drawing.Color.Transparent;
+            this.btnConfirm.BorderRadius = 5;
             this.btnConfirm.CheckedState.Parent = this.btnConfirm;
             this.btnConfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirm.CustomImages.Parent = this.btnConfirm;
@@ -160,11 +170,15 @@ namespace Movie_Ticket_Booking_System.View
             this.btnConfirm.DisabledState.Parent = this.btnConfirm;
             this.btnConfirm.FillColor = System.Drawing.Color.Transparent;
             this.btnConfirm.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
             this.btnConfirm.HoverState.Parent = this.btnConfirm;
-            this.btnConfirm.Location = new System.Drawing.Point(436, 236);
+            this.btnConfirm.Location = new System.Drawing.Point(216, 260);
             this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.ShadowDecoration.BorderRadius = 10;
+            this.btnConfirm.ShadowDecoration.Color = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(9)))), ((int)(((byte)(20)))));
+            this.btnConfirm.ShadowDecoration.Depth = 10;
+            this.btnConfirm.ShadowDecoration.Enabled = true;
             this.btnConfirm.ShadowDecoration.Parent = this.btnConfirm;
             this.btnConfirm.Size = new System.Drawing.Size(146, 45);
             this.btnConfirm.TabIndex = 15;
@@ -191,7 +205,7 @@ namespace Movie_Ticket_Booking_System.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(26)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(588, 295);
+            this.ClientSize = new System.Drawing.Size(588, 317);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.cmbRoom);
