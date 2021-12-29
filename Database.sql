@@ -133,7 +133,16 @@ else exec sp_addrolemember 'Standard', @AccountID
 SET @AccountID = SUBSTRING(@AccountID,2,10)
 INSERT into ACCOUNT VALUES(@AccountID,@Password,@FullName,@Balance, @Role)
 GO
-
+-- 2. Tạo proc tự động trừ tiền khi đặt vé thành công
+CREATE PROC sp_SetAccountBalance(@AccountID varchar(10), @Money decimal)
+AS
+UPDATE ACCOUNT SET Balance -= @Money WHERE AccountID = @AccountID
+GO
+-- 3. Tạo proc tự động hoàn tiền khi hủy vé
+CREATE PROC sp_SetAccountBalanceRefund(@AccountID varchar(10), @Money decimal)
+AS
+UPDATE ACCOUNT SET Balance += @Money WHERE AccountID = @AccountID
+GO
 
 -- TRIGGER
 -- 1. Không cho phép sửa thông tin phim khi phim đó đang có lịch chiếu
@@ -155,8 +164,9 @@ BEGIN
 END
 GO
 -- 2. Khi người dùng ở trong phòng đặt vé vượt quá thời gian chiếu
+-- cũng như không được hủy vé khi quá thời gian chiếu
 CREATE TRIGGER trg_checkTicketBooking ON TICKET
-AFTER INSERT AS
+AFTER INSERT, UPDATE AS
 BEGIN
 	DECLARE @check int
 	SELECT @check =  Count(*) 
@@ -220,13 +230,31 @@ GO
 CREATE TRIGGER trg_checkMoney ON TICKET
 AFTER INSERT AS
 BEGIN 
-	DECLARE @check int
+	DECLARE @check int, @accountID varchar(10), @money decimal
+	SELECT @accountID = i.AccountID FROM INSERTED i 
+	SELECT @money = i.TotalPrice FROM INSERTED i
 	SELECT @check =  Count(*) 
 	FROM TICKET t,
 		ACCOUNT a, INSERTED i
 	WHERE  t.AccountID = a.AccountID
 	AND t.TicketID = i.TicketID
 	AND a.Balance < i.TotalPrice
+	IF(@check > 0)
+		BEGIN
+			ROLLBACK TRAN
+			RETURN
+		END
+	exec sp_SetAccountBalance @accountID, @money
+END
+GO
+-- 6. Kiểm tra đăng ký tài khoản đã tồn tại hay chưa
+CREATE TRIGGER trg_CheckAccountExist ON ACCOUNT
+AFTER INSERT AS
+BEGIN 
+	DECLARE @check int
+	SELECT @check =  Count(*) 
+	FROM ACCOUNT a, INSERTED i
+	WHERE  i.AccountID = a.AccountID
 	IF(@check > 0)
 		BEGIN
 			ROLLBACK TRAN
